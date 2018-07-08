@@ -1,0 +1,2 @@
+include ':Tutorial1DaggerBasics', ':Tutorial1ProvisionMethod', ':Tutorial2InjectConstructor', ':Tutorial2InjectConstructor', ':Tutorial1DaggerBasics2', ':Tutorial2SelectContructorAndFieldInjection'
+include ':DaggerApplication'
