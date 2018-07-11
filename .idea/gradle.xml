@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DaggerApplication" />
+            <option value="$PROJECT_DIR$/DaggerDependentComponents" />
             <option value="$PROJECT_DIR$/Todo-MVP-Dagger2" />
             <option value="$PROJECT_DIR$/Tutorial1-1DaggerBasics" />
             <option value="$PROJECT_DIR$/Tutorial1-2DaggerBasics2" />
@@ -20,6 +21,7 @@
             <option value="$PROJECT_DIR$/Tutorial3-1Scope1" />
             <option value="$PROJECT_DIR$/Tutorial3-2Scope2" />
             <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent" />
+            <option value="$PROJECT_DIR$/Tutorial4-2Subcomponents" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
