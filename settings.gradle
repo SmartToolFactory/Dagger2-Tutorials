@@ -1,4 +1,13 @@
-include ':Tutorial1-1DaggerBasics', ':Tutorial1-3ProvisionMethod', ':Tutorial2-1InjectConstructor', ':Tutorial2InjectConstructor', ':Tutorial1-2DaggerBasics2', ':Tutorial2-2SelectContructorAndFieldInjection', ':Tutorial3-1Scope1', ':Tutorial1ProvisionStaticMethods', ':Tutorial3-2Scope2', ':Tutorial4-1DependentComponent', ':Tutorial4-2Subcomponents'
+include ':Tutorial1-1DaggerBasics',
+        ':Tutorial1-2DaggerBasics2',
+        ':Tutorial1-3ProvisionMethod',
+        ':Tutorial2-1InjectConstructor',
+        ':Tutorial2-2SelectContructorAndFieldInjection',
+        ':Tutorial3-1Scope1',
+        ':Tutorial3-2Scope2',
+        ':Tutorial4-1DependentComponent',
+        ':Tutorial4-2Subcomponents',
+        ':Tutorial4-3ComponentBuilders'
 include ':DaggerApplication'
 include ':Todo-MVP-Dagger2'
 include ':DaggerDependentComponents'

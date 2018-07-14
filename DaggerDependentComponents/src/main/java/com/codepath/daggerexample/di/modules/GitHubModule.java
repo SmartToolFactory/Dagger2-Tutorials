@@ -7,6 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 import retrofit.Retrofit;
 
+// This module depends on NetModule to provide Retrofit instance
 @Module
 public class GitHubModule {
 

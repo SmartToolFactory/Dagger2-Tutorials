@@ -7,5 +7,9 @@ import javax.inject.Singleton;
 import dagger.Component;
 @Component(modules = {MotorModule.class})
 public interface MotorComponent {
+
+    // remove injection methods if downstream modules will perform injection
+
+    // downstream components need these exposed
     Motor motor();
 }

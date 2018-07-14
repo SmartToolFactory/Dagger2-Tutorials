@@ -1,15 +1,14 @@
 package com.codepath.daggerexample.di.modules;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import com.squareup.okhttp.Cache;
-import com.squareup.okhttp.OkHttpClient;
-
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.squareup.okhttp.Cache;
+import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Singleton;
 
@@ -27,12 +26,15 @@ public class NetModule {
         this.mBaseUrl = baseUrl;
     }
 
+    // Field injection to MainActivity
     @Provides
     @Singleton
     SharedPreferences providesSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
     }
 
+    // provides Cache to provideOkHttpClient(Cache cache)
+    // application is injected from AppModule's providesApplication
     @Provides
     @Singleton
     Cache provideOkHttpCache(Application application) {
@@ -41,7 +43,7 @@ public class NetModule {
         return cache;
     }
 
-
+    // Provides Gson to provideRetrofit(Gson, OkHttpClient)
     @Provides  // Dagger will only look for methods annotated with @Provides
     @Singleton
     Gson provideGson() {
@@ -50,6 +52,7 @@ public class NetModule {
         return gsonBuilder.create();
     }
 
+    // Provides OkHttpClient to provideRetrofit(Gson, OkHttpClient)
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient(Cache cache) {
@@ -58,6 +61,8 @@ public class NetModule {
         return okHttpClient;
     }
 
+    // External provide Retrofit to providesGitHubInterface(Retrofit) inside GitHubModule
+    // and Field injected to MainActivity
     @Provides
     @Singleton
     Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {

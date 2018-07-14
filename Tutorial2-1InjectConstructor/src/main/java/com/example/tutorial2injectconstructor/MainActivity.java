@@ -11,6 +11,7 @@ import javax.inject.Named;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Constructor injection
     @Inject
     MySharedPreferences mySharedPreferences;
 
