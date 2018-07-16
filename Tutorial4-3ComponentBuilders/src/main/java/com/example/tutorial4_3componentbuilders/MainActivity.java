@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((MyApplication) getApplication()).getAppComponent().inject(this);
-        // ((MyApplication) getApplication()).getAppComponentWithBuilder().inject(this);
+       // ((MyApplication) getApplication()).getAppComponent().inject(this);
+        ((MyApplication) getApplication()).getAppComponentWithBuilder().inject(this);
 
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt("data", 13);

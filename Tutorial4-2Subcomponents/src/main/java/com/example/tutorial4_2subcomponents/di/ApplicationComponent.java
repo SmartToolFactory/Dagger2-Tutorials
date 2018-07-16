@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 // This is parent component
-@Component(modules = SharedPreferencesModule.class)
+@Component(modules = ApplicationModule.class)
 @Singleton
 public interface ApplicationComponent {
 

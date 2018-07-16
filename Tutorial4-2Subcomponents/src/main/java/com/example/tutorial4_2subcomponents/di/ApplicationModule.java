@@ -9,11 +9,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class SharedPreferencesModule {
+public class ApplicationModule {
 
     private Context context;
 
-    public SharedPreferencesModule(Context context) {
+    public ApplicationModule(Context context) {
         this.context = context;
     }
 

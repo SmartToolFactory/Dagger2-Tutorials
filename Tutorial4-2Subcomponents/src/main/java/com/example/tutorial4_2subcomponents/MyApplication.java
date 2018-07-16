@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.example.tutorial4_2subcomponents.di.ApplicationComponent;
 import com.example.tutorial4_2subcomponents.di.DaggerApplicationComponent;
-import com.example.tutorial4_2subcomponents.di.SharedPreferencesModule;
+import com.example.tutorial4_2subcomponents.di.ApplicationModule;
 
 public class MyApplication extends Application {
 
@@ -15,7 +15,7 @@ public class MyApplication extends Application {
         super.onCreate();
         mApplicationComponent = DaggerApplicationComponent
                 .builder()
-                .sharedPreferencesModule(new SharedPreferencesModule(getApplicationContext()))
+                .applicationModule(new ApplicationModule(getApplicationContext()))
                 .build();
 
         //   mApplicationComponent.inject(this);
