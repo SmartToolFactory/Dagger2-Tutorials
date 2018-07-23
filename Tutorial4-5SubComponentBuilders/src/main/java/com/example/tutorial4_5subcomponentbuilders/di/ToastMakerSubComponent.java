@@ -11,6 +11,7 @@ import dagger.Subcomponent;
 @ActivityScope
 @Subcomponent(modules = {ToastMakerModule.class})
 public interface ToastMakerSubComponent {
+
     void inject(MainActivity mainActivity);
 
     /*

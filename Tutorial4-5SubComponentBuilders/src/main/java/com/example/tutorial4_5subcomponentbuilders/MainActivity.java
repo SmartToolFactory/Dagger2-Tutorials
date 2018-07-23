@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         toastMaker.showToast("sharedPreferences " + sharedPreferences);
 
+        Integer.toString(5);
+
 
     }
 }

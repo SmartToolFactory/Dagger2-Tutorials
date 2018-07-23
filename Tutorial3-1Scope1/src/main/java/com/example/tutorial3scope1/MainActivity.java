@@ -52,4 +52,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return mUserComponent;
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "MainActivity onDestroy()", Toast.LENGTH_SHORT).show();
+    }
 }

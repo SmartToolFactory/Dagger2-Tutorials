@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements SensorController.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*        ((MyApplication) getApplication()).getAppComponent().inject(this);*/
+        ((MyApplication) getApplication()).getAppComponent().inject(this);
+/*
         ((MyApplication) getApplication()).getAppComponentWithBuilder().inject(this);
+*/
         toastMaker.showToast("sharedPreferences " + sharedPreferences);
         sensorController.setSensorEventChangeListener(this);
 

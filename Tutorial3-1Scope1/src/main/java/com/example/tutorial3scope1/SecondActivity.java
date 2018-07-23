@@ -40,4 +40,10 @@ public class SecondActivity extends AppCompatActivity {
         textView.setText("Second User: " + user.hashCode());
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "SecondActivity onDestroy()", Toast.LENGTH_SHORT).show();
+    }
+
 }

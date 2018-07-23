@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Dagger-Android-Sample" />
             <option value="$PROJECT_DIR$/DaggerApplication" />
             <option value="$PROJECT_DIR$/DaggerDependentComponents" />
             <option value="$PROJECT_DIR$/SubComponentBuilder" />
@@ -24,6 +25,11 @@
             <option value="$PROJECT_DIR$/Tutorial4-3ComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
             <option value="$PROJECT_DIR$/Tutorial4-5SubComponentBuilders" />
+            <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuildersMultipleModulesAndActvities" />
+            <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android" />
+            <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android-ContributesAndroidInjector" />
+            <option value="$PROJECT_DIR$/Tutorial5-3aDagger-Android" />
+            <option value="$PROJECT_DIR$/Tutorial5-3bDagger-Android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
