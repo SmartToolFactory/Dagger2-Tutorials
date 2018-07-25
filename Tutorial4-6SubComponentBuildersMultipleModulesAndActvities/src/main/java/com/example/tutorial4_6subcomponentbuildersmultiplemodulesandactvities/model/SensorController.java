@@ -37,6 +37,7 @@ public class SensorController implements SensorEventListener {
 
     @Inject
     public SensorController(Context context) {
+        System.out.println("SensorController context: " + context);
         // Sensor Manager
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         rotationVector = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);

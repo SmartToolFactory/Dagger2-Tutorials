@@ -11,7 +11,7 @@ import dagger.BindsInstance;
 import dagger.Subcomponent;
 
 @FragmentScope
-@Subcomponent(modules = {ToastMakerModule.class})
+@Subcomponent(modules = {ToastMakerModule.class, MySharedPreferencesModule.class})
 public interface ToastMakerSubComponent {
 
     void inject(MyFragment myFragment);
