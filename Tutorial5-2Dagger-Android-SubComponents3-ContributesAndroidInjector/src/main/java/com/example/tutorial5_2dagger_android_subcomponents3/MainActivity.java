@@ -1,7 +1,10 @@
 package com.example.tutorial5_2dagger_android_subcomponents3;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import javax.inject.Inject;
 
@@ -13,7 +16,7 @@ public class MainActivity extends DaggerAppCompatActivity {
     @Inject
     SharedPreferences sharedPreferences;
 
-    // Injected from ToastMaker SubComponent Module
+    // Injected from MainActivity SubComponent Module
     @Inject
     ToastMaker toastMaker;
 
@@ -24,6 +27,17 @@ public class MainActivity extends DaggerAppCompatActivity {
 
         toastMaker.showToast("sharedPreferences " + sharedPreferences);
 
+
+        Button button = findViewById(R.id.button);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

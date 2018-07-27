@@ -28,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     SharedPreferences mSharedPreferences;
 
- /*   @Inject
+    @Inject
     Retrofit mRetrofit;
-*/
     @Inject
     GitHubApiInterface mGitHubApiInterface;
 

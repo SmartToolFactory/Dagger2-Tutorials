@@ -2,10 +2,8 @@ package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     DummyDependency dummyDependency;
 
-
+    // Constructor Injection
     @Inject
     SensorController sensorController;
 
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("Dummy: " + dummyDependency.getApplicationName());
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container,new MyFragment()).commit();
+        ft.replace(R.id.container, new MyFragment()).commit();
 
         Toast.makeText(this, "MainActivity: " + sharedPreferences, Toast.LENGTH_SHORT).show();
 

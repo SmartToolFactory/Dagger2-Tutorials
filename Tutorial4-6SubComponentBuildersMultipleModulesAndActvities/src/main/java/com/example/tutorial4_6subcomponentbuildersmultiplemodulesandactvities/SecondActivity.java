@@ -3,18 +3,23 @@ package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.ApplicationComponent;
+import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.ToastMakerSubComponent;
+import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.model.ToastMaker;
 
 import javax.inject.Inject;
 
 public class SecondActivity extends AppCompatActivity {
 
+    // Injected from ApplicationModule
     @Inject
     SharedPreferences sharedPreferences;
 
- /*   @Inject
-    ToastMaker toastMaker;*/
+    // Injected from ToastMakerModule
+    @Inject
+    ToastMaker toastMaker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +28,18 @@ public class SecondActivity extends AppCompatActivity {
 
         ApplicationComponent applicationComponent = ((MyApplication) getApplication()).getApplicationComponent();
 
-  /*      ToastMakerSubComponent toastMakerSubComponent = applicationComponent
+        ToastMakerSubComponent toastMakerSubComponent = applicationComponent
                 .toastMakerBuilder()
                 .context(this)
-                .build();*/
+                .build();
 
-/*        toastMakerSubComponent.inject(this);
+        toastMakerSubComponent.inject(this);
 
         toastMaker.showToast("SharedPreferences: " + sharedPreferences);
 
         TextView textView = findViewById(R.id.text_view);
 
-        textView.setText("ToastMaker: " + toastMaker + "\n sharedPreferences: " + sharedPreferences);*/
+        textView.setText("ToastMaker: " + toastMaker + "\n sharedPreferences: " + sharedPreferences);
 
     }
 }
