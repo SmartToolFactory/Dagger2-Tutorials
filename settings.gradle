@@ -1,4 +1,4 @@
-include ':Tutorial1-1DaggerBasics', ':Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector'
+include ':Tutorial1-1DaggerBasics', ':Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector', ':Tutorial5-3Dagger-Android-MutipleActivitiesAndFragments'
 include ':Tutorial1-2DaggerBasics2'
 include ':Tutorial1-3ProvisionMethod'
 include ':Tutorial2-1InjectConstructor'
