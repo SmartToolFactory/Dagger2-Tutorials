@@ -9,6 +9,12 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * AppModule of dagger-android does not declare sub-components inside @Module annotation
+ *
+ * @Module(subcomponents = {A.class, B.class}) is not used
+ */
+
 @Module
 public abstract class AppModule {
 

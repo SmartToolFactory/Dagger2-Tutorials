@@ -11,15 +11,15 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AppModuleWithBuilder.class, ToastMakerModule.class, SensorControllerModule.class})
+@Component(modules = {AppModuleWithBind.class, ToastMakerModule.class, SensorControllerModule.class})
 
-public interface AppComponentWithBuilder {
+public interface AppComponentWithBind {
     void inject(MainActivity mainActivity);
 
     @Component.Builder
     interface Builder {
 
-        AppComponentWithBuilder build();
+        AppComponentWithBind build();
 
 
         // @BindsInstance replaces Builder appModule(AppModule appModule)

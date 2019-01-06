@@ -26,6 +26,7 @@ public class AppModule {
     @Singleton
     Application provideApplication(){
         return mApplication;}
+
     @Provides
     @Singleton
     SharedPreferences provideSharedPreferences(Application application)

@@ -3,16 +3,23 @@ package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.d
 
 import android.content.Context;
 
-import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.MainActivity;
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.MyFragment;
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.SecondActivity;
 
 import dagger.BindsInstance;
 import dagger.Subcomponent;
 
+/**
+ * This is a SubComponent with 2 modules {@link ToastMakerModule} and {@link MySharedPreferencesModule}
+ * Used for injecting objects provided by these modules to activity{@link com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.MainActivity}
+ * and fragment({@link MyFragment})
+ */
+
 @FragmentScope
 @Subcomponent(modules = {ToastMakerModule.class, MySharedPreferencesModule.class})
-public interface ToastMakerSubComponent {
+public interface ToastAndPreferencesSubComponent {
+
+    // !!! IMPORTANT: Only one Component can be injected to an Object
 
     void inject(MyFragment myFragment);
 
@@ -21,7 +28,7 @@ public interface ToastMakerSubComponent {
     @Subcomponent.Builder
     interface Builder {
 
-        ToastMakerSubComponent build();
+        ToastAndPreferencesSubComponent build();
 
         @BindsInstance
         Builder context(Context context);

@@ -22,4 +22,6 @@ public class ApplicationModule {
     SharedPreferences provideSharedPreferences() {
         return context.getSharedPreferences("PrefName", Context.MODE_PRIVATE);
     }
+
+
 }

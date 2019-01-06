@@ -3,7 +3,7 @@ package com.example.tutorial4_4componentbuildersmultiplemodules;
 import android.app.Application;
 
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppComponent;
-import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppComponentWithBuilder;
+import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppComponentWithBind;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppModule;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.DaggerAppComponent;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.DaggerAppComponentWithBuilder;
@@ -14,7 +14,7 @@ public class MyApplication extends Application {
 
     private AppComponent appComponent;
 
-    private AppComponentWithBuilder appComponentWithBuilder;
+    private AppComponentWithBind appComponentWithBuilder;
 
 
     @Override
@@ -42,7 +42,7 @@ public class MyApplication extends Application {
         return appComponent;
     }
 
-    public AppComponentWithBuilder getAppComponentWithBuilder() {
+    public AppComponentWithBind getAppComponentWithBuilder() {
         return appComponentWithBuilder;
     }
 }

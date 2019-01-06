@@ -7,6 +7,8 @@ import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.mo
 
 import dagger.Module;
 
+// This is SubComponent Module
+
 @Module
 public class MySharedPreferencesModule {
 

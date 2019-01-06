@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, new MyFragment()).commit();
 
+        System.out.println("MainActivity sharedPreferences: " + sharedPreferences);
+
         Toast.makeText(this, "MainActivity: " + sharedPreferences, Toast.LENGTH_SHORT).show();
 
     }

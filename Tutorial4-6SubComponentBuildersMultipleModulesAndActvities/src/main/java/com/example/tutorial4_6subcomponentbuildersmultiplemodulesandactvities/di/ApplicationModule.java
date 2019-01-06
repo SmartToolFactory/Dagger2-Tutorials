@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(subcomponents = {ToastMakerSubComponent.class, DummyDependencyComponent.class})
+@Module(subcomponents = {ToastAndPreferencesSubComponent.class, DummyDependencyComponent.class})
 public class ApplicationModule {
 
     @Provides
@@ -17,4 +17,6 @@ public class ApplicationModule {
     SharedPreferences provideSharedPreferences(Application application) {
         return application.getSharedPreferences("PrefName", Context.MODE_PRIVATE);
     }
+
+
 }

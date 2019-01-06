@@ -3,7 +3,12 @@ package com.example.tutorial4_2subcomponents.model;
 import android.content.SharedPreferences;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+/**
+ * Without @Singleton annotation constructor injection returns new instance
+ */
+// @Singleton
 public class MySharedPreferences {
 
     private SharedPreferences mSharedPreferences;
@@ -14,8 +19,9 @@ public class MySharedPreferences {
     */
 
     @Inject
-    public MySharedPreferences(SharedPreferences mSharedPreferences) {
-        this.mSharedPreferences = mSharedPreferences;
+    public MySharedPreferences(SharedPreferences sharedPreferences) {
+        this.mSharedPreferences = sharedPreferences;
+        System.out.println("MySharedPreferences mSharedPreferences: " + sharedPreferences);
     }
 
     public void putData(String key, int data) {

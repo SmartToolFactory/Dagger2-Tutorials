@@ -37,7 +37,7 @@ public interface ToastMakerSubComponent {
          * Passes context to  sub-component modules and removes module chain
          * toastMakerModule(new ToastMakerModule(this) from Activity or Fragment.
          *
-         * @param context is injected to required sub-component modules' methods
+         * @param context is injected  to sub-component modules' methods that require a context
          * @return Builder of SubComponent
          */
         @BindsInstance

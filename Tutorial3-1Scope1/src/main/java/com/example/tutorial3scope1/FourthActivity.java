@@ -15,6 +15,7 @@ import com.example.tutorial3scope1.model.User;
 import javax.inject.Inject;
 
 public class FourthActivity extends AppCompatActivity {
+
     private UserComponent mUserComponent;
 
     // This User is created each time device is rotated

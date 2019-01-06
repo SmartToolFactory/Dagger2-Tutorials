@@ -11,11 +11,12 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Injected from ApplicationModule
+    // Injected from ApplicationModule, and this is a Singleton object
     @Inject
     SharedPreferences sharedPreferences;
 
-    // Injected from ToastMaker SubComponent Module
+    // Injected from ToastMaker SubComponent Module,
+    // and new instance is created every time device is rotated
     @Inject
     ToastMaker toastMaker;
 
@@ -36,6 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         Integer.toString(5);
 
-
+        System.out.println("ToastMaker: " + toastMaker + ", sharedPreferences: " + sharedPreferences);
     }
 }

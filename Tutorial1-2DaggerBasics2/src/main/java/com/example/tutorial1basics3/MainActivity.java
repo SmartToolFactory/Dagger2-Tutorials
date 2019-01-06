@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements SensorController.
     MyApplication myApplication;
 
     // Inject field SensorController from Module with provideSensorController
+    // This object is Singleton and same instance is injected on device rotation
     @Inject
     SensorController mSensorController;
 
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements SensorController.
 
         ((MyApplication) getApplication()).getAppContextComponent().inject(this);
         mSensorController.setSensorEventChangeListener(this);
+
+        System.out.println("SensorController: " + mSensorController);
 
         Toast.makeText(myApplication, "myApplication: " + myApplication, Toast.LENGTH_SHORT).show();
     }

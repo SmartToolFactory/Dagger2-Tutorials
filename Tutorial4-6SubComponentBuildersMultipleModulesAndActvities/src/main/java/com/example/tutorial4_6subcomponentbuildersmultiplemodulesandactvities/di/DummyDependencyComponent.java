@@ -14,8 +14,8 @@ public interface DummyDependencyComponent {
     void inject(MainActivity mainActivity);
 
 
-    // TODO Only one Component can be injected to an Object
-    // Second Activity  uses ToastMakerSubComponent already
+    // !!! IMPORTANT: Only one Component can be injected to an Object
+    // Second Activity  uses ToastAndPreferencesSubComponent already
 /*
     void inject(SecondActivity secondActivity);
 */

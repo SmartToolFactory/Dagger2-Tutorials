@@ -6,7 +6,6 @@ import com.example.tutorial4_5subcomponentbuilders.di.ApplicationComponent;
 import com.example.tutorial4_5subcomponentbuilders.di.ApplicationModule;
 import com.example.tutorial4_5subcomponentbuilders.di.DaggerApplicationComponent;
 
-
 public class MyApplication extends Application {
 
     private ApplicationComponent mApplicationComponent;

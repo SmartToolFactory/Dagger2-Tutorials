@@ -18,7 +18,7 @@ public class MyApplication extends Application {
                 .applicationModule(new ApplicationModule(getApplicationContext()))
                 .build();
 
-        //   mApplicationComponent.inject(this);
+      //   mApplicationComponent.inject(this);
     }
 
     public ApplicationComponent getApplicationComponent() {

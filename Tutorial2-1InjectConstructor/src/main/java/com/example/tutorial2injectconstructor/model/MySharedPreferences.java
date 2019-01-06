@@ -3,7 +3,13 @@ package com.example.tutorial2injectconstructor.model;
 import android.content.SharedPreferences;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+/*
+ * Without @Singleton annotation constructor injection does not inject a singleton object.
+ * New instance of this object with @Inject contructor is created after each device rotation
+ */
+@Singleton
 public class MySharedPreferences {
 
     private SharedPreferences mSharedPreferences;
@@ -15,6 +21,7 @@ public class MySharedPreferences {
 
     @Inject
     public MySharedPreferences(SharedPreferences mSharedPreferences) {
+        System.out.println("MySharedPreferences Constructor with: " + mSharedPreferences);
         this.mSharedPreferences = mSharedPreferences;
     }
 

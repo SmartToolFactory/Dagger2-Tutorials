@@ -14,8 +14,6 @@ public class MyApplication extends Application {
 
     private AppComponentWithBuilder appComponentWithBuilder;
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -29,6 +27,7 @@ public class MyApplication extends Application {
                 .builder()
                 .application(this)
                 .build();
+
     }
 
 

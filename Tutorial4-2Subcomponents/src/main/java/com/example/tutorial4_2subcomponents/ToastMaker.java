@@ -6,6 +6,8 @@ public class ToastMaker {
 
     private MainActivity mainActivity;
 
+    private String message;
+
     public ToastMaker(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
     }
@@ -15,4 +17,11 @@ public class ToastMaker {
     }
 
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

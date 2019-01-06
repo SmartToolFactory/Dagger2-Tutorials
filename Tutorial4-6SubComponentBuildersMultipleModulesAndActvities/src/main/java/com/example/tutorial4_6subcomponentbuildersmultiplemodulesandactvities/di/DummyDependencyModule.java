@@ -11,6 +11,7 @@ import dagger.Provides;
 
 @Module
 public class DummyDependencyModule {
+
     @ActivityScope
     @Provides
     DummyDependency provideDummyDependency(Context context) {

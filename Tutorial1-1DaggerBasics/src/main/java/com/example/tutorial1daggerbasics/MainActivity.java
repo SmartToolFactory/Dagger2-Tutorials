@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Note: This is a singleton object, MainActivity injects same object after device is rotated!
     @Inject
     MyExample mMyExample;
 
@@ -26,5 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 .inject(MainActivity.this);
 
         dateTextView.setText((new Date(mMyExample.getDate())).toString());
+
+        System.out.println("MyExample: " + mMyExample);
     }
 }

@@ -13,10 +13,10 @@ public interface AppComponent {
 
     // DaggerAppComponent.build() returns this Builder interface
 
-/*    @Component.Builder
+    @Component.Builder
     interface Builder {
         AppComponent build();
         Builder appModule(AppModule appModule);
-    }*/
+    }
 
 }

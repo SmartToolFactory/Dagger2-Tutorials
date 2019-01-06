@@ -17,7 +17,6 @@ public class ToastMakerModule {
     @FragmentScope
     @Provides
     ToastMaker provideToastMaker(Context context) {
-        System.out.println("ToastMakerModule context: " + context);
         return new ToastMaker(context);
     }
 }

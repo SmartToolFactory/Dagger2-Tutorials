@@ -7,7 +7,6 @@ import android.widget.Toast;
 import com.example.tutorial2injectconstructor.model.MySharedPreferences;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         // SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PrefName", Context.MODE_PRIVATE);
         // mySharedPreferences = new MySharedPreferences(sharedPreferences);
 
-       mySharedPreferences.putData("info", 10);
+        System.out.println("MySharedPreferences: " + mySharedPreferences);
+
+        mySharedPreferences.putData("info", 10);
 
         int data = mySharedPreferences.getData("info");
         Toast.makeText(this, "DATA: " + data, Toast.LENGTH_SHORT).show();
