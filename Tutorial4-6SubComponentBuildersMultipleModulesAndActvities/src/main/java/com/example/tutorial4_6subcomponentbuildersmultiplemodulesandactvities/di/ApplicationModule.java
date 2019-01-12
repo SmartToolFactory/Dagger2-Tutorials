@@ -18,5 +18,4 @@ public class ApplicationModule {
         return application.getSharedPreferences("PrefName", Context.MODE_PRIVATE);
     }
 
-
 }

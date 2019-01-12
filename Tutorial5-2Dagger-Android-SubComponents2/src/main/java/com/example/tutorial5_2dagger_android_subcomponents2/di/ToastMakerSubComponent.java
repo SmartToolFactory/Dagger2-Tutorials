@@ -3,13 +3,16 @@ package com.example.tutorial5_2dagger_android_subcomponents2.di;
 
 import android.content.Context;
 
-
 import com.example.tutorial5_2dagger_android_subcomponents2.MainActivity;
 
 import dagger.BindsInstance;
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 
+/**
+ * SubComponents extend AndroidInjector<MainActivity> for scoped injections.
+ * {@link MainActivity} is the class where {@link ToastMakerModule} objects are injected.
+ */
 @ActivityScope
 @Subcomponent(modules = {ToastMakerModule.class})
 public interface ToastMakerSubComponent extends AndroidInjector<MainActivity> {

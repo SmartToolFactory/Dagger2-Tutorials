@@ -21,10 +21,10 @@ public interface ApplicationComponent {
     @Component.Builder
     interface Builder {
 
-        ApplicationComponent build();
-
         @BindsInstance
         Builder application(Application application);
+
+        ApplicationComponent build();
 
     }
 }

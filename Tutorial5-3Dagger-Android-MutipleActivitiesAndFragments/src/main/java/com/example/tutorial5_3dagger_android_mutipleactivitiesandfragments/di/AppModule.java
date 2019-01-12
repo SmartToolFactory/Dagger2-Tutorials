@@ -10,7 +10,8 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * AppModule of dagger-android does not declare sub-components inside @Module annotation
+ * AppModule of dagger-android with @ContributesAndroidInjector
+ * does not declare sub-components inside @Module annotation
  *
  * @Module(subcomponents = {A.class, B.class}) is not used
  */

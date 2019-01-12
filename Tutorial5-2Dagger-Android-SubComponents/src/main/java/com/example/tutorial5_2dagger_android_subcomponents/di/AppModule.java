@@ -28,9 +28,10 @@ public abstract class AppModule {
 
 
     /*
-    NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent
-    and can be removed using @ContributesAndroidInjector if SubComponent and Builder has no methods
-    */
+     *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in
+     *  non dagger-android, and can be removed using
+     *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
+     */
 
     @Binds
     @IntoMap

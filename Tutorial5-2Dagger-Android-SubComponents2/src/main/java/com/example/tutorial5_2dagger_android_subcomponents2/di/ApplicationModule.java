@@ -5,7 +5,6 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 import com.example.tutorial5_2dagger_android_subcomponents2.MainActivity;
 
 import javax.inject.Singleton;
@@ -27,7 +26,6 @@ public abstract class ApplicationModule {
      */
     // @Binds returns interface or abstract from implementation
 
-
 /*    @Binds
     public abstract Context bindContext(Application application);*/
 
@@ -40,9 +38,10 @@ public abstract class ApplicationModule {
     }
 
      /*
-    NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent
-    and can be removed using @ContributesAndroidInjector if SubComponent and Builder has no methods
-    */
+      *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in
+      *  non dagger-android, and can be removed using
+      *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
+      */
 
     @Binds
     @IntoMap

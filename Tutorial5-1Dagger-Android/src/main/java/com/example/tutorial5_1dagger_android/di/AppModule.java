@@ -29,7 +29,8 @@ public abstract class AppModule {
     @Binds
     @IntoMap
     @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindInjectorFactory(MainActivitySubComponent.Builder builder);
+    abstract AndroidInjector.Factory<? extends Activity>
+    bindInjectorFactory(MainActivitySubComponent.Builder builder);
 
 }
 

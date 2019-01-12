@@ -7,13 +7,14 @@ import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.secon
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
+/**
+ * {@link MainActivity} declares {@link MainActivityModule} to inject dependencies provided in {@link MainActivityModule}
+ * To be able to inject dependencies to fragments inside {@link MainActivity} it defines {@link FragmentContributorModule}
+ */
+
 @Module
 public abstract class ActivityContributorModule {
 
-    /*
-     MainActivity declares MainActivityModule to be able to inject dependencies provided in MainActivityModule
-      To be able to inject dependencies to fragments inside MainActivity it defines FragmentContributorModule
-      */
 
     @ActivityScope
     @ContributesAndroidInjector(modules = {MainActivityModule.class, FragmentContributorModule.class})
