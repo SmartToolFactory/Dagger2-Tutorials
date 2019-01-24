@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     MySharedPreferences mySharedPreferencesConstructor;
 
-
-    int data1, data2;
+    private int data1, data2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         // @ Inject calls this constructor of MySharedPreferences class after injecting SharedPreferences to it
         // SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("PrefName", Context.MODE_PRIVATE);
         // mySharedPreferences = new MySharedPreferences(sharedPreferences);
+
+
+        System.out.println("Field Injected: "+ mySharedPreferences);
+        System.out.println("Constructor Injected: "+ mySharedPreferencesConstructor);
 
         mySharedPreferences.putData("info", 0);
         mySharedPreferencesConstructor.putData("info", 0);

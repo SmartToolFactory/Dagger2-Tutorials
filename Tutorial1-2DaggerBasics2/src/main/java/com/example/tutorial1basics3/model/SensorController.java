@@ -1,14 +1,10 @@
-package com.example.tutorial1basics3.sensors;
+package com.example.tutorial1basics3.model;
 
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-
-import com.example.tutorial1basics3.MyApplication;
-
-import javax.inject.Inject;
 
 public class SensorController implements SensorEventListener {
 

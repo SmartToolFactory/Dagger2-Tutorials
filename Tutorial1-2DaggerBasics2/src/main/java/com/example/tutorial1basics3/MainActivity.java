@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tutorial1basics3.sensors.SensorController;
+import com.example.tutorial1basics3.model.SensorController;
+import com.example.tutorial1basics3.model.User;
 
 import javax.inject.Inject;
 
@@ -16,8 +17,15 @@ public class MainActivity extends AppCompatActivity implements SensorController.
     @Inject
     MyApplication myApplication;
 
+
+    // Inject field User from Module with provideUser
+    // This is a Singleton object because it has @Singleton on app level module
+    // @Singleton does not mean object will be singleton, it's singleton if it's used on application level modules
+    @Inject
+    User mUser;
+
     // Inject field SensorController from Module with provideSensorController
-    // This object is Singleton and same instance is injected on device rotation
+    // This object is not a Singleton
     @Inject
     SensorController mSensorController;
 
@@ -30,8 +38,11 @@ public class MainActivity extends AppCompatActivity implements SensorController.
         mSensorController.setSensorEventChangeListener(this);
 
         System.out.println("SensorController: " + mSensorController);
+        System.out.println("User: " + mUser);
 
         Toast.makeText(myApplication, "myApplication: " + myApplication, Toast.LENGTH_SHORT).show();
+
+
     }
 
 

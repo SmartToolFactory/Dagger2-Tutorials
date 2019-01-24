@@ -10,7 +10,10 @@ import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di
 
 import javax.inject.Inject;
 
-@ActivityScope
+/**
+ * Constructor injected component should have the same scope with the component that is injects to same object
+ * or no scope at all
+ */
 public class SensorController implements SensorEventListener {
 
     // Convert from radian to degrees

@@ -2,12 +2,12 @@ package com.example.tutorial1daggerbasics;
 
 import android.app.Application;
 
+import com.example.tutorial1daggerbasics.di.ApplicationComponent;
+import com.example.tutorial1daggerbasics.di.ApplicationModule;
 import com.example.tutorial1daggerbasics.di.DaggerMyExampleComponent;
-import com.example.tutorial1daggerbasics.di.MyExampleComponent;
-import com.example.tutorial1daggerbasics.di.MyExampleModule;
 
 public class MyApplication extends Application {
-    private MyExampleComponent mMyComponent;
+    private ApplicationComponent mMyComponent;
 
     @Override
     public void onCreate() {
@@ -15,13 +15,13 @@ public class MyApplication extends Application {
         mMyComponent = createMyComponent();
     }
 
-    MyExampleComponent getMyComponent() {
+    ApplicationComponent getMyComponent() {
         return mMyComponent;
     }
 
-    private MyExampleComponent createMyComponent() {
+    private ApplicationComponent createMyComponent() {
         return DaggerMyExampleComponent.builder()
-                .myExampleModule(new MyExampleModule())
+                .myExampleModule(new ApplicationModule())
                 .build();
     }
 }

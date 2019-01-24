@@ -21,15 +21,16 @@ public class SharedPreferencesModule {
         this.context = context;
     }
 
-    @Provides
     @Singleton
+    @Provides
     SharedPreferences provideSharedPreferences() {
         return context.getSharedPreferences("PrefName", Context.MODE_PRIVATE);
     }
 
     // Field Injection for MySharedPreferences
-    @Provides @Named("Field")
+    @Named("Field")
     @Singleton
+    @Provides
     MySharedPreferences provideMySharedPreferences() {
         return new MySharedPreferences(context.getSharedPreferences("Constructor", Context.MODE_PRIVATE));
     }

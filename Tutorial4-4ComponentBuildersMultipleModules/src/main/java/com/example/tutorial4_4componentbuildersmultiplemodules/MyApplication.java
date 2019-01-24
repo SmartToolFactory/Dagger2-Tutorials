@@ -6,7 +6,7 @@ import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppComponent;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppComponentWithBind;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.AppModule;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.DaggerAppComponent;
-import com.example.tutorial4_4componentbuildersmultiplemodules.di.DaggerAppComponentWithBuilder;
+import com.example.tutorial4_4componentbuildersmultiplemodules.di.DaggerAppComponentWithBind;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.SensorControllerModule;
 import com.example.tutorial4_4componentbuildersmultiplemodules.di.ToastMakerModule;
 
@@ -29,8 +29,7 @@ public class MyApplication extends Application {
                 .build();
 
 
-
-        appComponentWithBuilder = DaggerAppComponentWithBuilder
+        appComponentWithBuilder = DaggerAppComponentWithBind
                 .builder()
                 .application(this)
                 .build();
