@@ -3,16 +3,16 @@ package com.example.tutorial4_3componentbuilders;
 import android.app.Application;
 
 import com.example.tutorial4_3componentbuilders.di.AppComponent;
-import com.example.tutorial4_3componentbuilders.di.AppComponentWithBuilder;
+import com.example.tutorial4_3componentbuilders.di.AppComponentWithBindsInstance;
 import com.example.tutorial4_3componentbuilders.di.AppModule;
 import com.example.tutorial4_3componentbuilders.di.DaggerAppComponent;
-import com.example.tutorial4_3componentbuilders.di.DaggerAppComponentWithBuilder;
+import com.example.tutorial4_3componentbuilders.di.DaggerAppComponentWithBindsInstance;
 
 public class MyApplication extends Application {
 
     private AppComponent appComponent;
 
-    private AppComponentWithBuilder appComponentWithBuilder;
+    private AppComponentWithBindsInstance appComponentWithBindsInstance;
 
     @Override
     public void onCreate() {
@@ -23,19 +23,17 @@ public class MyApplication extends Application {
                 .appModule(new AppModule(this))
                 .build();
 
-        appComponentWithBuilder = DaggerAppComponentWithBuilder
+        appComponentWithBindsInstance = DaggerAppComponentWithBindsInstance
                 .builder()
                 .application(this)
                 .build();
-
     }
-
 
     public AppComponent getAppComponent() {
         return appComponent;
     }
 
-    public AppComponentWithBuilder getAppComponentWithBuilder() {
-        return appComponentWithBuilder;
+    public AppComponentWithBindsInstance getAppComponentWithBindsInstance() {
+        return appComponentWithBindsInstance;
     }
 }

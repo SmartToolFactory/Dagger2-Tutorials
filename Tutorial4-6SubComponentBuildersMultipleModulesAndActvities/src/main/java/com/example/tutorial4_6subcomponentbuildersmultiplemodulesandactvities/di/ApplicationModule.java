@@ -9,6 +9,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+
 @Module(subcomponents = {ToastAndPreferencesSubComponent.class, DummyDependencyComponent.class})
 public class ApplicationModule {
 

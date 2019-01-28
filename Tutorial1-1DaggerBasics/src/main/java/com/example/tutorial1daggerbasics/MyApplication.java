@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.example.tutorial1daggerbasics.di.ApplicationComponent;
 import com.example.tutorial1daggerbasics.di.ApplicationModule;
-import com.example.tutorial1daggerbasics.di.DaggerMyExampleComponent;
+import com.example.tutorial1daggerbasics.di.DaggerApplicationComponent;
 
 public class MyApplication extends Application {
     private ApplicationComponent mMyComponent;
@@ -20,8 +20,8 @@ public class MyApplication extends Application {
     }
 
     private ApplicationComponent createMyComponent() {
-        return DaggerMyExampleComponent.builder()
-                .myExampleModule(new ApplicationModule())
+        return DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule())
                 .build();
     }
 }

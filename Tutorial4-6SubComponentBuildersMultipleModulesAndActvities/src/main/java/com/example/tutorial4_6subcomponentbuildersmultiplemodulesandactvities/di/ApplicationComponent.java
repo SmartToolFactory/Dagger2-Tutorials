@@ -13,7 +13,9 @@ import dagger.Component;
 @Singleton
 public interface ApplicationComponent {
 
-    // Calls SubComponent Builder in MainActivity and MyFragment using ApplicationComponent
+    /**
+     * Calls SubComponent Builder in SecondActivity and MyFragment using ApplicationComponent
+     */
     ToastAndPreferencesSubComponent.Builder toastMakerBuilder();
 
     DummyDependencyComponent.Builder dummyDependencyBuilder();

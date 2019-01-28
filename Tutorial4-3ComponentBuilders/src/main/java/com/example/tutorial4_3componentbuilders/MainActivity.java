@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ((MyApplication) getApplication()).getAppComponent().inject(this);
-       // ((MyApplication) getApplication()).getAppComponentWithBuilder().inject(this);
+       // ((MyApplication) getApplication()).getAppComponentWithBindsInstance().inject(this);
 
         System.out.println("MainActivity mSharedPreferences: "+ mSharedPreferences);
 

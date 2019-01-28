@@ -10,6 +10,18 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * @Module(subcomponents = MainActivitySubComponent.class), MainActivitySubcomponent and
+ *     @Binds
+ *     @IntoMap
+ *     @ActivityKey(MainActivity.class)
+ *     abstract AndroidInjector.Factory<? extends Activity>
+ *     bindInjectorFactory(MainActivitySubComponent.Builder builder);
+ *
+ * is REMOVED when @ContributesAndroidInjector is used with MainActivity
+ *
+ *
+ */
 
 @Module
 public abstract class AppModule {

@@ -21,7 +21,6 @@ public interface AppComponentWithBind {
 
         AppComponentWithBind build();
 
-
         // @BindsInstance replaces Builder appModule(AppModule appModule)
         // And removes Constructor with Application AppModule(Application)
 

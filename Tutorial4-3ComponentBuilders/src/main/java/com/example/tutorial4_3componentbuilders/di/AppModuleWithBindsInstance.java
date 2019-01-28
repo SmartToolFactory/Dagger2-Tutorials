@@ -10,8 +10,12 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class AppModuleWithBuilder {
+public class AppModuleWithBindsInstance {
 
+    /*
+     * Application is provided from DaggerAppComponentWithBindsInstance.builder().application(this) in MyApplication class
+     * Appcomponent with @BindsInstance binds Application to all classes that require Application
+     */
     @Provides
     @Singleton
     public SharedPreferences providePreferences(Application application) {

@@ -1,7 +1,6 @@
 package com.example.tutorial4_3componentbuilders.di;
 
 import android.app.Application;
-import android.content.SharedPreferences;
 
 import com.example.tutorial4_3componentbuilders.MainActivity;
 
@@ -11,16 +10,15 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AppModuleWithBuilder.class})
+@Component(modules = {AppModuleWithBindsInstance.class})
 
-public interface AppComponentWithBuilder {
+public interface AppComponentWithBindsInstance {
     void inject(MainActivity mainActivity);
 
     @Component.Builder
     interface Builder {
 
-        AppComponentWithBuilder build();
-
+        AppComponentWithBindsInstance build();
 
         // @BindsInstance replaces Builder appModule(AppModule appModule)
         // And removes Constructor with Application AppModule(Application)

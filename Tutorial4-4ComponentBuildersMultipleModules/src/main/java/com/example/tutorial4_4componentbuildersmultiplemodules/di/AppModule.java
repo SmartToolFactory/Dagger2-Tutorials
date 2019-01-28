@@ -9,10 +9,6 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * This module is created as it's with other examples
- */
-
 @Module
 public class AppModule {
 
@@ -25,7 +21,7 @@ public class AppModule {
     @Provides
     @Singleton
     Application provideApplication() {
-        return  application;
+        return application;
     }
 
     @Provides

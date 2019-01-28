@@ -18,6 +18,12 @@ import dagger.multibindings.IntoMap;
 @Module(subcomponents = MainActivitySubComponent.class)
 public abstract class AppModule {
 
+    /**
+     * Generates an abstract class from a concrete class
+     *
+     * @param application
+     * @return context of application
+     */
     @Binds
     public abstract Context bindContext(Application application);
 
@@ -25,6 +31,12 @@ public abstract class AppModule {
     static DummyDependency provideDummyDependency(Context context) {
         return new DummyDependency(context);
     }
+
+    /*
+     *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in
+     *  non dagger-android, and can be removed using
+     *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
+     */
 
     @Binds
     @IntoMap

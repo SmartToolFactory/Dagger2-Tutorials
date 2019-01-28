@@ -6,6 +6,7 @@ import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.Ma
 
 import dagger.BindsInstance;
 import dagger.Subcomponent;
+
 /**
  * Sub component and module should not have different scopes.
  * IMPORTANT: Both can be unscoped but cannot have with different scopes
@@ -23,8 +24,8 @@ public interface DummyDependencyComponent {
     void inject(SecondActivity secondActivity);
 */
 
-    // !!! IMPORTANT2: Components scope and Injected objects scope can not be different
-    // SensorController is also injected to MainActivity,
+    // !!! IMPORTANT2: Component's and Injected objects' scopes can not be different
+    // SensorController is also injected to MainActivity via Constructor Injection,
     // thus both should have the same scope which is @ActivityScope
 
     @Subcomponent.Builder

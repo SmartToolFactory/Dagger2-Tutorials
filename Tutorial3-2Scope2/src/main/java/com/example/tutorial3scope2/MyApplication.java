@@ -2,6 +2,7 @@ package com.example.tutorial3scope2;
 
 import android.app.Application;
 
+import com.example.tutorial3scope2.di.DaggerMyComponent;
 import com.example.tutorial3scope2.di.MyComponent;
 import com.example.tutorial3scope2.di.SharedPreferencesModule;
 
