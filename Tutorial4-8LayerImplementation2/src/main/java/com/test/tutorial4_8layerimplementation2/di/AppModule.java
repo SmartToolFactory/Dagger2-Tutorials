@@ -4,20 +4,26 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.test.tutorial4_8layerlibrary.di.BaseSubComponent;
+import com.test.tutorial4_8layerlibrary.BaseApplication;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
-@Module(subcomponents = {BaseSubComponent.class})
-public class AppModule {
+@Module
+public abstract class AppModule {
 
     @Singleton
     @Provides
-    SharedPreferences provideSharedPreferences(Application application) {
+    static SharedPreferences provideSharedPreferences(Application application) {
         return application.getSharedPreferences("PrefName", Context.MODE_PRIVATE);
+    }
+
+    @Singleton
+    @Provides
+    static BaseApplication providesBaseApplication(Application application) {
+        return (BaseApplication) application;
     }
 
 }

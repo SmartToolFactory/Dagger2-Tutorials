@@ -1,18 +1,18 @@
 package com.test.tutorial4_8layerlibrary.model;
 
-import android.app.Application;
+import android.content.Context;
 import android.widget.Toast;
 
 public class ToastMaker {
 
-    private Application application;
+    private Context context;
 
-    public ToastMaker(Application application) {
-        this.application = application;
+    public ToastMaker(Context context) {
+        this.context = this.context;
     }
 
     public void showToast(String message) {
-        Toast.makeText(application, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
 

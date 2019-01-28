@@ -1,26 +1,20 @@
 package com.test.tutorial4_8layerlibrary.di;
 
-import android.app.Application;
 
-import com.test.tutorial4_8layerlibrary.model.ToastMaker;
-import com.test.tutorial4_8layerlibrary.model.User;
+import com.test.tutorial4_8layerlibrary.model.DummyModel;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class BaseAppModule {
+public abstract class BaseAppModule {
 
-    @ActivityScope
+    @Singleton
     @Provides
-    User provideUser() {
-        return new User("Unknown", "abc@xyz.com");
-    }
-
-    @ActivityScope
-    @Provides
-    ToastMaker provideToastMaker(Application application) {
-        return new ToastMaker(application);
+    static DummyModel providesDummyModel() {
+        return new DummyModel();
     }
 
 }
