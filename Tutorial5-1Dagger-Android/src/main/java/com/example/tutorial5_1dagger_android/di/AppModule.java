@@ -32,8 +32,29 @@ public abstract class AppModule {
         return new DummyDependency(context);
     }
 
+
+
     /*
-     *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in
+     * @Binds : Returns concrete class from an abstract one such as
+     *
+     * @Binds
+     * Context bindContext(MainActivity activity);
+     * or
+     * @Binds
+     * DetailView provideDetailView(DetailActivity detailActivity);
+     *
+     */
+
+    /*
+     * @IntoMap:
+     */
+
+    /*
+     * @ActivityKey:
+     */
+
+    /*
+     * 🔥🔥 NOTE: This is same as adding void inject(MainActivity mainActivity) in a SubComponent as in
      *  non dagger-android, and can be removed using
      *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
      */

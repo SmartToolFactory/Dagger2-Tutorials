@@ -11,7 +11,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * @Module(subcomponents = MainActivitySubComponent.class), MainActivitySubcomponent and
+ * @Module(subcomponents = MainActivitySubComponent.class), MainActivitySubComponent and
  *     @Binds
  *     @IntoMap
  *     @ActivityKey(MainActivity.class)

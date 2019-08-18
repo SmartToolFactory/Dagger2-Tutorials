@@ -1,8 +1,9 @@
-package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.di;
+package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.second;
 
 import android.content.Context;
 
 
+import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.di.ActivityScope;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.second.SecondActivity;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model.ToastMaker;
 

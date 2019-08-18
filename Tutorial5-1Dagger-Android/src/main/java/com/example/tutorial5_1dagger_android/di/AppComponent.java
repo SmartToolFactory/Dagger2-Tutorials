@@ -13,8 +13,8 @@ import dagger.android.support.DaggerApplication;
  *
  *  1- Binds AndroidSupportInjectionModule.class in modules
  *  2- Extends AndroidInjector<MyApplication>
- *  3- Does not have sub-component builder to inject to classes inside sub-component
- *  DummyDependencyComponent.Builder dummyDependencyBuilder(); is not required in app component
+ *  3- Does not have @Subcomponent.Builder to inject to classes inside Sub-Component
+ *  DummyDependencyComponent.Builder dummyDependencyBuilder(); is not required in AppComponent
  */
 
 @Component(modules = {

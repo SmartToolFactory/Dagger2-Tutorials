@@ -13,6 +13,13 @@ import dagger.Subcomponent;
  * This is a SubComponent with 2 modules {@link ToastMakerModule} and {@link MySharedPreferencesModule}
  * Used for injecting objects provided by these modules to activity{@link com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.MainActivity}
  * and fragment({@link MyFragment})
+ *
+ * <p></p>
+ * Sub component and module must not have different scopes.
+ * IMPORTANT: Both can be un-scoped but cannot have with different scopes
+ *
+ * <p></p>
+ * !!! Only 1 Component can be injected to an Activity, Fragment or Object
  */
 
 @FragmentScope

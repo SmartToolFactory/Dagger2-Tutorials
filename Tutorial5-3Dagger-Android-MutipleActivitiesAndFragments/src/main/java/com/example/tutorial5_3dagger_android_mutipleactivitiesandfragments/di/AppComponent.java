@@ -3,7 +3,6 @@ package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.di;
 import android.app.Application;
 
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.MyApplication;
-import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.MyFragment;
 
 import javax.inject.Singleton;
 

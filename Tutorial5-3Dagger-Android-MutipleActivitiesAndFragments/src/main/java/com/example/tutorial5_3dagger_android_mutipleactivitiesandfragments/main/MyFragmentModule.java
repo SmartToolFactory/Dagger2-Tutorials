@@ -1,4 +1,4 @@
-package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments;
+package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main;
 
 
 import android.content.SharedPreferences;

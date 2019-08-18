@@ -11,11 +11,11 @@ import dagger.android.support.DaggerAppCompatActivity;
 
 public class SecondActivity extends DaggerAppCompatActivity {
 
-    // Injected from ApplicationModule
+    // Injected from AppModule with @Singleton
     @Inject
     SharedPreferences sharedPreferences;
 
-    // Injected from SecondActivity SubComponent Module
+    // Injected from SecondActivity SubComponent Module with @ActivityScope
     @Inject
     ToastMaker toastMaker;
 
@@ -23,6 +23,9 @@ public class SecondActivity extends DaggerAppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        System.out.println("👀 SecondActivity toastMaker: " + toastMaker);
+
 
         toastMaker.showToast("sharedPreferences " + sharedPreferences);
     }

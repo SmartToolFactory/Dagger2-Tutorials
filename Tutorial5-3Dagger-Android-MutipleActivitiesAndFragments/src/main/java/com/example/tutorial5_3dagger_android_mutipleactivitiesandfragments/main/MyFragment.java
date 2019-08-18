@@ -1,4 +1,4 @@
-package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments;
+package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,9 +15,10 @@ import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model
 import javax.inject.Inject;
 
 import dagger.android.support.DaggerFragment;
+
 public class MyFragment extends DaggerFragment {
 
-    // Injected from ApplicationModule
+    // Injected from AppModule with @Singleton
     @Inject
     SharedPreferences sharedPreferences;
 
@@ -25,7 +26,10 @@ public class MyFragment extends DaggerFragment {
     @Inject
     MySharedPreferences mySharedPreferences;
 
-    // Injected from ToastMakerModule
+    /**
+     * Injected from {@link MainActivityModule} with @ActivityScope
+     * which is the same object with MainActivity
+     */
     @Inject
     ToastMaker toastMaker;
 
@@ -41,12 +45,15 @@ public class MyFragment extends DaggerFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        toastMaker.showToast("MyFragment Toast from Fragment " + sharedPreferences);
 
-        toastMaker.showToast("Toast from Fragment " + sharedPreferences);
+        System.out.println("🥶 MyFragment mySharedPreferences: " + mySharedPreferences);
+        System.out.println("🥶 MyFragment sharedPreferences: " + sharedPreferences);
+        System.out.println("🥶 MyFragment toastMaker: " + toastMaker);
 
         mySharedPreferences.putData("data", 12);
 
-        toastMaker.showToast("Data from Fragment: " + mySharedPreferences.getData("data"));
+        toastMaker.showToast("MyFragment Data from Fragment: " + mySharedPreferences.getData("data"));
 
 
     }

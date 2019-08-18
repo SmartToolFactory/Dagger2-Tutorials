@@ -8,8 +8,8 @@ import dagger.BindsInstance;
 import dagger.Subcomponent;
 
 /**
- * Sub component and module should not have different scopes.
- * IMPORTANT: Both can be unscoped but cannot have with different scopes
+ * Sub component and module must not have different scopes.
+ * IMPORTANT: Both can be un-scoped but cannot have with different scopes
  */
 @ActivityScope
 @Subcomponent(modules = {DummyDependencyModule.class})
@@ -18,13 +18,13 @@ public interface DummyDependencyComponent {
     void inject(MainActivity mainActivity);
 
 
-    // !!! IMPORTANT: Only one Component can be injected to an Object
+    // 🔥 !!! IMPORTANT: Only one Component can be injected to an Object
     // Second Activity  uses ToastAndPreferencesSubComponent already
 /*
     void inject(SecondActivity secondActivity);
 */
 
-    // !!! IMPORTANT2: Component's and Injected objects' scopes can not be different
+    // 🔥 !!! IMPORTANT2: Component's and Injected objects' scopes can not be different
     // SensorController is also injected to MainActivity via Constructor Injection,
     // thus both should have the same scope which is @ActivityScope
 

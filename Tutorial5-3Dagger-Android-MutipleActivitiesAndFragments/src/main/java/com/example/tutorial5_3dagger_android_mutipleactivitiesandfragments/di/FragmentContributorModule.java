@@ -1,8 +1,8 @@
 package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.di;
 
-import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.MainActivity;
-import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.MyFragment;
-import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.MyFragmentModule;
+import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main.MainActivity;
+import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main.MyFragment;
+import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main.MyFragmentModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

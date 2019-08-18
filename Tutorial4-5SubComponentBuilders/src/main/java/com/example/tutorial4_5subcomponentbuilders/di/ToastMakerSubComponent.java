@@ -8,6 +8,10 @@ import com.example.tutorial4_5subcomponentbuilders.MainActivity;
 import dagger.BindsInstance;
 import dagger.Subcomponent;
 
+/*
+ * Sub component and module must not have different scopes.
+ * IMPORTANT: Both can be unscoped but cannot have with different scopes
+ */
 @ActivityScope
 @Subcomponent(modules = {ToastMakerModule.class})
 public interface ToastMakerSubComponent {

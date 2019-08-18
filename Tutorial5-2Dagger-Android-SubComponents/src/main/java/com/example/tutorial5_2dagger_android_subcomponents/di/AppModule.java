@@ -33,6 +33,7 @@ public abstract class AppModule {
      *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
      */
 
+    // 🔥 Injects ToastMakerSubComponent objects to MainActivity
     @Binds
     @IntoMap
     @ActivityKey(MainActivity.class)

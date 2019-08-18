@@ -1,4 +1,4 @@
-package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments;
+package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.main;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.R;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model.SensorController;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model.ToastMaker;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.second.SecondActivity;
@@ -29,11 +30,14 @@ import dagger.android.support.DaggerAppCompatActivity;
 public class MainActivity extends DaggerAppCompatActivity implements SensorController.OnSensorEventChangeListener {
 
 
-    // AppModule
+    // Injected from AppModule with @Singleton
     @Inject
     SharedPreferences sharedPreferences;
 
-    // MainActivityModule
+    /**
+     * Injected from {@link MainActivityModule} with @ActivityScope
+     * which is the same object with MyFragment.
+     */
     @Inject
     ToastMaker toastMaker;
 
@@ -46,11 +50,14 @@ public class MainActivity extends DaggerAppCompatActivity implements SensorContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        System.out.println("🔥 MainActivity toastMaker: " + toastMaker);
+        System.out.println("🔥 MainActivity sharedPreferences: " + sharedPreferences);
+
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container,new MyFragment()).commit();
 
-        toastMaker.showToast("sharedPreferences " + sharedPreferences);
+        toastMaker.showToast("MainActivity sharedPreferences " + sharedPreferences);
         sensorController.setSensorEventChangeListener(this);
 
         Button button = findViewById(R.id.button);

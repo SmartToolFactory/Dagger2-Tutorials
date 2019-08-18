@@ -10,13 +10,21 @@ import javax.inject.Inject;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
+/**
+ * Each Activity has it's own module. MainActivity has MainActivityModule, SecondActivity has
+ * SecondActivityModule with @ActivityScope.
+ * <p>
+ * </p>
+ * Each object injected from module only lives through lifecycle of Activities.
+ * When an Activity is rotated new ToastMaker object is created for both activities.
+ */
 public class MainActivity extends DaggerAppCompatActivity {
 
-    // Injected from ApplicationModule
+    // Injected from AppModule with @Singleton
     @Inject
     SharedPreferences sharedPreferences;
 
-    // Injected from MainActivity SubComponent Module
+    // Injected from MainActivity SubComponent Module with @ActivityScope
     @Inject
     ToastMaker toastMaker;
 
@@ -24,6 +32,7 @@ public class MainActivity extends DaggerAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        System.out.println("🎃 MainActivity toastMaker: " + toastMaker);
 
         toastMaker.showToast("sharedPreferences " + sharedPreferences);
 
