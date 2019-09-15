@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.android.architecture.blueprints.todomvpdagger"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        applicationId "com.example.android.architecture.blueprints.todomvpdagger"
         versionCode 1
         versionName "1.0"
 
@@ -70,18 +71,21 @@ dependencies {
     implementation "com.android.support:design:$rootProject.supportLibraryVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
-    implementation "com.google.guava:guava:$rootProject.guavaVersion"
+
+    // Dagger Core dependencies
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion
+
+
+    // Dagger Android dependencies
+    annotationProcessor 'com.google.dagger:dagger-android-processor:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger-android-support:' + rootProject.daggerVersion
+
+    // Room
     implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
 
-    // Dagger Core dependencies
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
-    implementation 'com.google.dagger:dagger:2.13'
-
-    // Dagger Android dependencies
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
-    implementation 'com.google.dagger:dagger-android-support:2.13'
+    implementation "com.google.guava:guava:$rootProject.guavaVersion"
 
     // Dependencies for local unit tests
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
@@ -106,6 +110,7 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
     androidTestImplementation "com.android.support.test.espresso.idling:idling-concurrent:$rootProject.espressoVersion"
     implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
+
 
     // Resolve conflicts between main and test APK:
     androidTestImplementation "com.android.support:support-annotations:$rootProject.supportLibraryVersion"

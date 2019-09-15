@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
     defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         applicationId "com.gabrielsamojlo.dagger_212"
-        minSdkVersion 22
-        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,16 +23,20 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // Support Libraries
+    implementation 'com.android.support:appcompat-v7:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayoutVersion
+
 
     // Dagger Core dependencies
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
-    implementation 'com.google.dagger:dagger:2.13'
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion
+
 
     // Dagger Android dependencies
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
-    implementation 'com.google.dagger:dagger-android-support:2.13'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger-android-support:' + rootProject.daggerVersion
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

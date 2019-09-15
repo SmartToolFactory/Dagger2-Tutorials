@@ -1,43 +1,38 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-
-
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.tutorial5_2dagger_android_subcomponents"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Support Libraries
+    implementation 'com.android.support:appcompat-v7:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayoutVersion
 
-    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     // Dagger Core dependencies
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
-    implementation 'com.google.dagger:dagger:2.17'
+    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion
+
 
     // Dagger Android dependencies
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.17'
-    implementation 'com.google.dagger:dagger-android-support:2.17'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:' + rootProject.daggerVersion
+    implementation 'com.google.dagger:dagger-android-support:' + rootProject.daggerVersion
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
