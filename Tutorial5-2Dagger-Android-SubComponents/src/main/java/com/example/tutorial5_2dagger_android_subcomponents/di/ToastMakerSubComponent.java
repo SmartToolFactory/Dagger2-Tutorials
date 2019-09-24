@@ -8,6 +8,15 @@ import dagger.BindsInstance;
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 
+
+/**
+ * SubComponents extend AndroidInjector<MainActivity> for scoped injections.
+ * {@link MainActivity} is the class where {@link ToastMakerModule} objects are injected.
+ *
+ * <p></p>
+ * Sub component and @Provides annotated methods inside module cannot not have different scopes.
+ * IMPORTANT: Both can be unscoped but cannot have with different scopes
+ */
 @ActivityScope
 @Subcomponent(modules = {ToastMakerModule.class})
 public interface ToastMakerSubComponent extends AndroidInjector<MainActivity> {

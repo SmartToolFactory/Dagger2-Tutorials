@@ -14,10 +14,15 @@ import dagger.android.ContributesAndroidInjector;
  * To be able to inject dependencies to fragments inside {@link MainActivity} it defines {@link FragmentContributorModule}
  *
  * <p></p>
- * contributeMainActivity method with @ContributesAndroidInjector annotation replaces MainActivityComponent of non dagger-android.
+ * contributeMainActivity method with @ContributesAndroidInjector
+ * annotation replaces MainActivityComponent of non dagger-android.
+ * <p></p>
+ * @ContributesAndroidInjector replaces MainActivitySubComponent
+ * if the sub-component and it's builder has NO methods.
  * <p></p>
  *
- * Scope of contributor methods and their modules should be same. Otherwise app returns HAS CONFLICTING SCOPES error
+ * Scope of contributor methods and their modules should be same.
+ * Otherwise app returns HAS CONFLICTING SCOPES error
  *
  */
 
