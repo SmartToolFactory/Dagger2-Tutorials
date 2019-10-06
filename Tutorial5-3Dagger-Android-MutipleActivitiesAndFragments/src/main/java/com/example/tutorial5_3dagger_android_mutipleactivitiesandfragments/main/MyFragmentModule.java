@@ -8,6 +8,11 @@ import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model
 
 import dagger.Module;
 
+
+/**
+ * Scope of @ContributesAndroidInjector methods and their modules should be same.
+ * Otherwise app returns HAS CONFLICTING SCOPES error
+ */
 @Module
 public abstract class MyFragmentModule {
 

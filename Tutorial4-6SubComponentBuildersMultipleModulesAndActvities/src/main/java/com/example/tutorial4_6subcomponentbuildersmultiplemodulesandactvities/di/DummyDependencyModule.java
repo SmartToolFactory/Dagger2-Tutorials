@@ -10,8 +10,8 @@ import dagger.Provides;
 // This is SubComponent Module
 
 /**
- * Sub component and module should not have different scopes.
- * IMPORTANT: Both can be unscoped but cannot have with different scopes
+ * Sub component and module CAN NOT have different scopes.
+ * IMPORTANT: Both can be un- scoped but cannot have with different scopes
  */
 @Module
 public class DummyDependencyModule {

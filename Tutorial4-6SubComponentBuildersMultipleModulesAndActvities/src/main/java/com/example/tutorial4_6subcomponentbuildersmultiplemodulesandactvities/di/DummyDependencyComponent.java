@@ -8,8 +8,8 @@ import dagger.BindsInstance;
 import dagger.Subcomponent;
 
 /**
- * Sub component and module must not have different scopes.
- * IMPORTANT: Both can be un-scoped but cannot have with different scopes
+ * Sub component and module CAN NOT have different scopes.
+ * IMPORTANT: Both can be un- scoped but cannot have with different scopes
  */
 @ActivityScope
 @Subcomponent(modules = {DummyDependencyModule.class})

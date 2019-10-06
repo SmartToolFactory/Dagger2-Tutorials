@@ -13,6 +13,11 @@ import dagger.Provides;
 
 // This is SubComponent Module
 
+
+/**
+ * Sub component and module CAN NOT have different scopes.
+ * IMPORTANT: Both can be un-scoped but cannot have with different scopes
+ */
 @Module
 public class ToastMakerModule {
 

@@ -10,6 +10,11 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
+
+/**
+ * Scope of @ContributesAndroidInjector methods and their modules should be same.
+ * Otherwise app returns HAS CONFLICTING SCOPES error
+ */
 @Module
 public abstract class MainActivityModule {
 

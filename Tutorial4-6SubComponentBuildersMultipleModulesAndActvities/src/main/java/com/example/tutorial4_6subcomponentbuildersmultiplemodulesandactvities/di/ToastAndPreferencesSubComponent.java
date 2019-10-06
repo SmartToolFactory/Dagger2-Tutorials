@@ -15,7 +15,7 @@ import dagger.Subcomponent;
  * and fragment({@link MyFragment})
  *
  * <p></p>
- * Sub component and module must not have different scopes.
+ * Sub component and module CAN NOT have different scopes.
  * IMPORTANT: Both can be un-scoped but cannot have with different scopes
  *
  * <p></p>

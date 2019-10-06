@@ -17,6 +17,11 @@ public abstract class FragmentContributorModule {
      * <p>
      * In this example {@link MainActivity} has {@link MyFragment} fragment, and {@link MyFragment}
      * uses {@link MyFragmentModule} to inject objects
+     *
+     *  <p></p>
+     *  Scope of @ContributesAndroidInjector methods and their modules should be same.
+     * Otherwise app returns HAS CONFLICTING SCOPES error
+     *
      */
     @FragmentScope
     @ContributesAndroidInjector(modules = MyFragmentModule.class)

@@ -10,6 +10,12 @@ import dagger.Module;
 import dagger.Provides;
 
 
+/**
+ * <p></p>
+ * Sub component and @Provides annotated methods inside module CAN NOT not have different scopes.
+ * <p></p>
+ * IMPORTANT: Both can be un-scoped but cannot have with different scopes.
+ */
 @Module
 public abstract class ToastMakerModule {
 

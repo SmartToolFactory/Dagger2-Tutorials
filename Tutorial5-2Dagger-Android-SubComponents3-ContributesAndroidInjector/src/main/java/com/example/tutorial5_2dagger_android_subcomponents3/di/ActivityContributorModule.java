@@ -14,7 +14,7 @@ import dagger.android.ContributesAndroidInjector;
  * builder has NO methods.
  *
  * <p></p>
- * Scope of contributor methods and their modules should be same.
+ * Scope of @ContributesAndroidInjector methods and their modules should be same.
  * Otherwise app returns HAS CONFLICTING SCOPES error
  */
 @Module
