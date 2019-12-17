@@ -23,12 +23,17 @@
             <option value="$PROJECT_DIR$/Tutorial2-2SelectContructorAndFieldInjection" />
             <option value="$PROJECT_DIR$/Tutorial3-1Scope1" />
             <option value="$PROJECT_DIR$/Tutorial3-2Scope2" />
+            <option value="$PROJECT_DIR$/Tutorial3-3Qualifiers" />
             <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent" />
             <option value="$PROJECT_DIR$/Tutorial4-2Subcomponents" />
             <option value="$PROJECT_DIR$/Tutorial4-3ComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
             <option value="$PROJECT_DIR$/Tutorial4-5SubComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuildersMultipleModulesAndActvities" />
+            <option value="$PROJECT_DIR$/Tutorial4-7LayerImplementation" />
+            <option value="$PROJECT_DIR$/Tutorial4-7LayerLibrary" />
+            <option value="$PROJECT_DIR$/Tutorial4-8LayerImplementation2" />
+            <option value="$PROJECT_DIR$/Tutorial4-8LayerLibrary" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android-ContributesAndroidInjector" />
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents" />
@@ -38,6 +43,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
