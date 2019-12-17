@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".FourthActivity" />
+        <activity android:name=".Activity2" />
+        <activity android:name=".Activity3" />
+        <activity android:name=".Activity4" />
     </application>
 
 </manifest>

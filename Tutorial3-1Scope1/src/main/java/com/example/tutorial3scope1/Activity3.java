@@ -14,12 +14,7 @@ import com.example.tutorial3scope1.model.User;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
-    private UserComponent mUserComponent;
-
-    // This User is created each time device is rotated
-    // UserComponent is components are self-contained implementations,
-    // exiting a scope is as simple as dropping all references to the component instance
+public class Activity3 extends AppCompatActivity {
 
     @Inject
     User user;
@@ -27,35 +22,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_123);
 
-        getUserComponent().inject(this);
+        // Get Application Component
+        // ((MyApplication) getApplication()).getUserComponent().inject(this);
 
-        TextView textView = findViewById(R.id.textView);
-        textView.setText("Main User: " + user.hashCode());
-
+        // Get Class Component
+        UserComponent daggerUserComponent = DaggerUserComponent.create();
+        // TODO NEED to ADD void inject(Activity3 thirdActivity); UserComponent
+        daggerUserComponent.inject(this);
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(Activity3.this, Activity4.class);
                 startActivity(intent);
             }
         });
 
-    }
 
-    public UserComponent getUserComponent() {
-        if (mUserComponent == null) {
-            mUserComponent = DaggerUserComponent.create();
-        }
-        return mUserComponent;
+        TextView textView = findViewById(R.id.textView);
+        textView.setText("Third User: " + user.hashCode());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "MainActivity onDestroy()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Activity3 onDestroy()", Toast.LENGTH_SHORT).show();
     }
 }

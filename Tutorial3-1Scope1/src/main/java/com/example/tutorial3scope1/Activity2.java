@@ -13,7 +13,7 @@ import com.example.tutorial3scope1.model.User;
 
 import javax.inject.Inject;
 
-public class SecondActivity extends AppCompatActivity {
+public class Activity2 extends AppCompatActivity {
 
     @Inject
     User user;
@@ -21,13 +21,13 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_123);
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+                Intent intent = new Intent(Activity2.this, Activity3.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +43,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "SecondActivity onDestroy()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Activity2 onDestroy()", Toast.LENGTH_SHORT).show();
     }
 
 }
