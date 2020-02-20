@@ -1,15 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
+
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        applicationId "com.example.tutorial1daggerbasics"
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -19,23 +22,28 @@ android {
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // Support Libraries
-    implementation 'com.android.support:appcompat-v7:' + rootProject.supportLibraryVersion
-    implementation 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayoutVersion
 
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    // AppCompat
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    // Material
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    // RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
 
     // Dagger Core dependencies
-    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
-    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion
-
-
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
     // Dagger Android dependencies
-    annotationProcessor 'com.google.dagger:dagger-android-processor:' + rootProject.daggerVersion
-    implementation 'com.google.dagger:dagger-android-support:' + rootProject.daggerVersion
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }

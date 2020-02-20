@@ -1,8 +1,6 @@
 package com.example.tutorial5_2dagger_android_subcomponents3.di;
 
-import android.app.Activity;
 import android.content.Context;
-
 
 import com.example.tutorial5_2dagger_android_subcomponents3.MainActivity;
 import com.example.tutorial5_2dagger_android_subcomponents3.ToastMaker;

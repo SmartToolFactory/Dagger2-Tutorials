@@ -2,11 +2,12 @@ package com.example.tutorial3scope1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial3scope1.di.DaggerUserComponent;
 import com.example.tutorial3scope1.di.UserComponent;

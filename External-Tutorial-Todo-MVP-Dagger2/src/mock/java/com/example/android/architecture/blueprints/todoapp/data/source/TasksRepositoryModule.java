@@ -1,7 +1,8 @@
 package com.example.android.architecture.blueprints.todoapp.data.source;
 
 import android.app.Application;
-import android.arch.persistence.room.Room;
+
+import androidx.room.Room;
 
 import com.example.android.architecture.blueprints.todoapp.data.FakeTasksRemoteDataSource;
 import com.example.android.architecture.blueprints.todoapp.data.source.local.TasksDao;

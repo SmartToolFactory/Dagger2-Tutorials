@@ -1,8 +1,9 @@
 package com.example.tutorial2injectconstructor;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial2injectconstructor.model.MySharedPreferences;
 

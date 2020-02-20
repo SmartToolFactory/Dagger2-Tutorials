@@ -1,7 +1,8 @@
 package com.test.tutorial4_8layerlibrary;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.test.tutorial4_8layerlibrary.model.DummyModel;
 import com.test.tutorial4_8layerlibrary.model.User;

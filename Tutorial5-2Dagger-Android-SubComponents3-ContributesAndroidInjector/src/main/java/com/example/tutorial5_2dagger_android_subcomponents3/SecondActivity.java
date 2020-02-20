@@ -2,8 +2,8 @@ package com.example.tutorial5_2dagger_android_subcomponents3;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
 
 import javax.inject.Inject;
 

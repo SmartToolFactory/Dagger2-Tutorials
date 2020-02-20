@@ -1,15 +1,14 @@
 package com.example.tutorial1daggerbasics2;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial1daggerbasics2.di.DaggerVehicleComponent;
 import com.example.tutorial1daggerbasics2.di.VehicleComponent;
 import com.example.tutorial1daggerbasics2.di.VehicleModule;
 import com.example.tutorial1daggerbasics2.model.Vehicle;
-
-import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 

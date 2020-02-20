@@ -16,8 +16,8 @@
 
 package com.example.android.architecture.blueprints.todoapp.data.source.local;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 
 import com.example.android.architecture.blueprints.todoapp.data.Task;
 

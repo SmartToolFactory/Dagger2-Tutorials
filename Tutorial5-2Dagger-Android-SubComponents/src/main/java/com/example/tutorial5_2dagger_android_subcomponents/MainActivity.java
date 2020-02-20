@@ -1,7 +1,6 @@
 package com.example.tutorial5_2dagger_android_subcomponents;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import javax.inject.Inject;

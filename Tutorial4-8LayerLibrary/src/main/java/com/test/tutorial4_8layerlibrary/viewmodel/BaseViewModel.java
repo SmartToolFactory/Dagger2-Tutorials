@@ -1,7 +1,7 @@
 package com.test.tutorial4_8layerlibrary.viewmodel;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.test.tutorial4_8layerlibrary.model.User;
 

@@ -2,7 +2,8 @@ package com.example.tutorial4_5subcomponentbuilders;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial4_5subcomponentbuilders.di.ApplicationComponent;
 import com.example.tutorial4_5subcomponentbuilders.di.ToastMakerSubComponent;

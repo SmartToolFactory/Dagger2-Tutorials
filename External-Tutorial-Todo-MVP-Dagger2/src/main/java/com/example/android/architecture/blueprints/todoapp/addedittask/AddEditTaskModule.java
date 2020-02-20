@@ -1,6 +1,6 @@
 package com.example.android.architecture.blueprints.todoapp.addedittask;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.android.architecture.blueprints.todoapp.di.ActivityScoped;
 import com.example.android.architecture.blueprints.todoapp.di.FragmentScoped;

@@ -2,8 +2,9 @@ package com.example.tutorial4_2subcomponents;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial4_2subcomponents.di.ActivityModule;
 import com.example.tutorial4_2subcomponents.model.MySharedPreferences;

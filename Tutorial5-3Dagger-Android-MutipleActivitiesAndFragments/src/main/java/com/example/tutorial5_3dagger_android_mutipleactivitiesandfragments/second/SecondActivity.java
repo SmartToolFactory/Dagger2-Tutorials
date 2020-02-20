@@ -2,8 +2,6 @@ package com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.seco
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.R;

@@ -4,10 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.R;
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.model.SensorController;

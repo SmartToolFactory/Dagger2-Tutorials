@@ -1,16 +1,17 @@
 package com.example.tutorial3scope1;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tutorial3scope1.di.UserComponent;
 import com.example.tutorial3scope1.model.User;
 
 import javax.inject.Inject;
 
-public class Activity4 extends AppCompatActivity {
+public class FourthActivity extends AppCompatActivity {
 
     private UserComponent mUserComponent;
 
@@ -24,7 +25,7 @@ public class Activity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_4);
+        setContentView(R.layout.activity_second);
 
         ((MyApplication) getApplication()).getUserComponent().inject(this);
 
@@ -38,6 +39,6 @@ public class Activity4 extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "Activity4 onDestroy()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "FourthActivity onDestroy()", Toast.LENGTH_SHORT).show();
     }
 }
