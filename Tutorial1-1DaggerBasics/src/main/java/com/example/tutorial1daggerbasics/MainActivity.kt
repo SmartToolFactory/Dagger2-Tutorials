@@ -20,23 +20,19 @@ class MainActivity : AppCompatActivity() {
         and annotated with @Singleton or any scope
      */
     @Inject
-    lateinit var mMyExample: MyExample
+    lateinit var myExample: MyExample
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-        val dateTextView = findViewById<TextView>(R.id.tv_date)
-
         (application as MyApplication)
-                .myComponent
+                .applicationComponent
                 .inject(this@MainActivity)
 
-        dateTextView.text = Date(mMyExample.date).toString()
+        findViewById<TextView>(R.id.tv_date).text = Date(myExample.date).toString()
 
-        println("MyExample: $mMyExample")
 
-        Toast.makeText(this, "MyExample: $mMyExample", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "MyExample: $myExample", Toast.LENGTH_SHORT).show()
     }
 }

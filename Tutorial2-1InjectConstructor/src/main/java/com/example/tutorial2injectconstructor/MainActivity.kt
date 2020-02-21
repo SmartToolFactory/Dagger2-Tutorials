@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 //        val sharedPreferences = applicationContext.getSharedPreferences("PrefName", Context.MODE_PRIVATE)
 //        mySharedPreferences = MySharedPreferences(sharedPreferences)
 
-
         findViewById<TextView>(R.id.tvInfo).text = "mySharedPreferences: $mySharedPreferences"
 
         println("MySharedPreferences: $mySharedPreferences")

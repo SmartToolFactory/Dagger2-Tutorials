@@ -7,12 +7,12 @@ import com.example.tutorial1daggerbasics.di.DaggerApplicationComponent
 
 class MyApplication : Application() {
 
-    lateinit var myComponent: ApplicationComponent
+    lateinit var applicationComponent: ApplicationComponent
         private set
 
     override fun onCreate() {
         super.onCreate()
-        myComponent = createMyComponent()
+        applicationComponent = createMyComponent()
     }
 
     private fun createMyComponent(): ApplicationComponent {
