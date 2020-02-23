@@ -1,0 +1,19 @@
+package com.example.tutorial2selectcontructorandfieldinjection.model
+
+import android.content.SharedPreferences
+import javax.inject.Inject
+
+/**
+    Here in this model class constructor injection is used as @Inject is added on the constructor.
+    SharedPreferences object is passed from Module to constructor with provideSharedPreferences()
+*/
+class MySharedPreferences @Inject constructor(private val mSharedPreferences: SharedPreferences) {
+    fun putData(key: String?, data: Int) {
+        mSharedPreferences.edit().putInt(key, data).apply()
+    }
+
+    fun getData(key: String?): Int {
+        return mSharedPreferences.getInt(key, 0)
+    }
+
+}

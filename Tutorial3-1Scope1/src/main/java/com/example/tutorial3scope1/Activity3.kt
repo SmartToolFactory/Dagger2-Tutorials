@@ -10,6 +10,9 @@ import com.example.tutorial3scope1.di.DaggerUserComponent
 import com.example.tutorial3scope1.model.User
 import javax.inject.Inject
 
+/**
+ * User is NOT Singleton since daggerUserComponent lives through Activity lifecycle
+ */
 class Activity3 : AppCompatActivity() {
 
     @Inject
