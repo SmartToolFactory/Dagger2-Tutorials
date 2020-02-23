@@ -2,7 +2,7 @@ package com.example.tutorial4_4componentbuildersmultiplemodules.di;
 
 import android.app.Application;
 
-import com.example.tutorial4_4componentbuildersmultiplemodules.ToastMaker;
+import com.example.tutorial4_4componentbuildersmultiplemodules.model.ToastMaker;
 
 import javax.inject.Singleton;
 

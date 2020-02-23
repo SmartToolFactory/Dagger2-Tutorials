@@ -9,6 +9,8 @@ import dagger.Component
 /**
  * @Provides method of module should have same scope with component, or both component and module
  * shouldn't have one
+ *
+ * @ActivityScope is same as @Singleton if it's added ApplicationComponent
  */
 @ActivityScope
 @Component(modules = [UserModule::class])

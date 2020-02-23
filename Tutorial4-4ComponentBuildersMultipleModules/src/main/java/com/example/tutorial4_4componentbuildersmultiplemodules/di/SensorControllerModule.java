@@ -2,7 +2,7 @@ package com.example.tutorial4_4componentbuildersmultiplemodules.di;
 
 import android.app.Application;
 
-import com.example.tutorial4_4componentbuildersmultiplemodules.sensors.SensorController;
+import com.example.tutorial4_4componentbuildersmultiplemodules.model.SensorController;
 
 import javax.inject.Singleton;
 

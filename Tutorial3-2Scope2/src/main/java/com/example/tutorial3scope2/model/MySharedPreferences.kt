@@ -2,12 +2,12 @@ package com.example.tutorial3scope2.model
 
 import android.content.SharedPreferences
 import com.example.tutorial3scope2.MainActivity
-import com.example.tutorial3scope2.di.MyComponent
+import com.example.tutorial3scope2.di.ApplicationComponent
 import javax.inject.Inject
 
 /**
  * Scope of Injected class depends on the component of the class it's injeceted to
- * [MyComponent] is injected to [MainActivity]
+ * [ApplicationComponent] is injected to [MainActivity]
  * scope pf this class only be same as MyComponent's scope or un-scoped.
  *
  *

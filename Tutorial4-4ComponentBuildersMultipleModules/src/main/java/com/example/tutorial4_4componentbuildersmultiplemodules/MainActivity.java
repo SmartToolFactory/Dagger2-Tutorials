@@ -7,7 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tutorial4_4componentbuildersmultiplemodules.sensors.SensorController;
+import com.example.tutorial4_4componentbuildersmultiplemodules.model.SensorController;
+import com.example.tutorial4_4componentbuildersmultiplemodules.model.ToastMaker;
 
 import javax.inject.Inject;
 

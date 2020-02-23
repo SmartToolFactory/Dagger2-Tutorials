@@ -6,12 +6,12 @@ import com.example.tutorial3scope2.model.MySharedPreferences
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
-import javax.inject.Singleton
+
 
 @Module
-class SharedPreferencesModule(private val context: Context) {
+class ApplicationModule(private val context: Context) {
 
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideSharedPreferences(): SharedPreferences {
         return context.getSharedPreferences("PrefName", Context.MODE_PRIVATE)
@@ -19,7 +19,7 @@ class SharedPreferencesModule(private val context: Context) {
 
     // Field Injection for MySharedPreferences
     @Named("Field")
-    @Singleton
+    @ApplicationScope
     @Provides
     fun provideMySharedPreferences(): MySharedPreferences {
         return MySharedPreferences(context.getSharedPreferences("Constructor", Context.MODE_PRIVATE))

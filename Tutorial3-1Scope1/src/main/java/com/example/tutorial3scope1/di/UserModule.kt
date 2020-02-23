@@ -6,7 +6,10 @@ import dagger.Provides
 
 /**
  * @Provides method of module should have same scope with component, or both component and module
- * shouldn't have one
+ * shouldn't have one.
+ *
+ * If it has a gloabl/application level scope then it's generated as Singleton object.
+ * Without scope even it's a ApplicationModule objects are re-created
  */
 @Module
 class UserModule {
