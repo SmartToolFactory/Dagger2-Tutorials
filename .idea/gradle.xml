@@ -30,16 +30,13 @@
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
             <option value="$PROJECT_DIR$/Tutorial4-5SubComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuildersMultipleModulesAndActvities" />
-            <option value="$PROJECT_DIR$/Tutorial4-7LayerImplementation" />
-            <option value="$PROJECT_DIR$/Tutorial4-7LayerLibrary" />
-            <option value="$PROJECT_DIR$/Tutorial4-8LayerImplementation2" />
-            <option value="$PROJECT_DIR$/Tutorial4-8LayerLibrary" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android-ContributesAndroidInjector" />
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents" />
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents2" />
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector" />
             <option value="$PROJECT_DIR$/Tutorial5-3Dagger-Android-MutipleActivitiesAndFragments" />
+            <option value="$PROJECT_DIR$/Tutorial6-1ComponentFactory" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
