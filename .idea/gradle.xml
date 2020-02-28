@@ -37,6 +37,8 @@
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector" />
             <option value="$PROJECT_DIR$/Tutorial5-3Dagger-Android-MutipleActivitiesAndFragments" />
             <option value="$PROJECT_DIR$/Tutorial6-1ComponentFactory" />
+            <option value="$PROJECT_DIR$/Tutorial6-2ComponentFactoryVsBuilder" />
+            <option value="$PROJECT_DIR$/Tutorial6-3SubcomponentFactory" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
