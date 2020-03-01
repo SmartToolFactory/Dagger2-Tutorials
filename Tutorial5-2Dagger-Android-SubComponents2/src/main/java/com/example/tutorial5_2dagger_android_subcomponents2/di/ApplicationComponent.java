@@ -3,7 +3,6 @@ package com.example.tutorial5_2dagger_android_subcomponents2.di;
 
 import android.app.Application;
 
-
 import com.example.tutorial5_2dagger_android_subcomponents2.MyApplication;
 
 import javax.inject.Singleton;
@@ -24,6 +23,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {ApplicationModule.class, AndroidSupportInjectionModule.class})
 @Singleton
 public interface ApplicationComponent extends AndroidInjector<MyApplication> {
+
     @Component.Builder
     interface Builder {
         @BindsInstance

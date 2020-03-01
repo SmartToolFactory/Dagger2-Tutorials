@@ -6,12 +6,12 @@ import com.example.tutorial3scope2.di.ApplicationComponent
 import javax.inject.Inject
 
 /**
- * Scope of Injected class depends on the component of the class it's injeceted to
+ * Scope of Injected class depends on the component of the class it's injected to
  * [ApplicationComponent] is injected to [MainActivity]
- * scope pf this class only be same as MyComponent's scope or un-scoped.
+ * scope off this class only be same as MyComponent's scope or un-scoped.
  *
- *
- * Error when this class is scoped: MyComponent scoped with @Singleton may not reference bindings with different scopes
+ * Error when this class is scoped: MyComponent scoped
+ * with @Singleton may not reference bindings with different scopes
  *
  */
 

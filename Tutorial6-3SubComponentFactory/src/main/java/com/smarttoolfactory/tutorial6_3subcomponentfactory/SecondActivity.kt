@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SensorController
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SingletonObject
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.ToastMaker
 import javax.inject.Inject
 
@@ -17,13 +19,21 @@ class SecondActivity : AppCompatActivity() {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
-    // Injected from ToastMakerModule
+    // Injected from ToastMakerModule @FragmentScope
     @Inject
     lateinit var toastMaker: ToastMaker
 
-    // Injected from MySharedPreferencesModule
+    // Injected from MySharedPreferencesModule @FragmentScope
     @Inject
     lateinit var mySharedPreferences: MySharedPreferences
+
+    // Injected via Constructor Injection NOT Singleton
+    @Inject
+    lateinit var sensorController: SensorController
+
+    // 🔥 Injected via Constructor Injection with @Singleton scope
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +41,12 @@ class SecondActivity : AppCompatActivity() {
 
         initInjection()
 
-        findViewById<TextView>(R.id.tvInfo).text = "ToastMaker: ${toastMaker.hashCode()}\n" +
-                "mySharedPreferences: ${mySharedPreferences.hashCode()}"
+        findViewById<TextView>(R.id.tvInfo).text =
+                "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "@FragmentScope MySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
+                        "@FragmentScope ToastMaker: ${toastMaker.hashCode()}\n" +
+                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n"+
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 
         toastMaker.showToast("SharedPreferences: $sharedPreferences")
 

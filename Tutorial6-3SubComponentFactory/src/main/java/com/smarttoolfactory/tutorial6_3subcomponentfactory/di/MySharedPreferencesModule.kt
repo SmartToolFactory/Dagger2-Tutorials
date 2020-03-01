@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.scope.FragmentScope
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
 import dagger.Module
+import dagger.Provides
 
 /**
  * This is SubComponent Module of [ToastAndPreferencesSubComponent] in this example
@@ -13,6 +14,7 @@ import dagger.Module
 class MySharedPreferencesModule {
 
     @FragmentScope
+    @Provides
     fun provideMySharedPreference(sharedPreferences: SharedPreferences): MySharedPreferences {
         return MySharedPreferences(sharedPreferences)
     }

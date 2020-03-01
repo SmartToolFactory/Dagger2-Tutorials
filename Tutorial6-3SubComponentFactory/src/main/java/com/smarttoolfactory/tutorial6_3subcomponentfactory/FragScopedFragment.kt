@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SensorController
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SingletonObject
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.ToastMaker
 import javax.inject.Inject
 
@@ -20,13 +22,21 @@ class FragScopedFragment : Fragment() {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
-    // Injected from MySharedPreferencesModule
+    // Injected from MySharedPreferencesModule @FragmentScope
     @Inject
     lateinit var mySharedPreferences: MySharedPreferences
 
-    // Injected from ToastMakerModule
+    // Injected from ToastMakerModule @FragmentScope
     @Inject
     lateinit var toastMaker: ToastMaker
+
+    // Injected via Constructor Injection NOT Singleton
+    @Inject
+    lateinit var sensorController: SensorController
+
+    // 🔥 Injected via Constructor Injection with @Singleton scope
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -37,9 +47,10 @@ class FragScopedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "Frag: $this\n" +
-                        "ToastMaker: ${toastMaker.hashCode()}\n" +
-                        " mySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
-                        "sharedPreferences: ${sharedPreferences.hashCode()}"
+                        "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "@FragmentScope MySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
+                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n"+
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 
     }
 

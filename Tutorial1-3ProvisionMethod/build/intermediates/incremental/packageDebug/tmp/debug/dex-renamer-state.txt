@@ -1,0 +1,4 @@
+#Sun Mar 01 14:52:29 EET 2020
+base.0=/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial1-3ProvisionMethod/build/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

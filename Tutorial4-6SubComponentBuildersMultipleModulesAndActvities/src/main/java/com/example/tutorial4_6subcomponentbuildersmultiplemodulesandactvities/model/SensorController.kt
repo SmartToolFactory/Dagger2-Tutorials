@@ -5,13 +5,15 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import dagger.Reusable
 import javax.inject.Inject
 
 /**
  * Constructor injected component should have the same scope with the component that is injects to same object
  * or no scope at all
  */
-class SensorController @Inject constructor(context: Context) : SensorEventListener {
+
+class SensorController @Reusable @Inject constructor(context: Context) : SensorEventListener {
 
     private val rotationVector: Sensor
     private val sensorManager: SensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager

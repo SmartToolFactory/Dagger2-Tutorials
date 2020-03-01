@@ -6,7 +6,8 @@ import com.example.tutorial2selectcontructorandfieldinjection.di.MyComponent
 import com.example.tutorial2selectcontructorandfieldinjection.di.SharedPreferencesModule
 
 class MyApplication : Application() {
-    var myComponent: MyComponent? = null
+
+   lateinit var myComponent: MyComponent
         private set
 
     override fun onCreate() {

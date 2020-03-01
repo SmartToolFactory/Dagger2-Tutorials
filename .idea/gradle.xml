@@ -39,6 +39,7 @@
             <option value="$PROJECT_DIR$/Tutorial6-1ComponentFactory" />
             <option value="$PROJECT_DIR$/Tutorial6-2ComponentFactoryVsBuilder" />
             <option value="$PROJECT_DIR$/Tutorial6-3SubComponentFactory" />
+            <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

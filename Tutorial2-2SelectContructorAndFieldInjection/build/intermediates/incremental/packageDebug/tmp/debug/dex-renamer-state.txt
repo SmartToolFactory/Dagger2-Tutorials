@@ -1,0 +1,4 @@
+#Sun Mar 01 14:51:37 EET 2020
+base.0=/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial2-2SelectContructorAndFieldInjection/build/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

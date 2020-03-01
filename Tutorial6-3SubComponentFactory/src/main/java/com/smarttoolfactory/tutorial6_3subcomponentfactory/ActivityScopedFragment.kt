@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.DummyDependency
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SensorController
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SingletonObject
 import javax.inject.Inject
 
 class ActivityScopedFragment : Fragment() {
@@ -16,9 +18,17 @@ class ActivityScopedFragment : Fragment() {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
-    // Injected from DummyDependencyModule
+    // Injected from DummyDependencyModule @ActivityScope
     @Inject
     lateinit var dummyDependency: DummyDependency
+
+    // Injected via Constructor Injection NOT Singleton
+    @Inject
+    lateinit var sensorController: SensorController
+
+    // 🔥 Injected via Constructor Injection with @Singleton scope
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -30,8 +40,10 @@ class ActivityScopedFragment : Fragment() {
 
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "Frag: $this\n" +
-                        "DummyDependenyc: ${dummyDependency.hashCode()}\n" +
-                        "sharedPreferences: ${sharedPreferences.hashCode()}"
+                        "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "@ActivityScope DummyDependency: ${dummyDependency.hashCode()}\n" +
+                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n" +
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 
     }
 

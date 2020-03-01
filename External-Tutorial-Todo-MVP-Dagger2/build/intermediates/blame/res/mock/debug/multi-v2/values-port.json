@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/External-Tutorial-Todo-MVP-Dagger2/build/intermediates/incremental/mergeMockDebugResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/Users/smarttoolfactory/.gradle/caches/transforms-2/files-2.1/76ee215f8f7ce57ad170ac6a1fed2ff6/appcompat-1.0.0/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

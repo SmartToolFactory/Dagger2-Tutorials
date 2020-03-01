@@ -7,19 +7,24 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.DummyDependency
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.*
 import javax.inject.Inject
 
 /**
- * Component and SubComponent Factory can be used to replace Builders
+ * * Component and SubComponent Factory can be used to replace Builders
  *
- * For Application Component create SubComponent factories with XSubComponent.Factory
+ * * For Application Component create SubComponent factories with XSubComponent.Factory
  * and SubComponents should have inject() and create() methods to be able to inject to
  * Activity, Fragment or objects.
  *
- * 🔥 @ActivityScope on [ActivityScopedFragment] does not mean their objects live through
+ * * 🔥@ActivityScope on [ActivityScopedFragment] does not mean their objects live through
  * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
- * new dependencies are created!!!
+ * new dependencies are created!
+ *
+ * * 🔥@FragmentScope on ToastAndPreferencesSubComponent also does not mean this will
+ * only live through lifecycle of fragments. [SecondActivity] also gets [ToastMaker]
+ * and [MySharedPreferences] instances from this component and gets new instances
+ * whenever [SecondActivity] is created.
  */
 /*
  ONLY one component can inject to an Object
@@ -30,10 +35,17 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
-    // Injected from DummyDependencyModule
+    // Injected from DummyDependencyModule @ActivityScope
     @Inject
     lateinit var dummyDependency: DummyDependency
 
+    // Injected via Constructor Injection NOT Singleton
+    @Inject
+    lateinit var sensorController: SensorController
+
+    // 🔥 Injected via Constructor Injection with @Singleton scope
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,9 +74,13 @@ class MainActivity : AppCompatActivity() {
         }
         replaceSecondFragment()
 
-        findViewById<TextView>(R.id.tvInfo).text = "DummyDependenyc: ${dummyDependency.hashCode()}\n" +
-                "sharedPreferences: ${sharedPreferences.hashCode()}"
-        println("MainActivity sharedPreferences: $sharedPreferences")
+        findViewById<TextView>(R.id.tvInfo).text =
+
+                "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "@ActivityScope DummyDependency: ${dummyDependency.hashCode()}\n" +
+                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n"+
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
+
         Toast.makeText(this, "MainActivity: $sharedPreferences", Toast.LENGTH_SHORT).show()
     }
 

@@ -1,0 +1,46 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.tutorial4_1dependentcomponent"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="14"
+8-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:5:5-19:19
+12        android:allowBackup="true"
+12-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.2.0] /Users/smarttoolfactory/.gradle/caches/transforms-2/files-2.1/c3a877e75b918415cab05028f4e6ccd8/core-1.2.0/AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:7:9-43
+16        android:label="@string/app_name"
+16-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:8:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:9:9-54
+18        android:supportsRtl="true"
+18-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:10:9-35
+19        android:theme="@style/AppTheme" >
+19-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:11:9-40
+20        <activity android:name="com.example.tutorial4_1dependentcomponent.MainActivity" >
+20-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:12:9-18:20
+20-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:12:19-47
+21            <intent-filter>
+21-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:13:13-17:29
+22                <action android:name="android.intent.action.MAIN" />
+22-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:14:17-69
+22-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:14:25-66
+23
+24                <category android:name="android.intent.category.LAUNCHER" />
+24-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:16:17-77
+24-->/Users/smarttoolfactory/ANDROID/ANDROID WORKSPACE/Android Studio/Tutorials/Architecture Tutorials/Dagger2/Tutorial4-1DependentComponent/src/main/AndroidManifest.xml:16:27-74
+25            </intent-filter>
+26        </activity>
+27    </application>
+28
+29</manifest>
