@@ -8,5 +8,9 @@ import javax.inject.Singleton
 @Component(modules = [VehicleModule::class])
 interface VehicleComponent {
 
+    /**
+     * This method either needs a method with @Provides that returns Vehicle
+     * or constructor injection
+     */
     fun provideVehicle(): Vehicle
 }

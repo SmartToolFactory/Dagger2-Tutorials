@@ -1,4 +1,4 @@
-package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities
+package com.smarttoolfactory.tutorial6_3subcomponentfactory
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.model.MySharedPreferences
-import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.model.ToastMaker
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.ToastMaker
 import javax.inject.Inject
 
 class MyFragment : Fragment() {
@@ -39,12 +39,20 @@ class MyFragment : Fragment() {
     }
 
     private fun initInjection() {
-        val applicationComponent = (activity!!.application as MyApplication).applicationComponent
 
-        val toastMakerSubComponent = applicationComponent
-                .toastMakerBuilder()
-                .context(activity!!)
-                .build()
+        val appComponent = (activity!!.application as MyApplication).appComponent
+
+        // 🔥SubComponent Builder
+//        val toastMakerSubComponent = appComponent
+//                .toastMakerBuilder()
+//                .context(activity!!)
+//                .build()
+
+        // 🔥 SubComponent Factory
+        val toastMakerSubComponent = appComponent
+                .toastAndSharedPreferencesFactory
+                .create(activity!!)
+
         toastMakerSubComponent.inject(this)
     }
 }

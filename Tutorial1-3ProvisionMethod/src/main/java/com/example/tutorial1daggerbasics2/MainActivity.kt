@@ -12,6 +12,9 @@ import com.example.tutorial1daggerbasics2.model.Vehicle
  * This tutorial displays that provision method in [VehicleComponent] returns [Vehicle].
  *
  * Note: Returned object is not singleton since it's created inside this Activity.
+ *
+ * Provision method does the same thing with
+ * @Inject lateinit var vehicle: Vehicle
  */
 class MainActivity : AppCompatActivity() {
 

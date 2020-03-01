@@ -8,6 +8,7 @@ import javax.inject.Singleton
 
 @Module
 class VehicleModule {
+
     @Singleton
     @Provides
     fun provideMotor(): Motor {
