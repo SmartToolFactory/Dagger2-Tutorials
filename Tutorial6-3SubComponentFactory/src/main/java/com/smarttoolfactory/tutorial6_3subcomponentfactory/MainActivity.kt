@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
                 "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "@ActivityScope DummyDependency: ${dummyDependency.hashCode()}\n" +
-                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n"+
+                        "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n" +
                         "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 
         Toast.makeText(this, "MainActivity: $sharedPreferences", Toast.LENGTH_SHORT).show()

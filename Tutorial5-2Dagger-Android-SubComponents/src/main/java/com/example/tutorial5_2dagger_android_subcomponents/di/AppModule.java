@@ -1,6 +1,5 @@
 package com.example.tutorial5_2dagger_android_subcomponents.di;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,8 +11,8 @@ import javax.inject.Singleton;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
+import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {ToastMakerSubComponent.class})
@@ -36,7 +35,7 @@ public abstract class AppModule {
     // 🔥 Injects ToastMakerSubComponent objects to MainActivity
     @Binds
     @IntoMap
-    @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity>
+    @ClassKey(MainActivity.class)
+    abstract AndroidInjector.Factory<?>
     bindMainActivityFactory(ToastMakerSubComponent.Builder builder);
 }

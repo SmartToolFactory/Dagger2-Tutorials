@@ -1,5 +1,8 @@
 package com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di
 
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.DashboardFragmentModule
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.HomeFragmentModule
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.NotificationsFragmentModule
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.scope.FragmentScope
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.ui.dashboard.DashboardFragment
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.ui.home.HomeFragment
@@ -16,14 +19,14 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentContributorModule {
 
     @FragmentScope
-    @ContributesAndroidInjector
-    abstract fun contributeRepoDetailFragment(): HomeFragment
+    @ContributesAndroidInjector(modules = [HomeFragmentModule::class])
+    abstract fun contributeHomeFragmentFragment(): HomeFragment
 
     @FragmentScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [DashboardFragmentModule::class])
     abstract fun contributeDashboardFragment(): DashboardFragment
 
     @FragmentScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [NotificationsFragmentModule::class])
     abstract fun contributeNotificationsFragment(): NotificationsFragment
 }

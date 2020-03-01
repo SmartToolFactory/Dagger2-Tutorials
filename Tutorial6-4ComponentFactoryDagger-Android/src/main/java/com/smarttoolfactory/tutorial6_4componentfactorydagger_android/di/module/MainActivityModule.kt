@@ -9,12 +9,16 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-abstract class MainActivityModule {
+interface MainActivityModule {
 
-    @ActivityScope
-    @Provides
-    fun provideDummyDependency(context: Context): DummyDependency {
-        return DummyDependency(context)
+    companion object {
+        // any bindings here are effectvely static and part of the module
+        @ActivityScope
+        @JvmStatic
+        @Provides
+        fun provideDummyDependency(context: Context): DummyDependency {
+            return DummyDependency(context)
+        }
     }
 
     /*
