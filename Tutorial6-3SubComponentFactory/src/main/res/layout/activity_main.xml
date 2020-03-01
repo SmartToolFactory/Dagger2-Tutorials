@@ -8,36 +8,72 @@
 
 
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/container1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 
+
+    <FrameLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container1">
+
+    </FrameLayout>
+
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/tvInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47000003" />
+
+        app:layout_constraintTop_toBottomOf="@id/container2" />
+
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_first_frag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp"
+        android:text="First Frag"
+        app:layout_constraintEnd_toStartOf="@+id/btn_second_frag"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo" />
+
+    <Button
+        android:id="@+id/btn_second_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Frag"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_first_frag"
+        app:layout_constraintEnd_toStartOf="@+id/button_second_activity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_first_frag"
+        app:layout_constraintTop_toTopOf="@+id/btn_first_frag" />
+
+    <Button
+        android:id="@+id/button_second_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Activity"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_second_frag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_second_frag"
+        app:layout_constraintTop_toTopOf="@+id/btn_second_frag" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

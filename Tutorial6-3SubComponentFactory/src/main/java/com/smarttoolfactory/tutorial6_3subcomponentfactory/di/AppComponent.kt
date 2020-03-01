@@ -10,9 +10,8 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
 
-    val dummyDependencyComponentFactory: DummyDependencyComponent.Factory
+    val dummyDependencyComponentFactory: DummyDependencySubComponent.Factory
     val toastAndSharedPreferencesFactory: ToastAndPreferencesSubComponent.Factory
-
 
     @Component.Factory
     interface Factory {

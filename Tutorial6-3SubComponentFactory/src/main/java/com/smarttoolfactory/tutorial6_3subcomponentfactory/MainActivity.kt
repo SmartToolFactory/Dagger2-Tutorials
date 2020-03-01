@@ -2,16 +2,25 @@ package com.smarttoolfactory.tutorial6_3subcomponentfactory
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.DummyDependency
-import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SensorController
 import javax.inject.Inject
 
+/**
+ * Component and SubComponent Factory can be used to replace Builders
+ *
+ * For Application Component create SubComponent factories with XSubComponent.Factory
+ * and SubComponents should have inject() and create() methods to be able to inject to
+ * Activity, Fragment or objects.
+ *
+ * 🔥 @ActivityScope on [ActivityScopedFragment] does not mean their objects live through
+ * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
+ * new dependencies are created!!!
+ */
 /*
  ONLY one component can inject to an Object
  */
@@ -25,9 +34,6 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var dummyDependency: DummyDependency
 
-    // Constructor Injection
-    @Inject
-    lateinit var sensorController: SensorController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,18 +41,41 @@ class MainActivity : AppCompatActivity() {
 
         initInjection()
 
-        findViewById<Button>(R.id.button).setOnClickListener {
+        bindViews()
+
+
+    }
+
+    private fun bindViews() {
+        findViewById<Button>(R.id.button_second_activity).setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
             startActivity(intent)
         }
 
-        findViewById<TextView>(R.id.text_view).text = "Dummy:  ${dummyDependency.applicationName}"
+        findViewById<Button>(R.id.btn_first_frag).setOnClickListener {
+            replaceFirstFragment()
+        }
+        replaceFirstFragment()
 
-        val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.container, MyFragment()).commit()
+        findViewById<Button>(R.id.btn_second_frag).setOnClickListener {
+            replaceSecondFragment()
+        }
+        replaceSecondFragment()
 
+        findViewById<TextView>(R.id.tvInfo).text = "DummyDependenyc: ${dummyDependency.hashCode()}\n" +
+                "sharedPreferences: ${sharedPreferences.hashCode()}"
         println("MainActivity sharedPreferences: $sharedPreferences")
         Toast.makeText(this, "MainActivity: $sharedPreferences", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun replaceFirstFragment() {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.container1, FragScopedFragment()).commit()
+    }
+
+    private fun replaceSecondFragment() {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.container2, ActivityScopedFragment()).commit()
     }
 
     private fun initInjection() {
@@ -67,13 +96,5 @@ class MainActivity : AppCompatActivity() {
         dummyDependencyComponent.inject(this)
     }
 
-    override fun onResume() {
-        super.onResume()
-        sensorController.onResume(SensorManager.SENSOR_DELAY_UI)
-    }
 
-    override fun onPause() {
-        super.onPause()
-        sensorController.onPause()
-    }
 }

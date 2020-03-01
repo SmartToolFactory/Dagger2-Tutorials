@@ -10,7 +10,7 @@ import dagger.Subcomponent
 /**
  * This is a SubComponent with 2 modules [ToastMakerModule] and [MySharedPreferencesModule]
  * Used for injecting objects provided by these modules to activity[SecondActivity]
- * and fragment([MyFragment])
+ * and fragment1([MyFragment])
  *
  * Sub component and module CAN NOT have different scopes.
  * IMPORTANT: Both can be un-scoped but cannot have with different scopes

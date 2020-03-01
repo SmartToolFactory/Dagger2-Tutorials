@@ -66,7 +66,7 @@ public class TasksActivity extends DaggerAppCompatActivity {
         TasksFragment tasksFragment =
                 (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (tasksFragment == null) {
-            // Get the fragment from dagger
+            // Get the fragment1 from dagger
             tasksFragment = taskFragmentProvider.get();
             ActivityUtils.addFragmentToActivity(
                     getSupportFragmentManager(), tasksFragment, R.id.contentFrame);

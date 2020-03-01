@@ -1,8 +1,8 @@
-package com.smarttoolfactory.tutorial6_3subcomponentfactory.di
+package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di
 
 import android.content.Context
-import com.smarttoolfactory.tutorial6_3subcomponentfactory.MainActivity
-import com.smarttoolfactory.tutorial6_3subcomponentfactory.di.scope.ActivityScope
+import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.MainActivity
+import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.scope.ActivityScope
 import dagger.BindsInstance
 import dagger.Subcomponent
 
@@ -12,7 +12,7 @@ import dagger.Subcomponent
  */
 @ActivityScope
 @Subcomponent(modules = [DummyDependencyModule::class])
-interface DummyDependencyComponent {
+interface DummyDependencySubComponent {
 
     fun inject(mainActivity: MainActivity)
     // 🔥 !!! IMPORTANT: Only one Component can be injected to an Object
@@ -23,8 +23,10 @@ interface DummyDependencyComponent {
 // 🔥 !!! IMPORTANT2: Component's and Injected objects' scopes can not be different
 // SensorController is also injected to MainActivity via Constructor Injection,
 // thus both should have the same scope which is @ActivityScope
-    @Subcomponent.Factory
-    interface Factory {
-        fun create(@BindsInstance context: Context): DummyDependencyComponent
+    @Subcomponent.Builder
+    interface Builder {
+        fun build(): DummyDependencySubComponent
+        @BindsInstance
+        fun context(context: Context): Builder
     }
 }

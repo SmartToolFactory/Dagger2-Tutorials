@@ -21,7 +21,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 
 
 /*
-    MainActivity contains MyFragment and passes MainActivity context to fragment with
+    MainActivity contains MyFragment and passes MainActivity context to fragment1 with
 
     @ActivityScope
     @ContributesAndroidInjector(modules = {MainActivityModule.class, FragmentContributorModule.class})

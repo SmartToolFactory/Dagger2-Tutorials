@@ -4,28 +4,38 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.ToastMaker
 import javax.inject.Inject
 
+/**
+ * ToastMakerModule and MySharedPreferencesModule are scoped with @FragmentScope
+ */
 class SecondActivity : AppCompatActivity() {
 
     // Injected from ApplicationModule
     @Inject
-   lateinit var sharedPreferences: SharedPreferences
+    lateinit var sharedPreferences: SharedPreferences
 
     // Injected from ToastMakerModule
     @Inject
     lateinit var toastMaker: ToastMaker
 
+    // Injected from MySharedPreferencesModule
+    @Inject
+    lateinit var mySharedPreferences: MySharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
 
         initInjection()
 
+        findViewById<TextView>(R.id.tvInfo).text = "ToastMaker: ${toastMaker.hashCode()}\n" +
+                "mySharedPreferences: ${mySharedPreferences.hashCode()}"
+
         toastMaker.showToast("SharedPreferences: $sharedPreferences")
-        val textView = findViewById<TextView>(R.id.text_view)
-        textView.text = "ToastMaker: $toastMaker\n sharedPreferences: $sharedPreferences"
+
     }
 
     private fun initInjection() {

@@ -15,7 +15,7 @@ interface ApplicationComponent {
      */
     fun toastMakerBuilder(): ToastAndPreferencesSubComponent.Builder
 
-    fun dummyDependencyBuilder(): DummyDependencyComponent.Builder
+    fun dummyDependencyBuilder(): DummyDependencySubComponent.Builder
 
     @Component.Builder
     interface Builder {

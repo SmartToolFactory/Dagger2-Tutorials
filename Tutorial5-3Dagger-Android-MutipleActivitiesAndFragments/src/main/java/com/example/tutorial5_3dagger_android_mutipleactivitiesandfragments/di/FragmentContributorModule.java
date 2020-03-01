@@ -15,7 +15,7 @@ public abstract class FragmentContributorModule {
      * With @ContributesAndroidInjector(modules = MyFragmentModule.class)
      * defines which module will be used to inject objects to MyFragment
      * <p>
-     * In this example {@link MainActivity} has {@link MyFragment} fragment, and {@link MyFragment}
+     * In this example {@link MainActivity} has {@link MyFragment} fragment1, and {@link MyFragment}
      * uses {@link MyFragmentModule} to inject objects
      *
      *  <p></p>

@@ -84,7 +84,7 @@ public class TasksPresenterTest {
         mTasksPresenter.loadTasks(true);
 
         // Callback is captured and invoked with stubbed tasks twice
-        //First time is when the fragment is bound to the view and a second time when we force another load
+        //First time is when the fragment1 is bound to the view and a second time when we force another load
         verify(mTasksRepository,times(2)).getTasks(mLoadTasksCallbackCaptor.capture());
         mLoadTasksCallbackCaptor.getValue().onTasksLoaded(TASKS);
 
