@@ -66,7 +66,7 @@ ext {
     gsonVersion = '2.8.4'
 
     // Dagger
-    daggerVersion = '2.25.2'
+    daggerVersion = '2.26'
 
     // RxAndroid
     rxjavaVersion = '2.1.3'

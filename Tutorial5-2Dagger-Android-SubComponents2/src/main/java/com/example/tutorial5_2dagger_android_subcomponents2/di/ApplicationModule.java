@@ -12,8 +12,8 @@ import javax.inject.Singleton;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
+import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {ToastMakerSubComponent.class})
@@ -46,6 +46,6 @@ public abstract class ApplicationModule {
     // 🔥 Injects ToastMakerSubComponent objects to MainActivity
     @Binds
     @IntoMap
-    @ActivityKey(MainActivity.class)
+    @ClassKey(MainActivity.class)
     abstract AndroidInjector.Factory<? extends Activity> bindMainActivityFactory(ToastMakerSubComponent.Builder builder);
 }
