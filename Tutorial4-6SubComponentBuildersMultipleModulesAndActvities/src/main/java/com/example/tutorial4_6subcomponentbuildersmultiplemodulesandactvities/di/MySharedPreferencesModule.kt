@@ -18,4 +18,5 @@ class MySharedPreferencesModule {
     fun provideMySharedPreference(sharedPreferences: SharedPreferences): MySharedPreferences {
         return MySharedPreferences(sharedPreferences)
     }
+
 }

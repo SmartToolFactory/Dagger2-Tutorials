@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.di.DummyDependencySubComponent
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.*
 import javax.inject.Inject
 
@@ -19,7 +20,8 @@ import javax.inject.Inject
  *
  * * 🔥@ActivityScope on [ActivityScopedFragment] does not mean their objects live through
  * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
- * new dependencies are created!
+ * new dependencies are re-created, because [DummyDependencySubComponent] is created inside
+ * [ActivityScopedFragment].
  *
  * * 🔥@FragmentScope on ToastAndPreferencesSubComponent also does not mean this will
  * only live through lifecycle of fragments. [SecondActivity] also gets [ToastMaker]
@@ -59,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
-        findViewById<Button>(R.id.button_second_activity).setOnClickListener {
+        findViewById<Button>(R.id.btn_second_activity).setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
             startActivity(intent)
         }

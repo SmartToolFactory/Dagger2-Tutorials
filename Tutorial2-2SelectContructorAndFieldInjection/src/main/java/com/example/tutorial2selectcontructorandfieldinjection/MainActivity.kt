@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         println("Field Injected: $mySharedPreferences")
         println("Constructor Injected: $mySharedPreferencesConstructor")
-        mySharedPreferences!!.putData("info", 0)
-        mySharedPreferencesConstructor!!.putData("info", 0)
-        data1 = mySharedPreferences!!.getData("info")
-        data2 = mySharedPreferencesConstructor!!.getData("info")
+        mySharedPreferences.putData("info", 0)
+        mySharedPreferencesConstructor.putData("info", 0)
+        data1 = mySharedPreferences.getData("info")
+        data2 = mySharedPreferencesConstructor.getData("info")
 
         val button1 = findViewById<Button>(R.id.button1)
         val button2 = findViewById<Button>(R.id.button2)
@@ -44,13 +44,13 @@ class MainActivity : AppCompatActivity() {
 
         button1.setOnClickListener {
             data1 += 3
-            mySharedPreferences!!.putData("info", data1)
-            textView1.text = "Field injected: " + mySharedPreferences!!.getData("info")
+            mySharedPreferences.putData("info", data1)
+            textView1.text = "Field injected: " + mySharedPreferences.getData("info")
         }
         button2.setOnClickListener {
             data2 += 5
-            mySharedPreferencesConstructor!!.putData("info", data2)
-            textView2.text = "Constructor injected: " + mySharedPreferencesConstructor!!.getData("info")
+            mySharedPreferencesConstructor.putData("info", data2)
+            textView2.text = "Constructor injected: " + mySharedPreferencesConstructor.getData("info")
         }
     }
 }

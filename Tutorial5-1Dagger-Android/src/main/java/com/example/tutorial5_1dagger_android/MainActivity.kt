@@ -19,7 +19,6 @@ class MainActivity : DaggerAppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val textView = findViewById<TextView>(R.id.textView)
         findViewById<TextView>(R.id.textView).text = "dummyDependency: $dummyDependency"
     }
 }

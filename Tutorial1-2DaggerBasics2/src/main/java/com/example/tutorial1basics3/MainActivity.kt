@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity(), SensorController.OnSensorEventChangeLi
 
     override fun onResume() {
         super.onResume()
-        sensorController!!.onResume(SensorManager.SENSOR_DELAY_UI)
+        sensorController.onResume(SensorManager.SENSOR_DELAY_UI)
     }
 
     override fun onPause() {
         super.onPause()
-        sensorController!!.onPause()
+        sensorController.onPause()
     }
 
     override fun getOrientationValues(azimuth: Float, pitch: Float, roll: Float) {

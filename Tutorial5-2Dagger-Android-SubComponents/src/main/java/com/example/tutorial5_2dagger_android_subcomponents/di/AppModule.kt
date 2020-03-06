@@ -18,6 +18,8 @@ abstract class AppModule {
      *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in
      *  non dagger-android, and can be removed using
      *  @ContributesAndroidInjector if SubComponent and it's Builder has NO methods
+     *
+     * !! In kotlin Generic should match with @ClassKey, if it's ? then Kotlin should be *
      */
 // 🔥 Injects ToastMakerSubComponent objects to MainActivity
     @Binds

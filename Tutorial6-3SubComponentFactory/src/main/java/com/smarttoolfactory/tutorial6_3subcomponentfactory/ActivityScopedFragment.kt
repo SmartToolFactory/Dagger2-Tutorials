@@ -7,11 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.smarttoolfactory.tutorial6_3subcomponentfactory.di.DummyDependencySubComponent
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.DummyDependency
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SensorController
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.SingletonObject
 import javax.inject.Inject
 
+/**
+ * 🔥@ActivityScope on [ActivityScopedFragment] does not mean their objects live through
+ * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
+ * new dependencies are re-created, because [DummyDependencySubComponent] is created inside
+ * this fragment.
+ */
 class ActivityScopedFragment : Fragment() {
 
     // Injected from ApplicationModule

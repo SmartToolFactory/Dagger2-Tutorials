@@ -60,13 +60,13 @@
         android:layout_height="wrap_content"
         android:text="Second Frag"
         app:layout_constraintBottom_toBottomOf="@+id/btn_first_frag"
-        app:layout_constraintEnd_toStartOf="@+id/button_second_activity"
+        app:layout_constraintEnd_toStartOf="@+id/btn_second_activity"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_first_frag"
         app:layout_constraintTop_toTopOf="@+id/btn_first_frag" />
 
     <Button
-        android:id="@+id/button_second_activity"
+        android:id="@+id/btn_second_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Second Activity"

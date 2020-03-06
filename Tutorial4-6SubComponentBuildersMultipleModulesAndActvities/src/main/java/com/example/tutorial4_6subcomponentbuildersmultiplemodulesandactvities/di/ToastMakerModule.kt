@@ -15,9 +15,11 @@ import dagger.Provides
  */
 @Module
 class ToastMakerModule {
+
     @FragmentScope
     @Provides
     fun provideToastMaker(context: Context): ToastMaker {
         return ToastMaker(context)
     }
+
 }

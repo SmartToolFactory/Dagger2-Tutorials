@@ -2,11 +2,9 @@ package com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.model.DummyDependency
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.model.SensorController
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
    lateinit var sharedPreferences: SharedPreferences
 
-    // Injected from DummyDependencyModule
+    // Injected from @ActivityScope DummyDependencyModule
     @Inject
     lateinit var dummyDependency: DummyDependency
 
@@ -35,18 +33,30 @@ class MainActivity : AppCompatActivity() {
 
         initInjection()
 
-        findViewById<Button>(R.id.button).setOnClickListener {
+        bindViews()
+
+    }
+
+    private fun bindViews() {
+        findViewById<Button>(R.id.btn_second_activity).setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
             startActivity(intent)
         }
 
-        findViewById<TextView>(R.id.text_view).text = "Dummy:  ${dummyDependency.applicationName}"
+        findViewById<Button>(R.id.btn_frag).setOnClickListener {
+            replaceFragment()
+        }
+        replaceFragment()
 
+        findViewById<TextView>(R.id.tvInfo).text =
+                "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "@ActivityScope dummyDependency: ${dummyDependency.hashCode()}\n" +
+                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}"
+    }
+
+    private fun replaceFragment() {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.container, MyFragment()).commit()
-
-        println("MainActivity sharedPreferences: $sharedPreferences")
-        Toast.makeText(this, "MainActivity: $sharedPreferences", Toast.LENGTH_SHORT).show()
     }
 
     private fun initInjection() {
@@ -61,13 +71,4 @@ class MainActivity : AppCompatActivity() {
         dummyDependencyComponent.inject(this)
     }
 
-    override fun onResume() {
-        super.onResume()
-        sensorController.onResume(SensorManager.SENSOR_DELAY_UI)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        sensorController.onPause()
-    }
 }

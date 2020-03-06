@@ -1,7 +1,5 @@
 package com.example.tutorial3scope2.di
 
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 import javax.inject.Scope
 
 /**
@@ -10,5 +8,5 @@ import javax.inject.Scope
  * IMPORTANT: Both can be unscoped but cannot have with different scopes
  */
 @Scope
-@Retention(RetentionPolicy.RUNTIME)
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class ApplicationScope
