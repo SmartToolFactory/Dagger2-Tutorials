@@ -1,4 +1,4 @@
-package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di
+package com.smarttoolfactory.tutorial6_4_sucomponentfactory_multipleactivitiesandfragments.di
 
 import android.app.Application
 import android.content.Context
@@ -8,7 +8,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule {
+class AppModule {
 
     @Provides
     @Singleton

@@ -12,7 +12,7 @@ import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
 import javax.inject.Singleton
 
-@Module(subcomponents = [ToastMakerSubComponent::class])
+@Module
 abstract class AppModule {
     /*
      *  NOTE: This is same as adding void inject(MainActivity mainActivity) to SubComponent as in

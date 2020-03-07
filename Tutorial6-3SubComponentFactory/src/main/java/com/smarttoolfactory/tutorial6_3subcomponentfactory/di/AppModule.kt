@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(subcomponents = [DummyDependencySubComponent::class, ToastAndPreferencesSubComponent::class])
+@Module
 class AppModule {
 
     @Provides

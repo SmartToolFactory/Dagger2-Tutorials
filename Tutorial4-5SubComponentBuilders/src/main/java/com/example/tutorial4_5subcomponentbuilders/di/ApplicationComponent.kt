@@ -4,7 +4,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 // This is parent component
-@Component(modules = [ApplicationModule::class])
+@Component(modules = [ApplicationModule::class,SubComponentsModule::class])
 @Singleton
 interface ApplicationComponent {
 

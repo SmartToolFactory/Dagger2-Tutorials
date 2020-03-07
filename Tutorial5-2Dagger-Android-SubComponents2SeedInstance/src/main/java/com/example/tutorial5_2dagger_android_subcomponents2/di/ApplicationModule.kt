@@ -13,7 +13,7 @@ import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
 import javax.inject.Singleton
 
-@Module(subcomponents = [ToastMakerSubComponent::class, LiveObjectSubComponent::class])
+@Module
 abstract class ApplicationModule {
 
     /*

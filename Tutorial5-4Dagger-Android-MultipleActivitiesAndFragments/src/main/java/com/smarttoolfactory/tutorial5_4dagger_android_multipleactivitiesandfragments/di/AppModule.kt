@@ -8,6 +8,9 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
+// The "subcomponents" attribute in the @Module annotation tells Dagger what
+// Subcomponents are children of the Component this module is included in.
+
 /**
  * AppModule of dagger-android with @ContributesAndroidInjector
  * does not declare sub-components inside @Module annotation

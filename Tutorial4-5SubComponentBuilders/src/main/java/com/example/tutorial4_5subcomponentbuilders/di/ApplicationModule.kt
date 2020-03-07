@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(subcomponents = [ToastMakerSubComponent::class])
+@Module
 class ApplicationModule(private val context: Context) {
 
     @Provides

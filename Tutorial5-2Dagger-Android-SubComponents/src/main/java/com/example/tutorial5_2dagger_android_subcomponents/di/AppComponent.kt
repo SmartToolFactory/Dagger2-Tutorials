@@ -15,7 +15,12 @@ import javax.inject.Singleton
  *  2- Extends AndroidInjector<MyApplication>
  *  3- Does not have @Subcomponent.Builder to inject to classes inside Sub-Component
  */
-@Component(modules = [AppModule::class, AndroidSupportInjectionModule::class])
+@Component(
+        modules = [
+            AndroidSupportInjectionModule::class,
+            AppModule::class,
+            SubComponentsModule::class]
+)
 @Singleton
 interface AppComponent : AndroidInjector<MyApplication> {
 
