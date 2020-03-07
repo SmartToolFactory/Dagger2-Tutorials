@@ -17,11 +17,6 @@ import javax.inject.Singleton
 @Module(subcomponents = [MainActivitySubComponent::class])
 abstract class AppModule {
 
-//    @Binds
-//    @IntoMap
-//    @ClassKey(MainActivity::class)
-//    abstract fun bindMainActivityFactory(builder: MainActivitySubComponent.Builder): AndroidInjector.Factory<*>
-
     @Module
     companion object {
 

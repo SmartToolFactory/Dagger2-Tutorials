@@ -1,7 +1,7 @@
 package com.smarttoolfactory.tutorial6_3subcomponentfactory.di
 
 import android.content.SharedPreferences
-import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.scope.FragmentScope
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.scope.FragmentScope
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.MySharedPreferences
 import dagger.Module
 import dagger.Provides

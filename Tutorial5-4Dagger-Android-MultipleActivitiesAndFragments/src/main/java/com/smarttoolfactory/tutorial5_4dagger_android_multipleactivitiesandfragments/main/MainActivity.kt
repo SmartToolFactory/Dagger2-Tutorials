@@ -11,20 +11,34 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
- * [MyFragment] contains mySharedPreferences instance from MyFragmentModule
- * with @FragmentScope which is created each time [MyFragment] is created.
  *
- * Also contains [ToastMaker] from [MainActivityModule] with @ActivityScope
- * which live as long as Activity is alive
+ * In this tutorial instead of using @ContributesAndroidInjector,
+ * sub-component [MainActivitySubComponent], and it's sub-component
+ * [FirstFragmentSubComponent] are created with interface that extend
+ * AndroidInjector<MainActivity>, and AndroidInjector<FirstFragment>
+ *
+ *  🔥 Scope and component  determines the lifecycle of an injected object:
+ *
+ * [FirstFragment] contains mySharedPreferences instance from FirstFragmentModule
+ * with @FragmentScope which is created each time [FirstFragment] is created.
+ *
+ * [ToastMaker] with @ActivityScope via [MainActivitySubComponent] lives as long
+ * as the same [MainActivity] is alive, and not re-created whenever a fragment is created.
+ *
+ * 🔥🔥 [SecondFragment] has [SensorController] objected injected via constructor injection
+ * with @ActivityScope that is only created whenever [MainActivity] is re-created
+ *
+ *
  */
 class MainActivity : DaggerAppCompatActivity() {
 
     // Injected from AppModule with @Singleton
     @Inject
     lateinit var sharedPreferences: SharedPreferences
+
     /**
      * Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with MyFragment.
+     * which is the same object with FirstFragmetn.
      */
     @Inject
     lateinit var toastMaker: ToastMaker
@@ -45,15 +59,17 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     private fun bindViews() {
-        findViewById<Button>(R.id.btn_second_activity).setOnClickListener {
-//            val intent = Intent(this@MainActivity, SecondActivity::class.java)
-//            startActivity(intent)
-        }
 
-        findViewById<Button>(R.id.btn_frag).setOnClickListener {
-            replaceFragment()
+        findViewById<Button>(R.id.btn_first_frag).setOnClickListener {
+            replaceFirstFragment()
         }
-        replaceFragment()
+        replaceFirstFragment()
+
+        replaceSecondFragment()
+
+        findViewById<Button>(R.id.btn_second_frag).setOnClickListener {
+            replaceSecondFragment()
+        }
 
         findViewById<TextView>(R.id.tvInfo).text =
                 "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
@@ -61,9 +77,14 @@ class MainActivity : DaggerAppCompatActivity() {
                         "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}"
     }
 
-    private fun replaceFragment() {
+    private fun replaceFirstFragment() {
         val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.container, MyFragment()).commit()
+        ft.replace(R.id.container1, FirstFragment()).commit()
+    }
+
+    private fun replaceSecondFragment() {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.container2, SecondFragment()).commit()
     }
 
 }

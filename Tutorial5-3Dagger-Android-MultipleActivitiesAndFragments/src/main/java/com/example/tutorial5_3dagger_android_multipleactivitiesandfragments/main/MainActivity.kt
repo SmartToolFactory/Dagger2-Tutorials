@@ -13,11 +13,13 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
- * [MyFragment] contains mySharedPreferences instance from MyFragmentModule
- * with @FragmentScope which is created each time [MyFragment] is created.
+ * [FirstFragment] contains mySharedPreferences instance from MyFragmentModule
+ * with @FragmentScope which is created each time [FirstFragment] is created.
  *
  * Also contains [ToastMaker] from [MainActivityModule] with @ActivityScope
  * which live as long as Activity is alive
+ *
+ * Scope and sub-component determines the lifecycle of an injected object
  */
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -65,7 +67,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
     private fun replaceFragment() {
         val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.container, MyFragment()).commit()
+        ft.replace(R.id.container, FirstFragment()).commit()
     }
 
 }

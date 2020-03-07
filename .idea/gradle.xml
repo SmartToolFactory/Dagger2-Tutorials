@@ -29,7 +29,7 @@
             <option value="$PROJECT_DIR$/Tutorial4-3ComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
             <option value="$PROJECT_DIR$/Tutorial4-5SubComponentBuilders" />
-            <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuildersMultipleModulesAndActvities" />
+            <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuilders-MultipleModulesAndActvities" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android" />
             <option value="$PROJECT_DIR$/Tutorial5-1Dagger-Android-ContributesAndroidInjector" />
             <option value="$PROJECT_DIR$/Tutorial5-2Dagger-Android-SubComponents" />
@@ -40,6 +40,7 @@
             <option value="$PROJECT_DIR$/Tutorial6-1ComponentFactory" />
             <option value="$PROJECT_DIR$/Tutorial6-2ComponentFactoryVsBuilder" />
             <option value="$PROJECT_DIR$/Tutorial6-3SubComponentFactory" />
+            <option value="$PROJECT_DIR$/Tutorial6-4-SucomponentFactory-MultipleActivitiesAndFragments" />
             <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android" />
           </set>
         </option>

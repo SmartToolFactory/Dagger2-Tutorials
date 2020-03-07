@@ -1,7 +1,7 @@
 package com.smarttoolfactory.tutorial6_3subcomponentfactory.di
 
 import android.content.Context
-import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.di.scope.FragmentScope
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.scope.FragmentScope
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.ToastMaker
 import dagger.Module
 import dagger.Provides

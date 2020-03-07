@@ -1,8 +1,8 @@
 package com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.di
 
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.di.scope.FragmentScope
-import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.MyFragment
-import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.MyFragmentModule
+import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.FirstFragment
+import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.FirstFragmentModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -14,8 +14,8 @@ abstract class FragmentContributorModule {
      * defines which module will be used to inject objects to MyFragment
      *
      *
-     * In this example [MainActivity] has [MyFragment] fragment1, and [MyFragment]
-     * uses [MyFragmentModule] to inject objects
+     * In this example [MainActivity] has [FirstFragment] fragment1, and [FirstFragment]
+     * uses [FirstFragmentModule] to inject objects
      *
      *
      *
@@ -24,6 +24,6 @@ abstract class FragmentContributorModule {
      *
      */
     @FragmentScope
-    @ContributesAndroidInjector(modules = [MyFragmentModule::class])
-    abstract fun contributeMyFragment(): MyFragment
+    @ContributesAndroidInjector(modules = [FirstFragmentModule::class])
+    abstract fun contributeMyFragment(): FirstFragment
 }
