@@ -7,10 +7,12 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.smarttoolfactory.tutorial6_3subcomponentfactory.di.DummyDependencySubComponent
 import com.smarttoolfactory.tutorial6_3subcomponentfactory.model.*
 import javax.inject.Inject
 
+/*
+    This example does not have Activity>Fragment scope hierarchy
+ */
 /**
  * * Component and SubComponent Factory can be used to replace Builders
  *
@@ -18,15 +20,15 @@ import javax.inject.Inject
  * and SubComponents should have inject() and create() methods to be able to inject to
  * Activity, Fragment or objects.
  *
- * * 🔥@ActivityScope on [ActivityScopedFragment] does not mean their objects live through
- * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
- * new dependencies are re-created, because [DummyDependencySubComponent] is created inside
- * [ActivityScopedFragment].
- *
  * * 🔥@FragmentScope on ToastAndPreferencesSubComponent also does not mean this will
  * only live through lifecycle of fragments. [SecondActivity] also gets [ToastMaker]
  * and [MySharedPreferences] instances from this component and gets new instances
  * whenever [SecondActivity] is created.
+ *
+ * * 🔥🔥@ ActivityScope on [ActivityScopedFragment] does not mean their objects live through
+ * Activity lifecycle. Whenever [ActivityScopedFragment] fragment is replaced
+ * new dependencies are re-created, because ???
+ *
  */
 /*
  ONLY one component can inject to an Object
@@ -100,15 +102,10 @@ class MainActivity : AppCompatActivity() {
 
         val appComponent = (application as MyApplication).appComponent
 
-        // 🔥SubComponent Builder
-//        val dummyDependencyComponent = appComponent
-//                .dummyDependencyBuilder()
-//                .context(this)
-//                .build()
 
         // 🔥 SubComponent Factory
         val dummyDependencyComponent = appComponent
-                .dummyDependencyComponentFactory
+                .dummyDependencyComponentFactory()
                 .create(this)
 
         dummyDependencyComponent.inject(this)

@@ -1,7 +1,6 @@
 package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di
 
 import android.app.Application
-import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.scope.SubComponentsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

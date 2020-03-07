@@ -6,12 +6,12 @@ import dagger.Component
 import javax.inject.Singleton
 
 // This is parent component
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, SubComponentsModule::class])
 @Singleton
 interface AppComponent {
 
-    val dummyDependencyComponentFactory: DummyDependencySubComponent.Factory
-    val toastAndSharedPreferencesFactory: ToastAndPreferencesSubComponent.Factory
+    fun dummyDependencyComponentFactory(): DummyDependencySubComponent.Factory
+    fun toastAndSharedPreferencesFactory(): ToastAndPreferencesSubComponent.Factory
 
     @Component.Factory
     interface Factory {

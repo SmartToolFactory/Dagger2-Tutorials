@@ -74,7 +74,7 @@ class ActivityScopedFragment : Fragment() {
 
         // 🔥 SubComponent Factory
         val dummyDependencySubComponent = appComponent
-                .dummyDependencyComponentFactory
+                .dummyDependencyComponentFactory()
                 .create(activity!!)
 
         dummyDependencySubComponent.inject(this)

@@ -3,6 +3,7 @@ package com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.di
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.di.scope.FragmentScope
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.FirstFragment
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.FirstFragmentModule
+import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

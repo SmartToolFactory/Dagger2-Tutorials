@@ -76,7 +76,7 @@ class FragScopedFragment : Fragment() {
 
         // 🔥 SubComponent Factory
         val toastMakerSubComponent = appComponent
-                .toastAndSharedPreferencesFactory
+                .toastAndSharedPreferencesFactory()
                 .create(activity!!)
 
         toastMakerSubComponent.inject(this)

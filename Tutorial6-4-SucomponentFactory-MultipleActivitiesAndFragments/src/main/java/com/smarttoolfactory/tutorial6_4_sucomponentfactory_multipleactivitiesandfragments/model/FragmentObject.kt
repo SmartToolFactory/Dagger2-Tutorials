@@ -4,6 +4,4 @@ import com.smarttoolfactory.tutorial6_4_sucomponentfactory_multipleactivitiesand
 import javax.inject.Inject
 
 @FragmentScope
-class FragmentObject @Inject constructor() {
-
-}
+class FragmentObject @Inject constructor()

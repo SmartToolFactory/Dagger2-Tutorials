@@ -1,7 +1,5 @@
-package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.scope
+package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di
 
-import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.DummyDependencySubComponent
-import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.ToastAndPreferencesSubComponent
 import dagger.Module
 
 // The "subcomponents" attribute in the @Module annotation tells Dagger what

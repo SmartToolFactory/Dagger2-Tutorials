@@ -1,4 +1,4 @@
-package com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model
+package com.smarttoolfactory.tutorial6_4_sucomponentfactory_multipleactivitiesandfragments.model
 
 import android.content.SharedPreferences
 

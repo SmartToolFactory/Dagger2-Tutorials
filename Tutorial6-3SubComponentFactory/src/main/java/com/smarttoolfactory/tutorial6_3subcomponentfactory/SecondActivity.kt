@@ -65,7 +65,7 @@ class SecondActivity : AppCompatActivity() {
 
         // 🔥 SubComponent Factory
         val toastMakerSubComponent = appComponent
-                .toastAndSharedPreferencesFactory
+                .toastAndSharedPreferencesFactory()
                 .create(this)
 
         toastMakerSubComponent.inject(this)
