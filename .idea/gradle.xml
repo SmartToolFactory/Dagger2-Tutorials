@@ -11,9 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/External-Tutorial-CodeLabs" />
             <option value="$PROJECT_DIR$/External-Tutorial-Dagger-Android-Sample" />
             <option value="$PROJECT_DIR$/External-Tutorial-DaggerApplication" />
             <option value="$PROJECT_DIR$/External-Tutorial-DaggerDependentComponents" />
+            <option value="$PROJECT_DIR$/External-Tutorial-SimpleAssitedInject" />
             <option value="$PROJECT_DIR$/External-Tutorial-SubComponentBuilder" />
             <option value="$PROJECT_DIR$/External-Tutorial-Todo-MVP-Dagger2" />
             <option value="$PROJECT_DIR$/Tutorial1-1DaggerBasics" />
@@ -42,6 +44,8 @@
             <option value="$PROJECT_DIR$/Tutorial6-3SubComponentFactory" />
             <option value="$PROJECT_DIR$/Tutorial6-4-SucomponentFactory-MultipleActivitiesAndFragments" />
             <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android" />
+            <option value="$PROJECT_DIR$/Tutorial7-1BindsVsProvides" />
+            <option value="$PROJECT_DIR$/Tutorial7-2BindsVsProvides2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

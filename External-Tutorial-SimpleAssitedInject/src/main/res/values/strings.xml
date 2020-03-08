@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">simple-assisted-inject</string>
+
+    <string name="edit_text_initial_text">some text</string>
+    <string name="button_text">Open activity</string>
+    <string name="decoration_template">*** %s ***</string>
+</resources>
