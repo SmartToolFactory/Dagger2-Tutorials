@@ -7,7 +7,11 @@ import com.smarttoolfactory.tutorial7_1bindsvsprovides.model.Logger
 import javax.inject.Inject
 import javax.inject.Named
 
-
+/*
+    https://proandroiddev.com/dagger-2-on-android-the-official-guidelines-you-should-be-following-2607fd6c002e
+    https://developer.android.com/training/dependency-injection/dagger-android
+    https://medium.com/@elye.project/dagger-2-binds-vs-provides-cbf3c10511b5
+ */
 /**
  * Getting interface from a concrete implementation of a dependency
  * via @Binds has better performance and less generated code than @Provides

@@ -8,42 +8,24 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
-/*
- * Differences between AppComponent of dagger-android and regular dagger:
- *
-  * 1- Binds AndroidSupportInjectionModule.class in modules
- *  2- Extends AndroidInjector<MyApplication>
- *  3- Does not have sub-component builder to inject to classes inside sub-component
- *  DummyDependencyComponent.Builder dummyDependencyBuilder(); is not required in app component
- */
 
-/*
- * Differences between AppComponent of dagger-android and regular dagger:
- *
-  * 1- Binds AndroidSupportInjectionModule.class in modules
- *  2- Extends AndroidInjector<MyApplication>
- *  3- Does not have sub-component builder to inject to classes inside sub-component
- *  DummyDependencyComponent.Builder dummyDependencyBuilder(); is not required in app component
- */
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
     ActivityContributorModule::class])
-/*
- * ActivityContributorModule defines which Activities will have which modules and inject objects
- * If an Activity has any fragments it should add them via FragmentContributorModule with @ContributesAndroidInjector
- * @ContributesAndroidInjector(modules = {MainActivityModule.class, FragmentContributorModule.class})
+/**
+ * Component with @Factory annotation uses create method with params that have
+ * @BindsInstance annotation to inject at runtime. And in application class it's called using
+ * DaggerAppComponent.factory().create(this)
+ * instead of  DaggerAppComponent.builder().application(this).build()
  */
 @Singleton
 interface AppComponent : AndroidInjector<MyApplication> {
 
-    @Component.Builder
-    interface Builder {
+    @Component.Factory
+    interface Factory {
 
-        @BindsInstance
-        fun application(application: Application?): Builder
-
-        fun build(): AppComponent
+        fun create(@BindsInstance application: Application): AppComponent
     }
 
     override fun inject(myApplication: MyApplication)
