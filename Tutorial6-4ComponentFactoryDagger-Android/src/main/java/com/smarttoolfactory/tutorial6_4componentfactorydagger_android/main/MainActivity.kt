@@ -12,16 +12,28 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.R
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.AppComponent
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.settings.SettingsActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
+/**
+ * * In this example ViewModels, UseCases and Repository values depend on whether they
+ * are scoped with scope or not
+ *
+ * * If a ViewModel is annotated with scope that [AppComponent] has, for instance @Singleton,
+ * it's retained through the lifecycle of the app.
+ *
+ * * NotificationsViewModel is created using Activity so it's instance is RETAINED, and NOT
+ * created every time new NotificationFragment is created.
+ *
+ */
 class MainActivity : DaggerAppCompatActivity() {
 
     @Inject
      lateinit var viewModelFactory: ViewModelProvider.Factory
 
-     lateinit var mainViewModel: MainViewModel
+     private lateinit var mainViewModel: MainViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

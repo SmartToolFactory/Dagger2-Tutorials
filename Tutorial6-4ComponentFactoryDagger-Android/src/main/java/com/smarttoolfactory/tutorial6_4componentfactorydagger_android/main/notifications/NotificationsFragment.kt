@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.R
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import javax.inject.Inject
 
 /**
@@ -31,9 +32,15 @@ class NotificationsFragment : DaggerFragment() {
 
         val root = inflater.inflate(R.layout.fragment_notifications, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
+
         notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            textView.text = "Fragment: $this, $it"
         })
+
+        root.btnResult.setOnClickListener {
+            notificationsViewModel.getNotificationItem()
+        }
+
         return root
     }
 }

@@ -2,7 +2,6 @@ package com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di
 
 import android.app.Application
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.MyApplication
-import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -13,8 +12,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
-    ActivityContributorModule::class,
-    ViewModelModule::class])
+    ActivityContributorModule::class])
 /**
  * Component with @Factory annotation uses create method with params that have
  * @BindsInstance annotation to inject at runtime. And in application class it's called using
