@@ -1,5 +1,8 @@
 package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.model
 
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.FirstFragment
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.MainActivity
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.SecondActivity
 import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.di.ApplicationComponent
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -10,14 +13,17 @@ import javax.inject.Singleton
  * * 🔥 If un-scoped NEW instance of [SingletonObject] is created
  * whenever an Activity/Fragment/Object is recreated.
  *
- * * 🔥 If a scope different than [ApplicationComponent], for this example
- * it's injected to @ActivityScope and @FragmentScope activity and fragments
- * so it can't have neither of them(sub component scope) in this example
- * it returns ERROR ->
+ * * 🔥 If a scope different other than [ApplicationComponent] is used, in this example
+ * it's injected to @ActivityScope scoped [MainActivity], [SecondActivity] and @FragmentScope scoped [FirstFragment]
+ * so it can't have neither of these scopes(sub component scope)
+ * it returns ERROR:
  * ToastMakerSubComponent scoped with @ActivityScope
  * may not reference bindings with different scopes
  *
- */
+ * 🔥 If not injected to [MainActivity] it could ONLY have @ActivityScope without error because [SecondActivity]
+ * uses only @FragmentScope
+ *
+ * */
 @Singleton
 class SingletonObject @Inject constructor() {
 

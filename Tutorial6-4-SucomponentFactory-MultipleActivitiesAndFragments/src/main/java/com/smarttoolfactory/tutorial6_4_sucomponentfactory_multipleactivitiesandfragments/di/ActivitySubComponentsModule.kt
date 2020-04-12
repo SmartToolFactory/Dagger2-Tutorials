@@ -3,12 +3,10 @@ package com.smarttoolfactory.tutorial6_4_sucomponentfactory_multipleactivitiesan
 import com.smarttoolfactory.tutorial6_4_sucomponentfactory_multipleactivitiesandfragments.main.MainActivitySubComponent
 import dagger.Module
 
-// This module tells a Component which are its subcomponents
+// This module tells a Component which are its sub components
 @Module(
         subcomponents = [
             MainActivitySubComponent::class
         ]
 )
-class ActivitySubComponentsModule {
-
-}
+class ActivitySubComponentsModule

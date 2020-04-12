@@ -4,23 +4,23 @@ import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.HomeFragmentModule
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module.NotificationsFragmentModule
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.scope.FragmentScope
-import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.ui.dashboard.DashboardFragment
-import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.ui.home.HomeFragment
-import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.ui.notifications.NotificationsFragment
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.main.dashboard.DashboardFragment
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.main.home.HomeFragment
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.main.notifications.NotificationsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 /**
- * [FragmentContributorModule] is used inside [ActivityContributorModule]
+ * [MainActivityFragmentContributorModule] is used inside [ActivityContributorModule]
  * With @ContributesAndroidInjector(modules = FragmentContributorModule.class)
  * defines which module will be used to inject objects to declared fragments
  */
 @Module
-abstract class FragmentContributorModule {
+abstract class MainActivityFragmentContributorModule {
 
     @FragmentScope
     @ContributesAndroidInjector(modules = [HomeFragmentModule::class])
-    abstract fun contributeHomeFragmentFragment(): HomeFragment
+    abstract fun contributeHomeFragment(): HomeFragment
 
     @FragmentScope
     @ContributesAndroidInjector(modules = [DashboardFragmentModule::class])

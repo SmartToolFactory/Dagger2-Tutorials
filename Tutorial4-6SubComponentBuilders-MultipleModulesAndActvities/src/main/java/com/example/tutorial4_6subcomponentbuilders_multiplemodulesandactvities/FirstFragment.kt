@@ -35,6 +35,7 @@ class FirstFragment : Fragment() {
     // 🔥 Injected via Constructor Injection with @Singleton scope
     @Inject
     lateinit var singletonObject: SingletonObject
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment, container, false)
     }

@@ -20,7 +20,7 @@ class SecondActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
         println("🚙 SecondActivity toastMaker: $toastMaker")
         println("🚙 SecondActivity sharedPreferences: $sharedPreferences")
         toastMaker.showToast("SecondActivity SharedPreferences: $sharedPreferences")

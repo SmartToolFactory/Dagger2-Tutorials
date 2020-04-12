@@ -34,10 +34,10 @@
 
     <Button
         android:id="@+id/btn_frag"
-        android:layout_width="wrap_content"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:text="First Frag"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_second_activity"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,13 +45,24 @@
 
     <Button
         android:id="@+id/btn_second_activity"
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:text="Second Activity"
         app:layout_constraintBottom_toBottomOf="@+id/btn_frag"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_third_activity"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_frag"
         app:layout_constraintTop_toTopOf="@+id/btn_frag" />
+
+    <Button
+        android:id="@+id/btn_third_activity"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:text="Third Activity"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_second_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_second_activity"
+        app:layout_constraintTop_toTopOf="@+id/btn_second_activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

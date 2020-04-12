@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.model.DummyDependency
 import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.model.SensorController
+import com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.model.SingletonObject
 import com.example.tutorial4_6subcomponentbuildersmultiplemodulesandactvities.R
 import javax.inject.Inject
 
@@ -27,6 +28,10 @@ class MainActivity : AppCompatActivity() {
     // Constructor Injection
     @Inject
     lateinit var sensorController: SensorController
+
+    // 🔥 Injected via Constructor Injection with @Singleton scope
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +57,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvInfo).text =
                 "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "@ActivityScope dummyDependency: ${dummyDependency.hashCode()}\n" +
-                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}"
+                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}" +
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
     }
 
     private fun replaceFragment() {

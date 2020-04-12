@@ -8,24 +8,36 @@ import android.widget.TextView
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model.SensorController
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.second.SecondActivity
+import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.third.ThirdActivity
 import com.example.tutorial5_3dagger_android_mutipleactivitiesandfragments.R
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
- * [FirstFragment] contains mySharedPreferences instance from MyFragmentModule
+ * * [FirstFragment] contains mySharedPreferences instance from MyFragmentModule
  * with @FragmentScope which is created each time [FirstFragment] is created.
  *
- * Also contains [ToastMaker] from [MainActivityModule] with @ActivityScope
+ * * Also contains [ToastMaker] from [MainActivityModule] with @ActivityScope
  * which live as long as Activity is alive
  *
- * Scope and sub-component determines the lifecycle of an injected object
+ * * Scope and sub-component determines the lifecycle of an injected object
+ *
+ * * Activities that extend DaggerAppCompatActivity should have
+ * AndroidInjector.Factory via @ContributesAndroidInjector, or manually declaring
+ *
+ * <code>
+ *   @Subcomponent.Builder
+ *   abstract class Builder : AndroidInjector.Builder<MainActivity>()
+ *  </code>
+ *  * [ThirdActivity] does noe extend [DaggerAppCompatActivity] thus it does not
+ *  have to have an AndroidInjector
  */
 class MainActivity : DaggerAppCompatActivity() {
 
     // Injected from AppModule with @Singleton
     @Inject
     lateinit var sharedPreferences: SharedPreferences
+
     /**
      * Injected from [MainActivityModule] with @ActivityScope
      * which is the same object with MyFragment.
@@ -44,13 +56,17 @@ class MainActivity : DaggerAppCompatActivity() {
 
         toastMaker.showToast("MainActivity sharedPreferences $sharedPreferences")
 
-
         bindViews()
     }
 
     private fun bindViews() {
         findViewById<Button>(R.id.btn_second_activity).setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btn_third_activity).setOnClickListener {
+            val intent = Intent(this@MainActivity, ThirdActivity::class.java)
             startActivity(intent)
         }
 

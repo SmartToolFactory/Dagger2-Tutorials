@@ -1,8 +1,8 @@
 package com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.module
 
 import android.content.Context
-import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.MainActivity
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.scope.ActivityScope
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.main.MainActivity
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.model.DummyDependency
 import dagger.Binds
 import dagger.Module
