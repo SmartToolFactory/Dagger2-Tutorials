@@ -20,8 +20,10 @@ import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
- * * In this example ViewModels, UseCases and Repository values depend on whether they
- * are scoped with a scope or not
+ * * In this example Dagger-android, component factory and Clean architecture is used with scopes.
+ *
+ * * ViewModel, UseCase and Repository re-creation/retaining depends on whether they
+ * are scoped with a scope or not.
  *
  * * If a ViewModel is annotated with scope [AppComponent] has, for instance @Singleton,
  * it's retained through the lifecycle of the app.

@@ -43,7 +43,7 @@
             <option value="$PROJECT_DIR$/Tutorial6-2ComponentFactoryVsBuilder" />
             <option value="$PROJECT_DIR$/Tutorial6-3SubComponentFactory" />
             <option value="$PROJECT_DIR$/Tutorial6-4-SucomponentFactory-MultipleActivitiesAndFragments" />
-            <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android" />
+            <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android-AAC" />
             <option value="$PROJECT_DIR$/Tutorial7-1BindsVsProvides" />
             <option value="$PROJECT_DIR$/Tutorial7-2BindsVsProvides2" />
           </set>
