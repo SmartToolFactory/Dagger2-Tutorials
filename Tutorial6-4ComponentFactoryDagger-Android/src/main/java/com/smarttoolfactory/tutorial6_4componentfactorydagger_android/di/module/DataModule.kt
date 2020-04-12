@@ -6,15 +6,12 @@ import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.data.Setti
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.data.SettingsRepositoryImpl
 import dagger.Binds
 import dagger.Module
-import javax.inject.Singleton
 
 @Module(includes = [DataProviderModule::class])
 interface DataModule {
 
-    @Singleton
     @Binds
     fun bindRepository(repositoryImpl: RepositoryImpl): Repository
-
 
     @Binds
     fun bindSettingsRepository(settingsRepositoryImpl: SettingsRepositoryImpl): SettingsRepository

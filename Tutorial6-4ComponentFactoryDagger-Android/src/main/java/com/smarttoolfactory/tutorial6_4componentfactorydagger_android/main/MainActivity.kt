@@ -12,20 +12,25 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.R
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.data.SettingsRepositoryImpl
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.di.AppComponent
+import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.domain.SettingsUseCase
 import com.smarttoolfactory.tutorial6_4componentfactorydagger_android.settings.SettingsActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**
  * * In this example ViewModels, UseCases and Repository values depend on whether they
- * are scoped with scope or not
+ * are scoped with a scope or not
  *
- * * If a ViewModel is annotated with scope that [AppComponent] has, for instance @Singleton,
+ * * If a ViewModel is annotated with scope [AppComponent] has, for instance @Singleton,
  * it's retained through the lifecycle of the app.
  *
- * * NotificationsViewModel is created using Activity so it's instance is RETAINED, and NOT
+ * * NotificationsViewModel is created using Activity and it's instance is RETAINED, and NOT
  * created every time new NotificationFragment is created.
+ *
+ * * [SettingsUseCase] is @Singleton so it's and [SettingsRepositoryImpl] also retained in it,
+ * and returns values previously retrieved in [SettingsActivity]
  *
  */
 class MainActivity : DaggerAppCompatActivity() {
