@@ -1,3 +1,4 @@
+include ':Tutorial8-1DFM-App'
 include ':Tutorial1-1DaggerBasics', ':Tutorial6-1ComponentFactory', ':External-Tutorial-CodeLabs', ':External-Tutorial-SimpleAssitedInject'
 include ':Tutorial1-2DaggerBasics2'
 include ':Tutorial1-3ProvisionMethod'

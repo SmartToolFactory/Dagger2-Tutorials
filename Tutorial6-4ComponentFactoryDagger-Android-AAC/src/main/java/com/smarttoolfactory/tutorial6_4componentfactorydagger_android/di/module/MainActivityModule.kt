@@ -12,7 +12,8 @@ import dagger.Provides
 interface MainActivityModule {
 
     companion object {
-        // any bindings here are effectvely static and part of the module
+
+        // any bindings here are effectively static and part of the module
         @ActivityScope
         @JvmStatic
         @Provides
