@@ -38,6 +38,7 @@ dependencies {
 
     // Dagger Core dependencies
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation project(path: ':Tutorial4-8LayerLibrary')
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
     // Dagger Android dependencies

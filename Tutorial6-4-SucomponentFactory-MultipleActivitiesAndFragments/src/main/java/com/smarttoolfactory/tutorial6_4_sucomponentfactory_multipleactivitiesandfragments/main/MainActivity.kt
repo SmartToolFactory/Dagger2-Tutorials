@@ -48,14 +48,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
 
     /**
-     * Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with FirstFragment.
+     * 🔥🔥🔥 Injected from [MainActivityModule] with @ActivityScope
+     * which is the same object with [FirstFragment] and [SecondFragment]
      */
     @Inject
     lateinit var toastMaker: ToastMaker
 
     /**
-     * Constructor injection with @ActivityScope
+     * 🔥🔥🔥 Injected via constructor injection with @ActivityScope
+     * and same object with [SecondFragment]
      */
     @Inject
     lateinit var sensorController: SensorController

@@ -1,2 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test.tutorial4_7layerlibrary" />
+    package="com.test.tutorial4_7layerlibrary" >
+
+    <application>
+        <activity android:name=".LibraryActivity" />
+    </application>
+</manifest>

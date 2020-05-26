@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Dagger2.External-Tutorial-CodeLabs" target="1.7" />
+      <module name="Dagger2.External-Tutorial-Dagger-Android-Sample" target="1.7" />
+      <module name="Dagger2.External-Tutorial-DaggerApplication" target="1.7" />
+      <module name="Dagger2.External-Tutorial-DaggerDependentComponents" target="1.7" />
+      <module name="Dagger2.External-Tutorial-SimpleAssitedInject" target="1.7" />
+      <module name="Dagger2.External-Tutorial-SubComponentBuilder" target="1.7" />
+      <module name="Dagger2.External-Tutorial-Todo-MVP-Dagger2" target="1.7" />
+      <module name="Dagger2.Tutorial1-1DaggerBasics" target="1.7" />
+      <module name="Dagger2.Tutorial1-2DaggerBasics2" target="1.7" />
+      <module name="Dagger2.Tutorial1-3ProvisionMethod" target="1.7" />
+      <module name="Dagger2.Tutorial2-1InjectConstructor" target="1.7" />
+      <module name="Dagger2.Tutorial2-2SelectContructorAndFieldInjection" target="1.7" />
+      <module name="Dagger2.Tutorial3-1Scope1" target="1.7" />
+      <module name="Dagger2.Tutorial3-2Scope2" target="1.7" />
+      <module name="Dagger2.Tutorial3-3Qualifiers" target="1.7" />
+      <module name="Dagger2.Tutorial4-1DependentComponent" target="1.7" />
+      <module name="Dagger2.Tutorial4-2Subcomponents" target="1.7" />
+      <module name="Dagger2.Tutorial4-3ComponentBuilders" target="1.7" />
+      <module name="Dagger2.Tutorial4-4ComponentBuildersMultipleModules" target="1.7" />
+      <module name="Dagger2.Tutorial4-5SubComponentBuilders" target="1.7" />
+      <module name="Dagger2.Tutorial4-6SubComponentBuilders-MultipleModulesAndActvities" target="1.7" />
+      <module name="Dagger2.Tutorial4-7LayerImplementation" target="1.7" />
+      <module name="Dagger2.Tutorial4-7LayerLibrary" target="1.7" />
+      <module name="Dagger2.Tutorial4-8LayerImplementation2" target="1.7" />
+      <module name="Dagger2.Tutorial4-8LayerLibrary" target="1.7" />
+      <module name="Dagger2.Tutorial5-1Dagger-Android" target="1.7" />
+      <module name="Dagger2.Tutorial5-1Dagger-Android-ContributesAndroidInjector" target="1.7" />
+      <module name="Dagger2.Tutorial5-2Dagger-Android-SubComponents" target="1.7" />
+      <module name="Dagger2.Tutorial5-2Dagger-Android-SubComponents2SeedInstance" target="1.7" />
+      <module name="Dagger2.Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector" target="1.7" />
+      <module name="Dagger2.Tutorial5-3Dagger-Android-MultipleActivitiesAndFragments" target="1.7" />
+      <module name="Dagger2.Tutorial5-4Dagger-Android-MultipleActivitiesAndFragments" target="1.7" />
+      <module name="Dagger2.Tutorial6-1ComponentFactory" target="1.7" />
+      <module name="Dagger2.Tutorial6-2ComponentFactoryVsBuilder" target="1.7" />
+      <module name="Dagger2.Tutorial6-3SubComponentFactory" target="1.7" />
+      <module name="Dagger2.Tutorial6-4-SucomponentFactory-MultipleActivitiesAndFragments" target="1.7" />
+      <module name="Dagger2.Tutorial6-4ComponentFactoryDagger-Android-AAC" target="1.8" />
+      <module name="Dagger2.Tutorial7-1BindsVsProvides" target="1.8" />
+      <module name="Dagger2.Tutorial7-2BindsVsProvides2" target="1.8" />
+      <module name="Dagger2.Tutorial8-1DFM-App" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

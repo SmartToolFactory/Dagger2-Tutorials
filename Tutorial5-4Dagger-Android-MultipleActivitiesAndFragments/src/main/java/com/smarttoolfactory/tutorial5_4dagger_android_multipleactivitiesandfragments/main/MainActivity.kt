@@ -32,18 +32,22 @@ import javax.inject.Inject
  */
 class MainActivity : DaggerAppCompatActivity() {
 
+
     // Injected from AppModule with @Singleton
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
     /**
-     * Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with FirstFragmetn.
+     * 🔥🔥🔥 Injected from [MainActivityModule] with @ActivityScope
+     * which is the same object with [FirstFragment] and [SecondFragment]
      */
     @Inject
     lateinit var toastMaker: ToastMaker
 
-    // Constructor Injection
+    /**
+     * 🔥🔥🔥 Injected via constructor injection with @ActivityScope
+     * and same object with [SecondFragment]
+     */
     @Inject
     lateinit var sensorController: SensorController
 

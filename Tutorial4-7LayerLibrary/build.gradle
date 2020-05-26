@@ -38,6 +38,7 @@ dependencies {
 
     // Dagger Core dependencies
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
     // Dagger Android dependencies

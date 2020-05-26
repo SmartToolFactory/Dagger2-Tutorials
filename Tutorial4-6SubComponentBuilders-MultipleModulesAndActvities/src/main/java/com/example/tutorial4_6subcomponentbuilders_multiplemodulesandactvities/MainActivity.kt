@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvInfo).text =
                 "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "@ActivityScope dummyDependency: ${dummyDependency.hashCode()}\n" +
-                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}" +
+                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}\n" +
                         "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
     }
 

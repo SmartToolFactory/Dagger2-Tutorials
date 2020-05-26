@@ -29,7 +29,7 @@ class FirstFragment : Fragment() {
 
     /**
      * 🔥🔥🔥 Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with MainActivity
+     * which is the same object with [MainActivity] and [SecondFragment]
      */
     @Inject
     lateinit var toastMaker: ToastMaker

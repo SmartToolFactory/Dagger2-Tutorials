@@ -26,6 +26,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':Tutorial4-7LayerLibrary')
+
     implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
     // AppCompat
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"

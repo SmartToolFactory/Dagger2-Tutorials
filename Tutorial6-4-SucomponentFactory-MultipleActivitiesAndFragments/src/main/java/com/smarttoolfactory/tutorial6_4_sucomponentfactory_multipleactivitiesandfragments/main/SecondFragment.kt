@@ -29,7 +29,7 @@ class SecondFragment : Fragment() {
 
     /**
      * 🔥🔥🔥 Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with MainActivity
+     * which is the same object with [MainActivity] and [FirstFragment]
      */
     @Inject
     lateinit var toastMaker: ToastMaker
@@ -41,7 +41,8 @@ class SecondFragment : Fragment() {
     lateinit var fragmentObject: FragmentObject
 
     /**
-     * Injected via constructor injection with @ActivityScope
+     * 🔥🔥🔥 Injected via constructor injection with @ActivityScope
+     * and same object with [MainActivity]
      */
     @Inject
     lateinit var sensorController: SensorController

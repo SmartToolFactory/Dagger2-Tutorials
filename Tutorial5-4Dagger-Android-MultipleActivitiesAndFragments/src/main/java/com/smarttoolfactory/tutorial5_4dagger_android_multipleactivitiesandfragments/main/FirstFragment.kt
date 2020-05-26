@@ -28,7 +28,7 @@ class FirstFragment : DaggerFragment() {
 
     /**
      * 🔥🔥🔥 Injected from [MainActivityModule] with @ActivityScope
-     * which is the same object with MainActivity
+     * which is the same object with [MainActivity]
      */
     @Inject
    lateinit var toastMaker: ToastMaker

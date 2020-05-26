@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // 🔥 MotorComponent is dependency of VehicleComponent
         val motorComponent: MotorComponent = DaggerMotorComponent
                 .builder()
                 .motorModule(MotorModule())
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         val vehicleComponent: VehicleComponent = DaggerVehicleComponent
                 .builder()
+                // 🔥 Even though VehicleComponent does not have this method,
+                //  it must be added  to VehicleComponent builder
                 .motorComponent(motorComponent)
                 .vehicleModule(VehicleModule())
                 .build()

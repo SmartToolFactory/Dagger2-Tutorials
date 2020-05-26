@@ -1,4 +1,4 @@
-package com.example.tutorial4_6subcomponentbuilders_multiplemodulesandactvities.model
+package com.test.tutorial4_7layerlibrary.model
 
 import android.content.Context
 import javax.inject.Inject
