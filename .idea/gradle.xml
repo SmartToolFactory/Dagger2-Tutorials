@@ -6,18 +6,14 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/External-Tutorial-CodeLabs" />
-            <option value="$PROJECT_DIR$/External-Tutorial-Dagger-Android-Sample" />
-            <option value="$PROJECT_DIR$/External-Tutorial-DaggerApplication" />
-            <option value="$PROJECT_DIR$/External-Tutorial-DaggerDependentComponents" />
             <option value="$PROJECT_DIR$/External-Tutorial-SimpleAssitedInject" />
-            <option value="$PROJECT_DIR$/External-Tutorial-SubComponentBuilder" />
-            <option value="$PROJECT_DIR$/External-Tutorial-Todo-MVP-Dagger2" />
             <option value="$PROJECT_DIR$/Tutorial1-1DaggerBasics" />
             <option value="$PROJECT_DIR$/Tutorial1-2DaggerBasics2" />
             <option value="$PROJECT_DIR$/Tutorial1-3ProvisionMethod" />
@@ -27,12 +23,13 @@
             <option value="$PROJECT_DIR$/Tutorial3-2Scope2" />
             <option value="$PROJECT_DIR$/Tutorial3-3Qualifiers" />
             <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent" />
+            <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent2" />
             <option value="$PROJECT_DIR$/Tutorial4-2Subcomponents" />
             <option value="$PROJECT_DIR$/Tutorial4-3ComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
             <option value="$PROJECT_DIR$/Tutorial4-5SubComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-6SubComponentBuilders-MultipleModulesAndActvities" />
-            <option value="$PROJECT_DIR$/Tutorial4-7LayerImplementation" />
+            <option value="$PROJECT_DIR$/Tutorial4-7LayerImplementation-Dependent-Component" />
             <option value="$PROJECT_DIR$/Tutorial4-7LayerLibrary" />
             <option value="$PROJECT_DIR$/Tutorial4-8LayerImplementation2" />
             <option value="$PROJECT_DIR$/Tutorial4-8LayerLibrary" />
@@ -50,6 +47,8 @@
             <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android-AAC" />
             <option value="$PROJECT_DIR$/Tutorial7-1BindsVsProvides" />
             <option value="$PROJECT_DIR$/Tutorial7-2BindsVsProvides2" />
+            <option value="$PROJECT_DIR$/Tutorial8-1DaggerHilt-Basics" />
+            <option value="$PROJECT_DIR$/Tutorial8-2DaggerHilt-ComponentScopes" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -12,8 +12,9 @@ abstract class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        baseAppComponent = DaggerBaseAppComponent.builder().application(this).build()
-
+        baseAppComponent = DaggerBaseAppComponent.builder()
+                .application(this)
+                .build()
     }
 
 

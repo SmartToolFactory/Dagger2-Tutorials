@@ -3,6 +3,7 @@ package com.test.tutorial4_7layerlibrary.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.test.tutorial4_7layerlibrary.model.LibraryObject
 import com.test.tutorial4_7layerlibrary.model.ToastMaker
 import dagger.Module
 import dagger.Provides
@@ -19,4 +20,7 @@ class BaseAppModule {
     @Singleton
     @Provides
     fun provideToastMaker(application: Application) = ToastMaker(application)
+
+    @Provides
+    fun provideLibraryObject() = LibraryObject()
 }

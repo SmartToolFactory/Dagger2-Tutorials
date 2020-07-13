@@ -3,7 +3,9 @@ package com.example.tutorial3scope2
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tutorial3scope2.di.ApplicationModule
 import com.example.tutorial3scope2.model.MySharedPreferences
+import com.example.tutorial3scope2.model.SampleObject
 import javax.inject.Inject
 import javax.inject.Named
 
@@ -21,7 +23,7 @@ import javax.inject.Named
 class MainActivity : AppCompatActivity() {
 
     /**
-     * 🔥 This object has a scope in [ApplicationComponent]
+     * 🔥 This object has a scope in [ApplicationModule]
      * thus it's a SINGLETON object
      */
     @Named("Field")
@@ -35,16 +37,25 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var mySharedPreferencesConstructor: MySharedPreferences
 
+    /**
+     *  🔥 Injected from [ApplicationModule] with no scope which creates new instance
+     *  of this object every time this Activity is created
+     */
+    @Inject
+    lateinit var sampleObject: SampleObject
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         (applicationContext as MyApplication).applicationComponent.inject(this)
 
-        println("Field Injected: $mySharedPreferences")
-        println("Constructor Injected: $mySharedPreferencesConstructor")
+        println("Field Injected @Singleton myShared: $mySharedPreferences")
+        println("Constructor Injected No Scope myShared: $mySharedPreferencesConstructor")
 
-        findViewById<TextView>(R.id.tvInfo).text = "Field Injected: $mySharedPreferences\n" +
-                "Constructor Injected: $mySharedPreferencesConstructor"
+        findViewById<TextView>(R.id.tvInfo).text =
+                "Field Injected @Singleton myShared: ${mySharedPreferences.hashCode()}\n" +
+                        "Constructor injected  No Scope myShared: ${mySharedPreferencesConstructor.hashCode()}\n" +
+                        "AppModule with No scope sampleObject: ${sampleObject.hashCode()}"
     }
 }

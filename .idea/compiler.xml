@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="Dagger2.External-Tutorial-CodeLabs" target="1.7" />
       <module name="Dagger2.External-Tutorial-Dagger-Android-Sample" target="1.7" />
       <module name="Dagger2.External-Tutorial-DaggerApplication" target="1.7" />
@@ -18,12 +18,13 @@
       <module name="Dagger2.Tutorial3-2Scope2" target="1.7" />
       <module name="Dagger2.Tutorial3-3Qualifiers" target="1.7" />
       <module name="Dagger2.Tutorial4-1DependentComponent" target="1.7" />
+      <module name="Dagger2.Tutorial4-1DependentComponent2" target="1.7" />
       <module name="Dagger2.Tutorial4-2Subcomponents" target="1.7" />
       <module name="Dagger2.Tutorial4-3ComponentBuilders" target="1.7" />
       <module name="Dagger2.Tutorial4-4ComponentBuildersMultipleModules" target="1.7" />
       <module name="Dagger2.Tutorial4-5SubComponentBuilders" target="1.7" />
       <module name="Dagger2.Tutorial4-6SubComponentBuilders-MultipleModulesAndActvities" target="1.7" />
-      <module name="Dagger2.Tutorial4-7LayerImplementation" target="1.7" />
+      <module name="Dagger2.Tutorial4-7LayerImplementation-Dependent-Component" target="1.7" />
       <module name="Dagger2.Tutorial4-7LayerLibrary" target="1.7" />
       <module name="Dagger2.Tutorial4-8LayerImplementation2" target="1.7" />
       <module name="Dagger2.Tutorial4-8LayerLibrary" target="1.7" />

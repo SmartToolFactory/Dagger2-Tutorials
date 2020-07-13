@@ -4,30 +4,34 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.test.tutorial4_7layerlibrary.di.LibraryActivitySubComponent
-import com.test.tutorial4_7layerlibrary.model.MySharedPreferences
-import com.test.tutorial4_7layerlibrary.model.SensorController
-import com.test.tutorial4_7layerlibrary.model.SingletonObject
-import com.test.tutorial4_7layerlibrary.model.ToastMaker
+import com.test.tutorial4_7layerlibrary.di.BaseAppModule
+import com.test.tutorial4_7layerlibrary.di.LibraryActivityModule
+import com.test.tutorial4_7layerlibrary.model.*
 import javax.inject.Inject
 
 class LibraryActivity : AppCompatActivity() {
 
     /**
-     *  Injected from BaseAppModule @Singleton
+     *  Injected from [BaseAppModule] @Singleton
      */
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
     /**
-     * Injected from BaseAppModule @Singleton
+     * Injected from [BaseAppModule] @Singleton
      */
     @Inject
     lateinit var toastMaker: ToastMaker
 
 
     /**
-     * Injected from [LibraryActivitySubComponent] with @ActivityScope
+     * 🔥🔥🔥 Injected from [BaseAppModule] with NO SCOPE
+     */
+    @Inject
+    lateinit var libraryObject: LibraryObject
+
+    /**
+     * Injected from [LibraryActivityModule] with @ActivityScope
      */
     @Inject
     lateinit var mySharedPreferences: MySharedPreferences
@@ -42,7 +46,6 @@ class LibraryActivity : AppCompatActivity() {
     /**
      * Injected via Constructor Injection with @Singleton scope
      */
-
     @Inject
     lateinit var singletonObject: SingletonObject
 
@@ -57,6 +60,7 @@ class LibraryActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvInfo).text =
                 "BaseAppModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "BaseAppModule ToastMaker: ${toastMaker.hashCode()}\n" +
+                        "🔥 BaseAppModule LibraryModuleObject: ${libraryObject.hashCode()}\n" +
                         "@ActivityScope MySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
                         "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n" +
                         "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
