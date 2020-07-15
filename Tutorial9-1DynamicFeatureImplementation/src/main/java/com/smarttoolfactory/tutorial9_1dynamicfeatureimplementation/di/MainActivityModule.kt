@@ -1,6 +1,6 @@
 package com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di
 
-import android.content.Context
+import android.app.Application
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di.scope.ActivityScope
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.ToastMaker
 import dagger.Module
@@ -18,7 +18,7 @@ abstract class MainActivityModule {
         @JvmStatic
         @ActivityScope
         @Provides
-        fun provideToastMaker(context: Context): ToastMaker {
+        fun provideToastMaker(context: Application): ToastMaker {
             return ToastMaker(context)
         }
     }

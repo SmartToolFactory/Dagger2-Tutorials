@@ -14,7 +14,9 @@ class MyApplication : Application() {
         super.onCreate()
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-        appComponent = DaggerAppComponent.factory().create(this,sharedPreferences)
+        appComponent = DaggerAppComponent
+                .factory()
+                .create(this,sharedPreferences)
     }
 
 
