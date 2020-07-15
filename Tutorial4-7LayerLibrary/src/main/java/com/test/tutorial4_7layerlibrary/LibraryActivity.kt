@@ -61,7 +61,7 @@ class LibraryActivity : AppCompatActivity() {
                 "BaseAppModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "BaseAppModule ToastMaker: ${toastMaker.hashCode()}\n" +
                         "🔥 BaseAppModule LibraryModuleObject: ${libraryObject.hashCode()}\n" +
-                        "@ActivityScope MySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
+                        "LibraryActivityModule @ActivityScope mySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
                         "Constructor Un-scoped sensorController: ${sensorController.hashCode()}\n" +
                         "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 

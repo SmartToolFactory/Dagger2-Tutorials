@@ -1,8 +1,10 @@
 package com.test.tutorial4_7layerimplementation.di
 
+import android.app.Application
 import com.test.tutorial4_7layerimplementation.MainActivity
 import com.test.tutorial4_7layerlibrary.di.ActivityScope
 import com.test.tutorial4_7layerlibrary.di.BaseAppComponent
+import dagger.BindsInstance
 import dagger.Component
 
 /**
@@ -23,14 +25,16 @@ interface MainActivityComponent {
 
     fun inject(mainActivity: MainActivity)
 
-    // TODO NOT WORKING?
-//    @Component.Builder
-//    interface Builder {
-//
-//        @BindsInstance
-//        fun application(application: Application): Builder
-//
-//        fun build(): MainActivityComponent
-//    }
+    @Component.Builder
+    interface Builder {
+
+        fun build(): MainActivityComponent
+
+        @BindsInstance
+        fun application(application: Application): Builder
+        fun mainActivityModule(module: MainActivityModule): Builder
+        fun baseAppComponent(baseAppComponent: BaseAppComponent): Builder
+
+    }
 
 }

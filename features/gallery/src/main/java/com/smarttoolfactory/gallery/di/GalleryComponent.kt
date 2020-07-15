@@ -14,17 +14,7 @@ interface GalleryComponent {
 
     fun inject(galleryActivity: GalleryActivity)
 
-    //    @Component.Builder
-//    interface Builder {
-//
-//        fun build(): GalleryComponent
-//
-////         @BindsInstance replaces Builder appModule(AppModule appModule)
-////         And removes Constructor with Application AppModule(Application)
-////        @BindsInstance
-////        fun application(application: Application): Builder
-//
-//    }
+
     @Component.Builder
     interface Builder {
 

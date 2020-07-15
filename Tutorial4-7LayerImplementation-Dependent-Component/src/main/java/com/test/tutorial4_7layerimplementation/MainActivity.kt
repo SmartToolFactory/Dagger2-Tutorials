@@ -1,30 +1,48 @@
 package com.test.tutorial4_7layerimplementation
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.test.tutorial4_7layerimplementation.di.DaggerMainActivityComponent
 import com.test.tutorial4_7layerimplementation.di.MainActivityModule
 import com.test.tutorial4_7layerimplementation.model.User
 import com.test.tutorial4_7layerlibrary.BaseApplication
 import com.test.tutorial4_7layerlibrary.LibraryActivity
+import com.test.tutorial4_7layerlibrary.di.BaseAppComponent
 import com.test.tutorial4_7layerlibrary.di.BaseAppModule
 import com.test.tutorial4_7layerlibrary.model.ActivityScopedObject
 import com.test.tutorial4_7layerlibrary.model.LibraryObject
+import com.test.tutorial4_7layerlibrary.model.ToastMaker
 import javax.inject.Inject
 
-
+/**
+ * In this tutorial [MainActivityComponent] depends on [BaseAppComponent]
+ * * To inject objects from [BaseAppComponent], [BaseAppComponent] should have provision methods
+ * other than @Provides
+ *
+ * * MainActivityComponent should have a [Component.Builder] with baseComponent()`, `application()`
+ * and `mainActivityModule()` methods
+ *
+ *
+ */
 class MainActivity : AppCompatActivity() {
 
 
     /**
-     * Injected via Constructor Injection NO Scope from Library
+     *  Injected from BaseAppComponent with @Singleton
      */
-    // 🔥🔥  ❌ Compile ERROR: cannot be provided without an @Provides-annotated method because
-    // of Context
-//    @Inject
-//    lateinit var sensorController: SensorController
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
+
+    /**
+     *  Injected from BaseAppComponent with @Singleton
+     */
+    @Inject
+    lateinit var toastMaker: ToastMaker
+
 
     /**
      * Injected via Constructor Injection with @Singleton scope from Library
@@ -70,11 +88,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//        findViewById<TextView>(R.id.tvInfo).text =
-//                "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
-//                        "@ActivityScope dummyDependency: ${dummyDependency.hashCode()}\n" +
-//                        "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}\n" +
-//                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
+        findViewById<TextView>(R.id.tvInfo).text =
+                "AppModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "AppModule toastMaker: ${toastMaker.hashCode()}\n" +
+                        "Constructor @ActivityScope activityScopedObject: ${activityScopedObject.hashCode()}\n" +
+                        "Constructor @Singleton singletonObject: ${libraryObject.hashCode()}"
+
     }
 
 
@@ -83,6 +102,8 @@ class MainActivity : AppCompatActivity() {
 
         DaggerMainActivityComponent.builder()
                 .baseAppComponent(baseComponent)
+                .mainActivityModule(MainActivityModule())
+                .application(application)
                 .build()
                 .inject(this)
     }
