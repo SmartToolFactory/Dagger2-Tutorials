@@ -1,3 +1,5 @@
 package com.smarttoolfactory.gallery
 
-class GalleryViewer
+import android.content.Context
+
+class GalleryViewer(private val context: Context)

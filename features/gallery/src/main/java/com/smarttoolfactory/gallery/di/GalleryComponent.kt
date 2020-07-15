@@ -14,17 +14,28 @@ interface GalleryComponent {
 
     fun inject(galleryActivity: GalleryActivity)
 
+    // TODO Alternative1 With Builder
+//    @Component.Builder
+//    interface Builder {
+//
+//        fun build(): GalleryComponent
+//
+//        @BindsInstance
+//        fun application(application: Application): Builder
+//        fun galleryModule(module: GalleryModule): Builder
+//
+//        fun appComponent(appComponent: AppComponent): Builder
+//
+//    }
 
-    @Component.Builder
-    interface Builder {
+    // TODO Alternative2 With Factory
+    @Component.Factory
+    interface Factory {
 
-        fun build(): GalleryComponent
+        fun create(appComponent: AppComponent,
+                   galleryModule: GalleryModule,
+                   @BindsInstance application: Application): GalleryComponent
 
-        @BindsInstance
-        fun application(application: Application): Builder
-        fun galleryModule(module: GalleryModule): Builder
-
-        fun appComponent(appComponent: AppComponent): Builder
 
     }
 }

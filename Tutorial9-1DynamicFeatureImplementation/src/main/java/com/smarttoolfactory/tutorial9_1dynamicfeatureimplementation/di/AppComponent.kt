@@ -2,7 +2,7 @@ package com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di
 
 import android.app.Application
 import android.content.SharedPreferences
-import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.AnyDependency
+import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.ToastMaker
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
 
-    fun provideAnyDependency(): AnyDependency
+    fun provideToastMaker(): ToastMaker
     fun provideSharedPreferences(): SharedPreferences
 
     fun inject(application: Application)

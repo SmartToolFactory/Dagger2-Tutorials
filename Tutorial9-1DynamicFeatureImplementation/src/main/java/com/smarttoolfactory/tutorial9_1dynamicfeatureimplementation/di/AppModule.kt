@@ -3,7 +3,7 @@ package com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.AnyDependency
+import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.ToastMaker
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -21,7 +21,7 @@ import javax.inject.Singleton
     }
 
     @Provides
-    fun provideAnyDependency() = AnyDependency()
+    fun provideToastMaker(application: Application) = ToastMaker(application)
 }
 
 /**
@@ -37,7 +37,7 @@ import javax.inject.Singleton
 //        return application.getSharedPreferences("PrefName", Context.MODE_PRIVATE)
 //    }
 //
-//    @Provides
-//    fun provideAnyDependency() = AnyDependency()
+//@Provides
+//fun provideToastMaker(application: Application) = ToastMaker(application)
 //
 //}
