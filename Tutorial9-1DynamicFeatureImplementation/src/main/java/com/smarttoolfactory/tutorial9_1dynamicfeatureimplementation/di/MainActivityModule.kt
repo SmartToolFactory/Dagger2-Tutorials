@@ -2,14 +2,11 @@ package com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di
 
 import android.app.Application
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di.scope.ActivityScope
-import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.ToastMaker
+import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.MainActivityDependency
 import dagger.Module
 import dagger.Provides
 
-/**
- * Scope of @ContributesAndroidInjector methods and their modules should be same.
- * Otherwise app returns HAS CONFLICTING SCOPES error
- */
+
 @Module
 abstract class MainActivityModule {
 
@@ -18,8 +15,8 @@ abstract class MainActivityModule {
         @JvmStatic
         @ActivityScope
         @Provides
-        fun provideToastMaker(context: Application): ToastMaker {
-            return ToastMaker(context)
+        fun provideToastMaker(context: Application): MainActivityDependency {
+            return MainActivityDependency(context)
         }
     }
 }

@@ -27,9 +27,15 @@ class GalleryActivity : AppCompatActivity() {
     @Inject
     lateinit var toastMaker: ToastMaker
 
+    /**
+     * Injected from [GalleryModule] with @GalleryScope
+     */
     @Inject
     lateinit var galleryViewer: GalleryViewer
 
+    /**
+     * Injected from [GalleryModule] with @GalleryScope
+     */
     @Inject
     lateinit var dummyDependency: DummyDependency
 
@@ -41,8 +47,8 @@ class GalleryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gallery)
 
         findViewById<TextView>(R.id.tvInfo).text =
-                "ApplicationModule toastMaker: ${toastMaker.hashCode()}\n" +
-                        "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                "AppModule @Singleton sharedPreferences: ${sharedPreferences.hashCode()}\n" +
+                        "AppModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "GalleryModule @GalleryScope  dummyDependency: ${dummyDependency.hashCode()}\n" +
                         "GalleryModule @GalleryScope galleryViewer: ${galleryViewer.hashCode()}"
 

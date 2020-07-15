@@ -11,8 +11,17 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
 
-
+    /**
+     * 🔥🔥🔥 This method is required to get this object from a class that uses this component
+     * as dependent component
+     *
+     */
     fun provideToastMaker(): ToastMaker
+
+    /**
+     * 🔥🔥🔥 This method is required to get this object from a class that uses this component
+     * as dependent component
+     */
     fun provideSharedPreferences(): SharedPreferences
 
     fun inject(application: Application)
