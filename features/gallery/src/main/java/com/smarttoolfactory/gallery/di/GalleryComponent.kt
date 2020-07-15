@@ -4,9 +4,10 @@ import com.smarttoolfactory.gallery.GalleryActivity
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di.AppComponent
 import dagger.Component
 
-@Component(dependencies = [AppComponent::class], modules = [GalleryModule::class])
+@GalleryScope
+@Component(
+        dependencies = [AppComponent::class],
+        modules = [GalleryModule::class])
 interface GalleryComponent {
-
-
     fun inject(galleryActivity: GalleryActivity)
 }

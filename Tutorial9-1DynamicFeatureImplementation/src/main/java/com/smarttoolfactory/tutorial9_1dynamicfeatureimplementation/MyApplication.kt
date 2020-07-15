@@ -15,6 +15,8 @@ open class MyApplication : Application() {
     open fun initializeComponent(): AppComponent {
         // Creates an instance of AppComponent using its Factory constructor
         // We pass the applicationContext that will be used as Application
-        return DaggerAppComponent.factory().create(this)
+        return DaggerAppComponent.factory().create(this).apply {
+            inject(this@MyApplication)
+        }
     }
 }

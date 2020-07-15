@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.di.MainActivitySubComponent
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.SensorController
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var mainActivityComponent: MainActivitySubComponent
 
     @Inject
     lateinit var sharedPreferences: SharedPreferences
@@ -19,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        (application as MyApplication).appComponent.inject(this)
+//        (application as MyApplication).appComponent.inject(this)
+
+        initInjection()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,5 +41,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    private fun initInjection() {
+
+        val appComponent = (application as MyApplication).appComponent
+
+        mainActivityComponent = appComponent
+                .mainActivityComponentFactory()
+                .create()
+
+        mainActivityComponent.inject(this)
     }
 }
