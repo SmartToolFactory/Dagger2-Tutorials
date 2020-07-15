@@ -1,4 +1,4 @@
-package com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model
+package com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model
 
 import android.content.Context
 import android.widget.Toast

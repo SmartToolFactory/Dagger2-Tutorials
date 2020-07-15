@@ -1,4 +1,5 @@
-include ':Tutorial8-2DaggerHilt-ComponentScopes'
+include ':features:gallery'
+
 include ':External-Tutorial-CodeLabs'
 include ':External-Tutorial-SimpleAssitedInject'
 
@@ -33,14 +34,23 @@ include ':Tutorial5-2Dagger-Android-SubComponents3-ContributesAndroidInjector'
 include ':Tutorial5-3Dagger-Android-MultipleActivitiesAndFragments'
 include ':Tutorial5-4Dagger-Android-MultipleActivitiesAndFragments'
 
+// Factory
 include ':Tutorial6-1ComponentFactory'
 include ':Tutorial6-2ComponentFactoryVsBuilder'
 include ':Tutorial6-3SubComponentFactory'
 include ':Tutorial6-4ComponentFactoryDagger-Android-AAC'
 include ':Tutorial6-4-SucomponentFactory-MultipleActivitiesAndFragments'
 
+// Binds and Provides Annotations
 include ':Tutorial7-1BindsVsProvides'
 include ':Tutorial7-2BindsVsProvides2'
+include ':Tutorial7-3BindsContextWithApplication'
 
+// Dagger Hilt
 include ':Tutorial8-1DaggerHilt-Basics'
+include ':Tutorial8-2DaggerHilt-ComponentScopes'
+
+// Dynamic Feature Modules
+include ':Tutorial9-1DynamicFeatureImplementation'
+
 

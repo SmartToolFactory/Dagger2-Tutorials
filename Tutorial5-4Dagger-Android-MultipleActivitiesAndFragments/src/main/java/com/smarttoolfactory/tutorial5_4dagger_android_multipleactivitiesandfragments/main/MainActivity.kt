@@ -4,9 +4,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.R
 import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.SensorController
+import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 

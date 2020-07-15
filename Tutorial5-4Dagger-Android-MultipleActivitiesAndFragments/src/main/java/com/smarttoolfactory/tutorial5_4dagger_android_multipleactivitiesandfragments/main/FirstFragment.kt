@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.R
 import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.FragmentObject
 import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.MySharedPreferences
+import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 

@@ -2,7 +2,7 @@ package com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfrag
 
 import android.content.Context
 import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.di.scope.ActivityScope
-import com.example.tutorial5_3dagger_android_multipleactivitiesandfragments.model.ToastMaker
+import com.smarttoolfactory.tutorial5_4dagger_android_multipleactivitiesandfragments.model.ToastMaker
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
