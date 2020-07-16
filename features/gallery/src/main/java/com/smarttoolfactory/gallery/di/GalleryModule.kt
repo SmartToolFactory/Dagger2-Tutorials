@@ -8,7 +8,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
-@Module(includes = [GalleryProvideModule::class])
+@Module(includes = [GalleryBindModule::class])
 class GalleryModule {
 
     @GalleryScope
@@ -21,7 +21,7 @@ class GalleryModule {
 }
 
 @Module
-abstract class GalleryProvideModule {
+abstract class GalleryBindModule {
     @Binds
     abstract fun bindContext(application: Application): Context
 

@@ -47,8 +47,16 @@
             <option value="$PROJECT_DIR$/Tutorial6-4ComponentFactoryDagger-Android-AAC" />
             <option value="$PROJECT_DIR$/Tutorial7-1BindsVsProvides" />
             <option value="$PROJECT_DIR$/Tutorial7-2BindsVsProvides2" />
+            <option value="$PROJECT_DIR$/Tutorial7-3BindsContextWithApplication" />
             <option value="$PROJECT_DIR$/Tutorial8-1DaggerHilt-Basics" />
             <option value="$PROJECT_DIR$/Tutorial8-2DaggerHilt-ComponentScopes" />
+            <option value="$PROJECT_DIR$/Tutorial9-1DynamicFeatureImplementation" />
+            <option value="$PROJECT_DIR$/Tutorial9-2DynamicFeatureImplementation2" />
+            <option value="$PROJECT_DIR$/Tutorial9-2core" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/feature_camera" />
+            <option value="$PROJECT_DIR$/features/feature_photos" />
+            <option value="$PROJECT_DIR$/features/gallery" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

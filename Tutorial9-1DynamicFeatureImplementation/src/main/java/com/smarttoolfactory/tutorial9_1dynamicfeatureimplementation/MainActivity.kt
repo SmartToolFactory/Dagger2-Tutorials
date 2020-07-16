@@ -12,6 +12,15 @@ import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.Sensor
 import com.smarttoolfactory.tutorial9_1dynamicfeatureimplementation.model.ToastMaker
 import javax.inject.Inject
 
+/**
+ * Tutorial for injecting dependencies from app to Activity which is inside dynamic feature module
+ *
+ * To inject from AppModule to feature module Activity there should be a **provision method** for
+ * each dependency should be injected.
+ *
+ * * Dynamic feature module should build it's component using binding, Module and
+ * dependent component(AppComponent for this instance) using Builder or Factory pattern.
+ */
 class MainActivity : AppCompatActivity() {
 
     lateinit var mainActivityComponent: MainActivitySubComponent

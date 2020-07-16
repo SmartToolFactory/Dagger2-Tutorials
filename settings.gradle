@@ -1,3 +1,5 @@
+include ':features:feature_photos'
+include ':features:feature_camera'
 include ':features:gallery'
 
 include ':External-Tutorial-CodeLabs'
@@ -52,5 +54,7 @@ include ':Tutorial8-2DaggerHilt-ComponentScopes'
 
 // Dynamic Feature Modules
 include ':Tutorial9-1DynamicFeatureImplementation'
+include ':Tutorial9-2DynamicFeatureImplementation2'
+include ':Tutorial9-2core'
 
 
