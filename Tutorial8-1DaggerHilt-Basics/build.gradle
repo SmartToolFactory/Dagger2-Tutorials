@@ -52,11 +52,9 @@ dependencies {
     // Lifecycle Extensions
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-
     // Dagger Core dependencies
     implementation "com.google.dagger:hilt-android:$rootProject.daggerHiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.daggerHiltVersion"
-
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

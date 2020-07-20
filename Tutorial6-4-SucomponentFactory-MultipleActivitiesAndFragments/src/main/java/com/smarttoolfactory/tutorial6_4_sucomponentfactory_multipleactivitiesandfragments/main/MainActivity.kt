@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         bindViews()
 
     }
@@ -100,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvInfo).text =
                 "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
-                        "@ActivityScope toastMaker: ${toastMaker.hashCode()}\n" +
+                        "🔥 MainActivityModule @ActivityScope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor @ActivityScope sensorController: ${sensorController.hashCode()}"
 
         Toast.makeText(this, "MainActivity: $sharedPreferences", Toast.LENGTH_SHORT).show()

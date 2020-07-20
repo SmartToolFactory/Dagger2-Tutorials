@@ -1,4 +1,4 @@
-package com.smarttoolfactory.tutorial8_2daggerhilt_componentscopes
+package com.smarttoolfactory.tutorial10_1dfm_daggerhilt
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,3 +1,4 @@
+include ':Tutorial10-1DFM-DaggerHilt'
 include ':features:feature_photos'
 include ':features:feature_camera'
 include ':features:gallery'

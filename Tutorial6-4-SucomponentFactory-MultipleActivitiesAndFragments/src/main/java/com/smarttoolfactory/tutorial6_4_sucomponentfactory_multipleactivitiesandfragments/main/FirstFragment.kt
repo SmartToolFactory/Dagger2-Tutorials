@@ -59,11 +59,14 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.findViewById<TextView>(R.id.tvTitle).text =
+                "Frag: ${this.javaClass.simpleName} #${this.hashCode()}\n"
+
         view.findViewById<TextView>(R.id.tvInfo).text =
-                "Frag: $this\n" +
+                "Frag: ${this.javaClass.simpleName} #${this.hashCode()}\n" +
                         "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "FirstFragmentModule @FragmentScope mySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
-                        "MainActivityModule @ActivityScope toastMaker: ${toastMaker.hashCode()}\n" +
+                        "🔥 MainActivityModule @ActivityScope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor @FragmentScope fragObject: ${fragmentObject.hashCode()}"
     }
 }
