@@ -27,6 +27,7 @@ android {
 dependencies {
 
     implementation project(":Tutorial9-2DynamicFeatureImplementation2")
+    implementation project(':Tutorial9-2core')
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

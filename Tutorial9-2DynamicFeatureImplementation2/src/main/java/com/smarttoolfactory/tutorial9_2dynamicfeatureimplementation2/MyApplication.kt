@@ -16,7 +16,6 @@ open class MyApplication : Application() {
         DaggerCoreComponent.factory().create(this)
     }
 
-
     companion object {
         @JvmStatic
         fun coreComponent(context: Context) =

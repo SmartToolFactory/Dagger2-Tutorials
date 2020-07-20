@@ -5,12 +5,35 @@ import com.smarttoolfactory.tutorial9_2core.di.BaseActivityComponent
 import com.smarttoolfactory.tutorial9_2core.di.CoreComponent
 import com.smarttoolfactory.tutorial9_2core.di.scope.ActivityScope
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.MainActivity
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.main.MainFragmentSubComponent
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityDependency
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.ToastMaker
 import dagger.BindsInstance
 import dagger.Component
 
+/**
+ * [FragmentSubComponentsModule] is for adding Subcomponent
+ *
+ */
 @ActivityScope
-@Component(dependencies = [CoreComponent::class], modules = [MainActivityModule::class])
-interface MainActivityComponent:BaseActivityComponent<MainActivity> {
+@Component(
+        dependencies = [CoreComponent::class],
+        modules = [
+            FragmentSubComponentsModule::class,
+            MainActivityModule::class]
+)
+interface MainActivityComponent : BaseActivityComponent<MainActivity> {
+
+    /*
+        🔥🔥🔥 Provision methods to provide the dependencies from [MainActivityModule] to components that
+        depends on MainActivityComponent.
+
+        PhotoComponent depends on this component
+     */
+    fun provideToastMaker(): ToastMaker
+    fun provideMainActivityDependency(): MainActivityDependency
+
+    fun mainFragmentFactory(): MainFragmentSubComponent.Factory
 
     @Component.Factory
     interface Factory {

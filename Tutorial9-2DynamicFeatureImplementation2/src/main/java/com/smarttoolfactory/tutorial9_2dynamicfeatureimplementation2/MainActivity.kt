@@ -1,9 +1,10 @@
 package com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.smarttoolfactory.tutorial9_2core.di.CoreComponent
+import com.smarttoolfactory.tutorial9_2core.di.CoreModule
 import com.smarttoolfactory.tutorial9_2core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial9_2core.model.CoreDependency
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.di.DaggerMainActivityComponent
@@ -16,38 +17,42 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mainActivityComponent: MainActivityComponent
+
     /**
-     * Injected from [CoreComponent] with @Singleton scope
+     * Injected from [CoreModule] with @Singleton scope
      */
     @Inject
     lateinit var coreDependency: CoreDependency
 
     /**
-     * Injected from [CoreComponent] with no scope
+     * Injected from [CoreModule] with no scope
      */
     @Inject
     lateinit var coreActivityDependency: CoreActivityDependency
 
     /**
-     * Injected from [MainActivityComponent] with no scope
+     * Injected from [MainActivityModule] with no scope
      */
     @Inject
     lateinit var toastMaker: ToastMaker
 
-
     /**
      *
-     * Injected from [MainActivityComponent] with @ActivityScope
+     * Injected from [MainActivityModule] with @ActivityScope
      * * To inject this there should be @Binds that gets Context from an Application
      */
     @Inject
     lateinit var mainActivityDependency: MainActivityDependency
 
+    /**
+     * Injected via constructor injection
+     */
     @Inject
     lateinit var sensorController: SensorController
 
     /**
-     * ❌ Cannot inject object with @Singleton or any scope other than [MainActivityComponent] has to this class
+     * ❌ Cannot inject object with @Singleton or any scope other than [MainActivityModule] has to this class
      * from this module
      *
      * ### Error: may not reference bindings with different scopes: public abstract interface MainActivityComponent extends
@@ -55,29 +60,32 @@ class MainActivity : AppCompatActivity() {
 //    @Inject
 //    lateinit var singletonObject: SingletonObject
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        initInjection()
+        initCoreDependentInjection()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.tvInfo).text =
-                "CoreComponent @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreComponent no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
-                        "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
+                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
+                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "MainActivityModule @ActivityScope mainActivityDependency: ${mainActivityDependency.hashCode()}\n" +
+                        "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor no scope sensorController: ${sensorController.hashCode()}"
     }
 
-    private fun initInjection() {
-        DaggerMainActivityComponent.factory()
+    private fun initCoreDependentInjection() {
+
+        mainActivityComponent = DaggerMainActivityComponent.factory()
                 .create(
                         coreComponent = coreComponent(),
                         mainActivityModule = MainActivityModule(),
                         application = application
                 )
-                .inject(this)
+
+        mainActivityComponent.inject(this)
     }
 
 

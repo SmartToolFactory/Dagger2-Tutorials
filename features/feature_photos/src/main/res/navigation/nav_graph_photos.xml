@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/photosFragment1"
-        android:name="com.smarttoolfactory.feature_photos.PhotosFragment1"
+        android:name="com.smarttoolfactory.feature_photos.PhotoFragment1"
         android:label="PhotosFragment1"
         tools:layout="@layout/fragment_photos1" >
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/photosFragment2"
-        android:name="com.smarttoolfactory.feature_photos.PhotosFragment2"
+        android:name="com.smarttoolfactory.feature_photos.PhotoFragment2"
         android:label="PhotosFragment2"
         tools:layout="@layout/fragment_photos2" />
 

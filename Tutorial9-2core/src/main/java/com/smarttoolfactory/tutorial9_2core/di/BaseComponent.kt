@@ -2,6 +2,7 @@ package com.smarttoolfactory.tutorial9_2core.di
 
 import android.app.Activity
 import android.app.Service
+import androidx.fragment.app.Fragment
 
 interface BaseComponent<T> {
 
@@ -12,6 +13,12 @@ interface BaseComponent<T> {
  * Base dagger component for use in activities.
  */
 interface BaseActivityComponent<T : Activity> : BaseComponent<T>
+
+
+/**
+ * Base dagger components for use in fragments.
+ */
+interface BaseFragmentComponent<T : Fragment> : BaseComponent<T>
 
 /**
  * Base dagger components for use in services.
