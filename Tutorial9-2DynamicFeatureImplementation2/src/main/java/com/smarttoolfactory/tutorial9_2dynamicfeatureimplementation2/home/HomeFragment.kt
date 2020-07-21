@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
      * because this fragment has no relation with [MainActivity]
      */
 //    @Inject
-//    lateinit var mainActivityDependency: MainActivityDependency
+//    lateinit var mainActivityObject: MainActivityObject
 
     @Inject
     lateinit var fragmentObject: FragmentObject

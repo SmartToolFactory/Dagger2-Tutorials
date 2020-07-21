@@ -5,7 +5,9 @@ import javax.inject.Singleton
 
 
 /**
- * 🔥 Cannot inject this object to any module since it has different scope which is @Singleton
+ * 🔥🔥 Cannot inject this object to
+ * any DEPENDENT module(MainActivityModule, dynamic feature CameraModule, etc)
+ * since it has different scope which is @Singleton
  */
 @Singleton
 class SingletonObject @Inject constructor() {

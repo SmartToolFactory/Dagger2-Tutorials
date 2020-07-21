@@ -3,7 +3,7 @@ package com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.di
 import android.app.Application
 import android.content.Context
 import com.smarttoolfactory.tutorial9_2core.di.scope.ActivityScope
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityDependency
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityObject
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.ToastMaker
 import dagger.Binds
 import dagger.Module
@@ -17,7 +17,7 @@ class MainActivityModule {
 
     @ActivityScope
     @Provides
-    fun provideMainActivityDependency(context: Context) = MainActivityDependency(context)
+    fun provideMainActivityObject(context: Context) = MainActivityObject(context)
 
 }
 

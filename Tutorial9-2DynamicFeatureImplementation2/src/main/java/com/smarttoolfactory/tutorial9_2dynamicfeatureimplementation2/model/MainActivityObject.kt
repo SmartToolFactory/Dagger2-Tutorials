@@ -5,4 +5,4 @@ import android.content.Context
 /**
  * To inject this there should be @Binds that gets Context from an Application
  */
-class MainActivityDependency(private val context: Context)
+class MainActivityObject(private val context: Context)

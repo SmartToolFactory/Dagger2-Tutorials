@@ -6,7 +6,7 @@ import com.smarttoolfactory.tutorial9_2core.di.CoreComponent
 import com.smarttoolfactory.tutorial9_2core.di.scope.ActivityScope
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.MainActivity
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.main.MainFragmentSubComponent
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityDependency
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityObject
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.ToastMaker
 import dagger.BindsInstance
 import dagger.Component
@@ -31,7 +31,7 @@ interface MainActivityComponent : BaseActivityComponent<MainActivity> {
         PhotoComponent depends on this component
      */
     fun provideToastMaker(): ToastMaker
-    fun provideMainActivityDependency(): MainActivityDependency
+    fun provideMainActivityDependency(): MainActivityObject
 
     fun mainFragmentFactory(): MainFragmentSubComponent.Factory
 

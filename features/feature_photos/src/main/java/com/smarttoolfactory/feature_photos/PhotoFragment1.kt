@@ -16,7 +16,7 @@ import com.smarttoolfactory.tutorial9_2core.di.CoreModule
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.MainActivity
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.di.MainActivityComponent
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.di.MainActivityModule
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityDependency
+import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityObject
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.SensorController
 import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.ToastMaker
 import javax.inject.Inject
@@ -50,7 +50,7 @@ class PhotoFragment1 : Fragment() {
      * * To inject this there should be @Binds that gets Context from an Application
      */
     @Inject
-    lateinit var mainActivityDependency: MainActivityDependency
+    lateinit var mainActivityObject: MainActivityObject
 
     /**
      * Injected from [PhotoModule] with @FeatureScope
@@ -59,7 +59,7 @@ class PhotoFragment1 : Fragment() {
     lateinit var photoObject: PhotoObject
 
     /**
-     * Injected via constructor injection
+     * Injected via constructor injection with no scope
      */
     @Inject
     lateinit var sensorController: SensorController
@@ -85,7 +85,7 @@ class PhotoFragment1 : Fragment() {
 //                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
 //                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                 "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
-                        "MainActivityModule @ActivityScope mainActivityDependency: ${mainActivityDependency.hashCode()}\n" +
+                        "MainActivityModule @ActivityScope mainActivityObject: ${mainActivityObject.hashCode()}\n" +
                         "PhotoModule @FeatureScope photoObject: ${photoObject.hashCode()}\n" +
                         "Constructor no scope sensorController: ${sensorController.hashCode()}"
     }

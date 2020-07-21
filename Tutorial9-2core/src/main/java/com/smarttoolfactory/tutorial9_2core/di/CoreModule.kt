@@ -26,7 +26,8 @@ object CoreProvideModule {
     fun provideCoreDependency(application: Application) = CoreDependency(application)
 
     /**
-     * 🔥 This is NOT an Activity scoped dependency neither for Activity nor Fragment
+     * 🔥🔥 This is NOT an Activity scoped dependency neither for Activity nor Fragment, yet it COMPILES with
+     * another scope @Singleton???
      */
     @ActivityScope
     @Provides
