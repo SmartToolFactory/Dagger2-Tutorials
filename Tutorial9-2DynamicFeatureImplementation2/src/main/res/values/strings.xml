@@ -2,4 +2,6 @@
     <string name="app_name">Tutorial9-2DynamicFeatureImplementation2</string>
     <string name="title_feature_camera">Camera</string>
     <string name="title_feature_photos">Photos</string>
+    <string name="title_feature_hilt_camera">Camera</string>
+    <string name="title_feature_hilt_photos">Photos</string>
 </resources>

@@ -1,7 +1,11 @@
+// Tutorial 9-1 Feature
+include ':features:gallery'
+// Tutorial 9-2 Features
 include ':features:feature_photos'
 include ':features:feature_camera'
-include ':features:gallery'
-include ':features:feature_leaderboard'
+// Tutorial 10-1 Features
+include ':features:feature_hilt_photos'
+include ':features:feature_hilt_camera'
 
 include ':External-Tutorial-CodeLabs'
 include ':External-Tutorial-SimpleAssitedInject'

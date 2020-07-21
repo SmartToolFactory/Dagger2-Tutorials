@@ -2,7 +2,6 @@ package com.smarttoolfactory.tutorial9_2core.di
 
 import android.app.Application
 import android.content.Context
-import com.smarttoolfactory.tutorial9_2core.di.scope.ActivityScope
 import com.smarttoolfactory.tutorial9_2core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial9_2core.model.CoreCameraDependency
 import com.smarttoolfactory.tutorial9_2core.model.CoreDependency
@@ -25,13 +24,6 @@ object CoreProvideModule {
     @Provides
     fun provideCoreDependency(application: Application) = CoreDependency(application)
 
-    /**
-     * 🔥🔥 This is NOT an Activity scoped dependency neither for Activity nor Fragment, acts like non scoped
-     * but exists in a singleton Component's module.
-     *
-     * * How does this even compile when both @Singleton and @ActivityScope exist in a single module???
-     */
-    @ActivityScope
     @Provides
     fun provideCoreActivityDependency(context: Context) = CoreActivityDependency(context)
 

@@ -10,6 +10,7 @@ import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.di.MainActivityModule
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.MainActivityObject
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.SensorController
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.SingletonObject
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.ToastMaker
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -51,9 +52,12 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Injected via constructor injection with @Singleton scope
+     *
+     * ### Unlike Tutorial 9-2 This can be injected because MainActivity's component does not
+     * depend on any component with another scope
      */
-//    @Inject
-//    lateinit var singletonObject: SingletonObject
+    @Inject
+    lateinit var singletonObject: SingletonObject
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,11 +66,11 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "MainActivityModule @ActivityScoped mainActivityObject: ${mainActivityObject.hashCode()}\n" +
                         "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor no scope sensorController: ${sensorController.hashCode()}\n"
-//                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
+                        "Constructor @Singleton singletonObject: ${singletonObject.hashCode()}"
 
 
     }

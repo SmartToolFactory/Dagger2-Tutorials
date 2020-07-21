@@ -1,4 +1,4 @@
-package com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.main
+package com.smarttoolfactory.tutorial10_1dfm_daggerhilt.main
 
 
 import android.annotation.SuppressLint
@@ -10,16 +10,14 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.smarttoolfactory.tutorial9_2core.di.CoreModule
-import com.smarttoolfactory.tutorial9_2core.model.CoreActivityDependency
-import com.smarttoolfactory.tutorial9_2core.model.CoreDependency
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.MainActivity
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.R
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.di.MainActivityModule
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.FragmentObject
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainActivityObject
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.MainFragmentObject
-import com.smarttoolfactory.tutorial9_2dynamicfeatureimplementation2.model.ToastMaker
+import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
+import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.R
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.FragmentObject
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.MainActivityObject
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.MainFragmentObject
+import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.model.ToastMaker
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
@@ -29,6 +27,8 @@ import javax.inject.Inject
  * * MainActivity is the parent component so, any dependency with @ActivityScope is injected
  * both to this fragment and MainActivity
  */
+
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     /**
@@ -55,6 +55,7 @@ class MainFragment : Fragment() {
      */
     @Inject
     lateinit var mainActivityObject: MainActivityObject
+
 
     /**
      * Injected from [MainFragmentModule] with no scope
@@ -89,20 +90,20 @@ class MainFragment : Fragment() {
         }
 
         btnCamera.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_camera)
+//            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_camera)
         }
 
         btnPhotos.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_photos)
+//            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_photos)
         }
 
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
                         "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
-                        "MainActivityModule @ActivityScope mainActivityObject: ${mainActivityObject.hashCode()}\n" +
-                        "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
+                        "MainActivityModule @ActivityScoped mainActivityObject: ${mainActivityObject.hashCode()}\n" +
                         "MainFragmentModule no scope mainFragmentObject: ${mainFragmentObject.hashCode()}\n" +
-                        "Constructor @FragmentScope fragmentObject: ${fragmentObject.hashCode()}"
+                        "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
+                        "Constructor @FragmentScoped fragmentObject: ${fragmentObject.hashCode()}"
     }
 
 
@@ -112,9 +113,9 @@ class MainFragment : Fragment() {
     }
 
     private fun initSubComponentInjection() {
-        val mainFragmentSubComponent = (activity as MainActivity).mainActivityComponent
-                .mainFragmentFactory().create(requireActivity())
-        mainFragmentSubComponent.inject(this) // cannot be in onAttach because of SavedStateHandle
+//        val mainFragmentSubComponent = (activity as MainActivity).mainActivityComponent
+//                .mainFragmentFactory().create()
+//        mainFragmentSubComponent.inject(this) // cannot be in onAttach because of SavedStateHandle
     }
 
 }

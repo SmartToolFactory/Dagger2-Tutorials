@@ -33,6 +33,9 @@ interface MainActivityComponent : BaseActivityComponent<MainActivity> {
     fun provideToastMaker(): ToastMaker
     fun provideMainActivityDependency(): MainActivityObject
 
+    /**
+     * Subcomponent of this component
+     */
     fun mainFragmentFactory(): MainFragmentSubComponent.Factory
 
     @Component.Factory

@@ -19,11 +19,12 @@ interface CoreComponent {
      */
     fun coreDependency(): CoreDependency
 
+    fun coreActivityDependency(): CoreActivityDependency
+
     fun coreCameraDependency(): CoreCameraDependency
 
     fun corePhotoDependency(): CorePhotoDependency
 
-    fun coreActivityDependency(): CoreActivityDependency
 
 
     @Component.Factory
