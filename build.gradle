@@ -35,9 +35,9 @@ ext {
 
     // Sdk and tools
     // Support library and architecture components support minSdk 14 and above.
-    minSdkVersion = 14
-    targetSdkVersion = 28
-    compileSdkVersion = 28
+    minSdkVersion = 21
+    targetSdkVersion = 29
+    compileSdkVersion = 29
 
     coreKtxVersion = '1.2.0'
     fragmentVersion = '1.1.0-alpha07'

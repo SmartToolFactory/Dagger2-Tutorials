@@ -1,7 +1,7 @@
-include ':Tutorial10-1DFM-DaggerHilt'
 include ':features:feature_photos'
 include ':features:feature_camera'
 include ':features:gallery'
+include ':features:feature_leaderboard'
 
 include ':External-Tutorial-CodeLabs'
 include ':External-Tutorial-SimpleAssitedInject'
@@ -57,5 +57,9 @@ include ':Tutorial8-2DaggerHilt-ComponentScopes'
 include ':Tutorial9-1DynamicFeatureImplementation'
 include ':Tutorial9-2DynamicFeatureImplementation2'
 include ':Tutorial9-2core'
+
+// Dynamic Features and Hİlt
+include ':Tutorial10-1core'
+include ':Tutorial10-1DFM-DaggerHilt'
 
 
