@@ -91,7 +91,7 @@ class MainFragment : Fragment() {
 
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "MainActivityModule @ActivityScope mainActivityObject: ${mainActivityObject.hashCode()}\n" +
                         "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor @FragmentScope fragmentObject: ${fragmentObject.hashCode()}"

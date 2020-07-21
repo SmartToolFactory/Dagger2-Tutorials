@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "MainActivityModule no scope  mainActivityDependency: ${mainActivityDependency.hashCode()}\n" +
                         "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor no scope sensorController: ${sensorController.hashCode()}\n"

@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
 
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "HomeFragmentModule no scope homeFragmentObject: ${homeFragmentObject.hashCode()}\n" +
                         "Constructor @FragmentScope fragmentObject: ${fragmentObject.hashCode()}"
     }
