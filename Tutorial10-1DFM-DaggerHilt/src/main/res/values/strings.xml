@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tutorial10-1DFM-DaggerHilt</string>
-    <string name="title_feature_leaderboard">Leaderboard</string>
+    <string name="title_feature_hilt_camera">Camera</string>
+    <string name="title_feature_hilt_photos">Photos</string>
 </resources>

@@ -90,11 +90,12 @@ class MainFragment : Fragment() {
         }
 
         btnCamera.setOnClickListener {
-//            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_camera)
+            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_camera)
         }
 
         btnPhotos.setOnClickListener {
-//            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_photos)
+            findNavController().navigate(R.id.action_mainFragment_to_nav_graph_photos)
+//            findNavController().navigate(R.id.photoActivity)
         }
 
         view.findViewById<TextView>(R.id.tvInfo).text =

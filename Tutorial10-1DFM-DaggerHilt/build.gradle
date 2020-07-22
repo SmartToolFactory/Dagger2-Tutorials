@@ -33,6 +33,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    dynamicFeatures = [ ':features:feature_hilt_camera', ':features:feature_hilt_photos']
+
 }
 
 dependencies {

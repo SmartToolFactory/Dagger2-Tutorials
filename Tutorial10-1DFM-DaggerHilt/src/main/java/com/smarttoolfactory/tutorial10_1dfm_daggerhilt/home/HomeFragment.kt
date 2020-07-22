@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.R
@@ -61,13 +62,13 @@ class HomeFragment : Fragment() {
         val btnCamera = view.findViewById<Button>(R.id.btnCamera)
         val btnPhotos = view.findViewById<Button>(R.id.btnPhotos)
 
-//        btnCamera.setOnClickListener {
-//            findNavController().navigate(R.id.action_homeFragment_to_nav_graph_camera)
-//        }
-//
-//        btnPhotos.setOnClickListener {
-//            findNavController().navigate(R.id.action_homeFragment_to_nav_graph_photos)
-//        }
+        btnCamera.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_nav_graph_camera)
+        }
+
+        btnPhotos.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_nav_graph_photos)
+        }
 
         view.findViewById<TextView>(R.id.tvInfo).text =
                 "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +

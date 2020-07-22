@@ -13,12 +13,46 @@
         <action
             android:id="@+id/action_mainFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_graph_camera"
+            app:destination="@id/nav_graph_camera" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_graph_photos"
+            app:destination="@id/nav_graph_photos" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.smarttoolfactory.tutorial10_1dfm_daggerhilt.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_nav_graph_camera"
+            app:destination="@id/nav_graph_camera" />
+        <action
+            android:id="@+id/action_homeFragment_to_nav_graph_photos"
+            app:destination="@id/nav_graph_photos" />
     </fragment>
+
+
+    <!-- camera dynamic feature module-->
+    <include-dynamic
+        android:id="@+id/nav_graph_camera"
+        android:name="com.smarttoolfactory.feature_hilt_camera"
+        app:graphResName="nav_graph_camera"
+        app:moduleName="feature_hilt_camera"></include-dynamic>
+
+
+    <!-- photos dynamic feature module-->
+    <include-dynamic
+        android:id="@+id/nav_graph_photos"
+        android:name="com.smarttoolfactory.feature_hilt_photos"
+        app:graphResName="nav_graph_photos"
+        app:moduleName="feature_hilt_photos"></include-dynamic>
+
+    <activity
+        android:id="@+id/photoActivity"
+        android:name="com.smarttoolfactory.feature_hilt_photos.PhotoActivity"
+        android:label="PhotoActivity"
+        app:moduleName="feature_hilt_photos" />
 
 </navigation>
