@@ -39,7 +39,13 @@
         android:id="@+id/nav_graph_camera"
         android:name="com.smarttoolfactory.feature_hilt_camera"
         app:graphResName="nav_graph_camera"
-        app:moduleName="feature_hilt_camera"></include-dynamic>
+        app:moduleName="feature_hilt_camera" />
+
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.smarttoolfactory.feature_hilt_camera.CameraActivity"
+        android:label="Camera Activity"
+        app:moduleName="feature_hilt_camera" />
 
 
     <!-- photos dynamic feature module-->
@@ -47,12 +53,8 @@
         android:id="@+id/nav_graph_photos"
         android:name="com.smarttoolfactory.feature_hilt_photos"
         app:graphResName="nav_graph_photos"
-        app:moduleName="feature_hilt_photos"></include-dynamic>
-
-    <activity
-        android:id="@+id/photoActivity"
-        android:name="com.smarttoolfactory.feature_hilt_photos.PhotoActivity"
-        android:label="PhotoActivity"
         app:moduleName="feature_hilt_photos" />
+
+
 
 </navigation>

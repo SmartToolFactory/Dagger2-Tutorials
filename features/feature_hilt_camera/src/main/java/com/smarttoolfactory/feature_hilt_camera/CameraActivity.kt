@@ -1,14 +1,8 @@
 package com.smarttoolfactory.feature_hilt_camera
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import com.smarttoolfactory.feature_hilt_camera.di.DaggerCameraComponent
 import com.smarttoolfactory.feature_hilt_camera.model.CameraObject
 import com.smarttoolfactory.tutorial10_1core.di.CoreComponent
@@ -18,7 +12,7 @@ import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
 import dagger.hilt.android.EntryPointAccessors
 import javax.inject.Inject
 
-class CameraFragment1 : Fragment() {
+class CameraActivity : AppCompatActivity() {
 
     /**
      * Injected from [CoreModule] with @Singleton scope
@@ -44,41 +38,34 @@ class CameraFragment1 : Fragment() {
     @Inject
     lateinit var cameraObject: CameraObject
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_camera1, container, false)
-    }
-
-    @SuppressLint("SetTextI18n")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<Button>(R.id.btnNextPage).setOnClickListener {
-            findNavController().navigate(R.id.action_cameraFragment1_to_cameraFragment2)
-        }
-
-        view.findViewById<TextView>(R.id.tvInfo).text =
-                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
-                        "CoreModule no scope coreCameraDependency: ${coreCameraDependency.hashCode()}\n" +
-                        "CameraModule  no scope cameraObject: ${cameraObject.hashCode()}"
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        initCoreDependentInjection()
+
+//        initHiltDependencyInjection()
+
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_camera)
+
+        findViewById<TextView>(R.id.tvInfo).text =
+                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
+                        "CoreModule @ActivityScope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                        "CoreModule no scope coreCameraDependency: ${coreCameraDependency.hashCode()}\n" +
+                        "CameraModule  @FeatureScope cameraObject: ${cameraObject.hashCode()}"
     }
 
-    private fun initCoreDependentInjection() {
+    private fun initHiltDependencyInjection() {
 
         DaggerCameraComponent.factory().create(
                 EntryPointAccessors.fromApplication(
-                        requireActivity().applicationContext,
+                        applicationContext,
                         CoreComponent::class.java
                 ),
-                requireActivity().application
+                application
         )
                 .inject(this)
 
+
     }
+
+
 }

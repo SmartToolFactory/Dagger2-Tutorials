@@ -1,4 +1,4 @@
-package com.smarttoolfactory.feature_camera.model
+package com.smarttoolfactory.feature_hilt_camera.model
 
 import android.content.Context
 

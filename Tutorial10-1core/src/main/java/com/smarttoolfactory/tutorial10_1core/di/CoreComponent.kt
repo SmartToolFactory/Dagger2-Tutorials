@@ -26,5 +26,4 @@ interface CoreComponent {
 
     fun corePhotoDependency(): CorePhotoDependency
 
-
 }
