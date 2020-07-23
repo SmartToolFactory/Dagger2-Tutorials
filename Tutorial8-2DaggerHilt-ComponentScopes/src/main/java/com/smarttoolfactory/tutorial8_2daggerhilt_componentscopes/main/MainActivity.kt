@@ -14,6 +14,12 @@ import javax.inject.Inject
 /**
  * Tutorial fro implementing subcomponents and scopes presented in Tutorial 6-4 using Dagger Hilt.
  *
+ * * You can either use single module for FragmentComponent, or other pre-defined Hilt components,
+ * for instance or use several
+ * modules like in regular module.
+ *
+ * * Do not use put same provide methods for same dependencies without qualifier
+ * in several modules.
  *
  */
 @AndroidEntryPoint

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.smarttoolfactory.feature_hilt_camera.di.DaggerCameraComponent
 import com.smarttoolfactory.feature_hilt_camera.model.CameraObject
-import com.smarttoolfactory.tutorial10_1core.di.CoreComponent
+import com.smarttoolfactory.tutorial10_1core.di.CoreComponentDependencies
 import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreCameraDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
@@ -71,11 +71,13 @@ class CameraFragment1 : Fragment() {
 
     private fun initCoreDependentInjection() {
 
+        val coreComponentDependencies = EntryPointAccessors.fromApplication(
+                requireActivity().applicationContext,
+                CoreComponentDependencies::class.java
+        )
+
         DaggerCameraComponent.factory().create(
-                EntryPointAccessors.fromApplication(
-                        requireActivity().applicationContext,
-                        CoreComponent::class.java
-                ),
+                coreComponentDependencies,
                 requireActivity().application
         )
                 .inject(this)

@@ -30,6 +30,6 @@
         android:id="@id/nav_graph_camera"
         android:name="com.smarttoolfactory.feature_hilt_camera"
         app:graphResName="nav_graph_camera"
-        app:moduleName="feature_camera">
+        app:moduleName="feature_hilt_camera">
     </include-dynamic>
 </navigation>

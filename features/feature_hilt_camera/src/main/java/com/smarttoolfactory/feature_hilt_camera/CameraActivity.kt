@@ -1,11 +1,12 @@
 package com.smarttoolfactory.feature_hilt_camera
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.smarttoolfactory.feature_hilt_camera.di.DaggerCameraComponent
 import com.smarttoolfactory.feature_hilt_camera.model.CameraObject
-import com.smarttoolfactory.tutorial10_1core.di.CoreComponent
+import com.smarttoolfactory.tutorial10_1core.di.CoreComponentDependencies
 import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreCameraDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
@@ -39,9 +40,10 @@ class CameraActivity : AppCompatActivity() {
     lateinit var cameraObject: CameraObject
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
-//        initHiltDependencyInjection()
+        initHiltDependencyInjection()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
@@ -55,11 +57,13 @@ class CameraActivity : AppCompatActivity() {
 
     private fun initHiltDependencyInjection() {
 
+        val coreComponentDependencies = EntryPointAccessors.fromApplication(
+                applicationContext,
+                CoreComponentDependencies::class.java
+        )
+
         DaggerCameraComponent.factory().create(
-                EntryPointAccessors.fromApplication(
-                        applicationContext,
-                        CoreComponent::class.java
-                ),
+                coreComponentDependencies,
                 application
         )
                 .inject(this)

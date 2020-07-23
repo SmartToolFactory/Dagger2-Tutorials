@@ -4,12 +4,12 @@ import android.app.Application
 import com.smarttoolfactory.feature_hilt_camera.CameraActivity
 import com.smarttoolfactory.feature_hilt_camera.CameraFragment1
 import com.smarttoolfactory.feature_hilt_camera.CameraFragment2
-import com.smarttoolfactory.tutorial10_1core.di.CoreComponent
+import com.smarttoolfactory.tutorial10_1core.di.CoreComponentDependencies
 import dagger.BindsInstance
 import dagger.Component
 
 @Component(
-        dependencies = [CoreComponent::class],
+        dependencies = [CoreComponentDependencies::class],
         modules = [CameraModule::class]
 )
 interface CameraComponent {
@@ -22,7 +22,7 @@ interface CameraComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(coreComponent: CoreComponent, @BindsInstance application: Application): CameraComponent
+        fun create(coreComponentDependencies: CoreComponentDependencies, @BindsInstance application: Application): CameraComponent
     }
 
 }

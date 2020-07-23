@@ -1,5 +1,6 @@
 package com.smarttoolfactory.tutorial8_2daggerhilt_componentscopes.main
 
+import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,8 +24,11 @@ class SecondFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
 
     /**
-     * Injected from [SecondFragmentModule] with @FragmentScope which
+     * Injected from [SecondFragmentModule] or [FragmentModule] with @FragmentScoped which
      * is created each time an instance of this fragment is created.
+     *
+     * * Commented out SecondFragment since you can put all dependencies for different fragments
+     * into a single module with Hilt
      */
     @Inject
     lateinit var mySharedPreferences: MySharedPreferences
@@ -54,6 +58,7 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.fragment2, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -63,7 +68,7 @@ class SecondFragment : Fragment() {
         view.findViewById<TextView>(R.id.tvInfo).text =
                         "ApplicationModule sharedPreferences: ${sharedPreferences.hashCode()}\n" +
                         "SecondFragmentModule @FragmentScoped mySharedPreferences: ${mySharedPreferences.hashCode()}\n" +
-                        "🔥 MainActivityModule @ActivityScope toastMaker: ${toastMaker.hashCode()}\n" +
+                        "🔥 MainActivityModule @ActivityScoped toastMaker: ${toastMaker.hashCode()}\n" +
                         "Constructor @FragmentScoped fragObject: ${fragmentObject.hashCode()}\n" +
                         "Constructor @ActivityScoped sensorController: ${sensorController.hashCode()}"
     }

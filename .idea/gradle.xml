@@ -24,7 +24,6 @@
             <option value="$PROJECT_DIR$/Tutorial3-2Scope2" />
             <option value="$PROJECT_DIR$/Tutorial3-3Qualifiers" />
             <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent" />
-            <option value="$PROJECT_DIR$/Tutorial4-1DependentComponent2" />
             <option value="$PROJECT_DIR$/Tutorial4-2Subcomponents" />
             <option value="$PROJECT_DIR$/Tutorial4-3ComponentBuilders" />
             <option value="$PROJECT_DIR$/Tutorial4-4ComponentBuildersMultipleModules" />
@@ -51,6 +50,7 @@
             <option value="$PROJECT_DIR$/Tutorial7-3BindsContextWithApplication" />
             <option value="$PROJECT_DIR$/Tutorial8-1DaggerHilt-Basics" />
             <option value="$PROJECT_DIR$/Tutorial8-2DaggerHilt-ComponentScopes" />
+            <option value="$PROJECT_DIR$/Tutorial8-3DaggerHilt-DefineComponent" />
             <option value="$PROJECT_DIR$/Tutorial9-1DynamicFeatureImplementation" />
             <option value="$PROJECT_DIR$/Tutorial9-2DynamicFeatureImplementation2" />
             <option value="$PROJECT_DIR$/Tutorial9-2core" />

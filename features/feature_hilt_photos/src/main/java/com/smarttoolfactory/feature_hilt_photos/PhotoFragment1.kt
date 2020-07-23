@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.smarttoolfactory.feature_hilt_photos.di.DaggerPhotoComponent
 import com.smarttoolfactory.feature_hilt_photos.model.PhotoObject
-import com.smarttoolfactory.tutorial10_1core.di.CoreComponent
 import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
 import com.smarttoolfactory.tutorial10_1dfm_daggerhilt.di.PhotoModuleDependencies
@@ -24,19 +23,17 @@ import javax.inject.Inject
 
 class PhotoFragment1 : Fragment() {
 
-//    /**
-//     * ❌ Cannot inject from [CoreModule] even though [PhotoComponent]
-//     * depends on [MainActivityComponent]
-//     */
-//    @Inject
-//    lateinit var coreDependency: CoreDependency
-//
-//    /**
-//     * ❌ Cannot inject from [CoreModule] even though [PhotoComponent]
-//     * depends on [MainActivityComponent]
-//     */
-//    @Inject
-//    lateinit var coreActivityDependency: CoreActivityDependency
+    /**
+     * Injected from [CoreModule] using [PhotoModuleDependencies] in app module
+     */
+    @Inject
+    lateinit var coreDependency: CoreDependency
+
+    /**
+     * Injected from [CoreModule] using [PhotoModuleDependencies] in app module
+     */
+    @Inject
+    lateinit var coreActivityDependency: CoreActivityDependency
 
     /**
      * Injected from [MainActivityModule] with no scope
@@ -84,8 +81,8 @@ class PhotoFragment1 : Fragment() {
 
 
         view.findViewById<TextView>(R.id.tvInfo).text =
-//                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
-//                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
+                "CoreModule @Singleton coreDependency: ${coreDependency.hashCode()}\n" +
+                        "CoreModule no scope coreActivityDependency: ${coreActivityDependency.hashCode()}\n" +
                         "MainActivityModule no scope toastMaker: ${toastMaker.hashCode()}\n" +
                         "MainActivityModule @ActivityScoped mainActivityObject: ${mainActivityObject.hashCode()}\n" +
                         "PhotoModule no scope photoObject: ${photoObject.hashCode()}\n" +
@@ -100,11 +97,13 @@ class PhotoFragment1 : Fragment() {
 
     private fun initHiltDependencyInjection() {
 
+        val photoModuleDependencies = EntryPointAccessors.fromActivity(
+                requireActivity(),
+                PhotoModuleDependencies::class.java
+        )
+
         DaggerPhotoComponent.factory().create(
-                EntryPointAccessors.fromActivity(
-                        requireActivity(),
-                        PhotoModuleDependencies::class.java
-                ),
+                photoModuleDependencies,
                 requireActivity().application
         )
                 .inject(this)
