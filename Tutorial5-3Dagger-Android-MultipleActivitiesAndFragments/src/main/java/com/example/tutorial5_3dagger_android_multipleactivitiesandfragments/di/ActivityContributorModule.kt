@@ -29,7 +29,7 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class ActivityContributorModule {
-    
+
     @ActivityScope
     @ContributesAndroidInjector(modules = [MainActivityModule::class, FragmentContributorModule::class])
     abstract fun contributeMainActivity(): MainActivity
@@ -38,13 +38,6 @@ abstract class ActivityContributorModule {
     @ContributesAndroidInjector(modules = [SecondActivityModule::class])
     abstract fun contributeSecondActivity(): SecondActivity
 
-    /**
-     * Even though [ThirdActivity] does not have any scoped injections it's required for this Activity
-     * to be added and have sub compnent via @ContributesAndroidInjector
-     *
-     * returns ERROR java.lang.IllegalArgumentException: No injector factory bound for Class<com.example
-     * if  @ContributesAndroidInjector NOT USED
-     */
     @ActivityScope
     @ContributesAndroidInjector
     abstract fun contributeThirdActivity(): ThirdActivity

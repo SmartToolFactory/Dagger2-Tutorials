@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.smarttoolfactory.feature_hilt_camera.di.DaggerCameraComponent
 import com.smarttoolfactory.feature_hilt_camera.model.CameraObject
-import com.smarttoolfactory.tutorial10_1core.di.CoreComponentDependencies
+import com.smarttoolfactory.tutorial10_1core.di.CoreModuleDependencies
 import com.smarttoolfactory.tutorial10_1core.model.CoreActivityDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreCameraDependency
 import com.smarttoolfactory.tutorial10_1core.model.CoreDependency
@@ -57,13 +57,13 @@ class CameraActivity : AppCompatActivity() {
 
     private fun initHiltDependencyInjection() {
 
-        val coreComponentDependencies = EntryPointAccessors.fromApplication(
+        val coreModuleDependencies = EntryPointAccessors.fromApplication(
                 applicationContext,
-                CoreComponentDependencies::class.java
+                CoreModuleDependencies::class.java
         )
 
         DaggerCameraComponent.factory().create(
-                coreComponentDependencies,
+                coreModuleDependencies,
                 application
         )
                 .inject(this)

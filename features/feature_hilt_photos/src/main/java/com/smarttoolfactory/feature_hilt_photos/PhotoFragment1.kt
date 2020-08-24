@@ -108,7 +108,6 @@ class PhotoFragment1 : Fragment() {
         )
                 .inject(this)
 
-
     }
 
 

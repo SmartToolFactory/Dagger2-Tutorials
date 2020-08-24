@@ -17,5 +17,4 @@ abstract class ActivityContributorModule {
     abstract fun bindMainActivityFactory(builder: MainActivitySubComponent.Builder): AndroidInjector.Factory<*>
 
 
-
 }

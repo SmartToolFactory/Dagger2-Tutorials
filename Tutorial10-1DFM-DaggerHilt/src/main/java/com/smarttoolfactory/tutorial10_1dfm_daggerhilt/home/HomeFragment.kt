@@ -78,23 +78,4 @@ class HomeFragment : Fragment() {
                         "Constructor @FragmentScope fragmentObject: ${fragmentObject.hashCode()}"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        initCoreDependentInjection()
-        super.onCreate(savedInstanceState)
-    }
-
-    private fun initCoreDependentInjection() {
-
-//        val homeFragmentComponent = DaggerHomeFragmentComponent.factory()
-//                .create(
-//                        coreComponent = requireActivity().coreComponent(),
-//                        homeFragmentModule = HomeFragmentModule(),
-//                        application = requireActivity().application
-//                )
-//
-//        homeFragmentComponent.inject(this)
-
-    }
-
-
 }

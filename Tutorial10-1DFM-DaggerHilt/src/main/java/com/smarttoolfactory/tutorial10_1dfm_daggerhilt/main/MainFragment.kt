@@ -107,16 +107,4 @@ class MainFragment : Fragment() {
                         "Constructor @FragmentScoped fragmentObject: ${fragmentObject.hashCode()}"
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        initSubComponentInjection()
-        super.onCreate(savedInstanceState)
-    }
-
-    private fun initSubComponentInjection() {
-//        val mainFragmentSubComponent = (activity as MainActivity).mainActivityComponent
-//                .mainFragmentFactory().create()
-//        mainFragmentSubComponent.inject(this) // cannot be in onAttach because of SavedStateHandle
-    }
-
 }

@@ -13,7 +13,7 @@ import dagger.hilt.android.components.ApplicationComponent
  */
 @EntryPoint
 @InstallIn(ApplicationComponent::class)
-interface CoreComponentDependencies {
+interface CoreModuleDependencies {
 
     /*
         🔥 Provision methods to provide dependencies to components that depend on this component
